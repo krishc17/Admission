@@ -1,5 +1,3 @@
-# Admission
-
 # Navrachna Universirty Admission Portal
 
 [![N|Solid](http://nuv.ac.in/images/nuv_logo.png)](http://nuv.ac.in/)
