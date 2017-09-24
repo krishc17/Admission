@@ -2,6 +2,8 @@
 
 [![N|Solid](http://nuv.ac.in/images/nuv_logo.png)](http://nuv.ac.in/)
 
+[![Build Status](https://travis-ci.org/dextel2/Admission.svg?branch=master)](https://travis-ci.org/dextel2/Admission)
+
 This Admission portal is a final year University Project, probably will go live around in 2018. This project is made by the students for the students and the faculty as well
 
 
