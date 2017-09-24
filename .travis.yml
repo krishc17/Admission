@@ -14,5 +14,4 @@ matrix:
     - php: 5.6
   fast_finish: true
 
-env:
-  - WP_VERSION=master WP_MULTISITE=1
+os: windows
