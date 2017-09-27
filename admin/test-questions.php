@@ -24,15 +24,16 @@
 
             <div class="col-md-2">
             <div class="dropdown create">
-              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Test Options
-                <span class="caret"></span>
+              <button class="btn btn-default" type="button"   aria-haspopup="true" aria-expanded="false">
+              <a class=href="add-questions.php">Add Questions</a>  
+              <span class="caret"></span>
               </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-<!--                <li><a type="button" data-toggle="modal" data-target="#addPage">Add Questions</a></li> -->
+              
+              <!-- <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a type="button" data-toggle="modal" data-target="#addPage">Add Questions</a></li> 
                 <li><a href="add-questions.php">Add Questions</a></li>
 
-              </ul>
+              </ul> -->
             </div>
           </div>
          </div>
