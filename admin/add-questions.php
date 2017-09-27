@@ -86,11 +86,9 @@
                           <input type="text" class="form-control " value="ans 4">
       
                           <label>
-      
+                            <!-- Add Correct Answer Logic Soon -->
                           </label>
                               <input type="submit" class="form-control btn btn-default" value="Submit">
-                              
-                          
                         </div>
       
                       </form>

@@ -30,7 +30,7 @@
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 <!--                <li><a type="button" data-toggle="modal" data-target="#addPage">Add Questions</a></li> -->
-                <li><a href="#">Add Questions</a></li>
+                <li><a href="add-questions.php">Add Questions</a></li>
 
               </ul>
             </div>
@@ -61,20 +61,32 @@
               </div>
         </div>
         <br>
-        <table class="table table-striped table-hover">
+        <table class="table table-striped table-hover table-bordered" >
               <tr>
                 <th>ID</th>
-                <th>Quesion</th>
-                <th>Online</th>
+                <th>Question</th>
                 <th>Created</th>
                 <th>Actions</th>
               </tr>
               <tr>
                 <td>1</td>
-                <td>Blog Post 1</td>
-                <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-                <td>Dec 12, 2016</td>
-                <td><a class="btn btn-default" href="edit.html">Edit</a> <a class="btn btn-danger" href="#">Delete</a></td>
+                <td>Which of the following operating systems do you choose to implement a client server network?</td>
+                <td>Sep 27, 2017</td>
+                <td><a class="btn btn-default" href="#">Edit</a> <a class="btn btn-danger" href="#">Delete</a></td>
+              </tr>
+
+              <tr>
+                <td>2</td>
+                <td>Which of the following operating systems do you choose to implement a client server network?</td>
+                <td>Sep 28, 2017</td>
+                <td><a class="btn btn-default" href="#">Edit</a> <a class="btn btn-danger" href="#">Delete</a></td>
+              </tr>
+
+              <tr>
+                <td>3</td>
+                <td>Which of the following operating systems do you choose to implement a client server network?</td>
+                <td>Sep 28, 2017</td>
+                <td><a class="btn btn-default" href="#">Edit</a> <a class="btn btn-danger" href="#">Delete</a></td>
               </tr>
             </table>
       </div>
