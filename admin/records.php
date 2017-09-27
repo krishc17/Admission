@@ -39,7 +39,7 @@
          </div>
          <div class="panel-body">
             <div class="row">
-               <div class="col-md-4">
+               <div class="col-md-6">
                   <div class="form-group">
                      <label for="exampleSelect1">Select Year</label>
                      <select class="form-control" id="exampleSelect1">
@@ -51,7 +51,8 @@
                      </select>
                   </div>
                </div>
-               <div class="col-md-4">
+               
+               <div class="col-md-6">
                   <div class="form-group">
                      <label for="exampleSelect1">Select Course</label>
                      <select class="form-control" id="exampleSelect1">
@@ -67,7 +68,7 @@
                </div>
             </div>
             <br>
-            <table border=1 class="table table-striped table-hover">
+            <table class="table table-striped table-hover table-bordered">
                <tr>
                   <th>ID</th>
                   <th>Student Name</th>
