@@ -13,14 +13,14 @@
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <li><a href="index.php">Dashboard</a></li>
-          <li><a href="pages.html">Transaction</a></li>
+          <li><a href="#">Transaction</a></li>
           <li><a href="records.php">Records</a></li>
-          <li><a href="users.html">Test</a></li>
+          <li><a href="test-questions.php">Test</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Welcome</a></li>
+          <li><a href="#">Welcome, Admin</a></li>
           <li><a href="#"> Profile </a></li>
-          <li><a href="login.html">Logout</a></li>
+          <li><a href="#">Logout</a></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
