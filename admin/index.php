@@ -36,72 +36,70 @@
          <!-- Website Overview -->
          <div class="panel panel-default">
             <div class="panel-heading main-color-bg">
-               <h3 class="panel-title">Website Overview</h3>
+               <h3 class="panel-title"> Overview</h3>
             </div>
             <div class="panel-body">
-               <div class="col-md-4">
+               <div class="col-md-6">
                   <div class="well dash-box">
                      <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 203</h2>
-                     <h4>Users</h4>
+                     <h4>Admissions</h4>
                   </div>
                </div>
-               <div class="col-md-4">
+               <div class="col-md-6">
                   <div class="well dash-box">
                      <h2><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> 12</h2>
-                     <h4>Pages</h4>
+                     <h4>Test Questions</h4>
                   </div>
                </div>
-               <div class="col-md-4">
+            <!--   <div class="col-md-4">
                   <div class="well dash-box">
                      <h2><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 33</h2>
                      <h4>Posts</h4>
                   </div>
-               </div>
-               <!--<div class="col-md-3">
-                  <div class="well dash-box">
-                    <h2><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> 12,334</h2>
-                    <h4>Visitors</h4>
-                  </div>
-                  </div>-->
+               </div> -->
+
             </div>
          </div>
          <!-- Latest Users -->
          <div class="panel panel-default">
             <div class="panel-heading">
-               <h3 class="panel-title">Latest Users</h3>
+               <h3 class="panel-title">Recent Admissions</h3>
             </div>
             <div class="panel-body">
-               <table class="table table-striped table-hover">
+               <table class="table table-striped table-hover table-bordered">
                   <tr>
+                    <th>ID</th>
                      <th>Name</th>
                      <th>Email</th>
+                     <th>Course</th>
                      <th>Joined</th>
                   </tr>
+
                   <tr>
-                     <td>Jill Smith</td>
-                     <td>jillsmith@gmail.com</td>
-                     <td>Dec 12, 2016</td>
+                    <td>1</td>
+                     <td>Yash Karanke</td>
+                     <td>yashkaranke@gmail.com</td>
+                     <td>Msc (IT)</td>
+                     <td>27-Sep-2017</td>
                   </tr>
+
                   <tr>
-                     <td>Eve Jackson</td>
-                     <td>ejackson@yahoo.com</td>
-                     <td>Dec 13, 2016</td>
+                     <td>2</td>
+                     <td>Jay Pakhadiwala</td>
+                     <td>jayp@gmail.com</td>
+                     <td>Msc (IT)</td>
+                     <td>27-Sep-2017</td>
                   </tr>
+
                   <tr>
-                     <td>John Doe</td>
-                     <td>jdoe@gmail.com</td>
-                     <td>Dec 13, 2016</td>
+                    <td>3</td>
+                     <td>Shaileen Earnest</td>
+                     <td>shaileener@gmail.com</td>
+                     <td>Msc (IT)</td>
+                     <td>27-Sep-2017</td>
                   </tr>
-                  <tr>
-                     <td>Stephanie Landon</td>
-                     <td>landon@yahoo.com</td>
-                     <td>Dec 14, 2016</td>
-                  </tr>
-                  <tr>
-                     <td>Mike Johnson</td>
-                     <td>mjohnson@gmail.com</td>
-                     <td>Dec 15, 2016</td>
-                  </tr>
+
+
                </table>
             </div>
          </div>
@@ -110,7 +108,7 @@
       </div>
       </section>
       <footer id="footer">
-         <p>Copyright AdminStrap, &copy; 2017</p>
+
       </footer>
       <!-- Modals -->
       <!-- Add Page -->
