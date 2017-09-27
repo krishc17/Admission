@@ -164,7 +164,7 @@ padding-right:50px;
 </style>
 <nav class="navbar navbar-inverse text-center h4">
 <div class="container-fluid">
-	 <a class="navbar-brand" href="index.php">
+	 <a class="navbar-brand" href="home.php">
 	 <img class="img" src="img/nuv_logo.png" />
 	 </a>
 	 <div class="navbar-header">
@@ -176,7 +176,7 @@ padding-right:50px;
 	 </div>
 	 <div style="margin-left:100px;" class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav vertical lclass" style="text-decoration:none;">
-				 <li><a class="link-3" href="index.php">Home</a></li>
+				 <li><a class="link-3" href="home.php">Home</a></li>
 				 <li><a class="link-3" href="profile.php">Profile</a></li>
 				 <li><a class="link-3" href="apply.php">Apply</a></li>
 			</ul>

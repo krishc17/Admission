@@ -81,7 +81,7 @@
 									</div>
 									<div class="col-sm-12 form-group">
 										<label>Courses</label>
-										<select id="sub_groups" class="form-control">
+										<select id="sub_groups" class="form-control autocomplete">
 											<option active>Select a Course</option>
 											<!-- SBL -->
 											<option data-group='School of Business and Law' value='BCA'>Bachelor of Computer Applications </option>
