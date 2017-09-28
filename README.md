@@ -32,10 +32,8 @@ This Admission portal is a final year University Project, probably will go live 
 # Technology Used
 
 * [Bootstrap](http://getbootstrap.com) - HTML enhanced for web apps!
-* Core PHP 
-* [node.js] - evented I/O for the backend
-* [jQuery] - duh
+* [Core PHP](http://www.php.net/) PHP Version 7
+* [node.js](https://nodejs.org/en/) - evented I/O for the backend also for node_modules
+* [jQuery](https://jquery.com/) - JavaScript Framework
 
-
-----
 
