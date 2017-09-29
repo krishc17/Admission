@@ -1,5 +1,5 @@
             CREATE TABLE student_data(
-                ID INT(3) PRIMARY KEY AUTO_INCREMENT,
+                ID INT(3) NOT NULL PRIMARY KEY AUTO_INCREMENT,
                 fullname VARCHAR(70),
                 GENDER VARCHAR(8),
                 BGROUP VARCHAR(10),
