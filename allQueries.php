@@ -16,14 +16,15 @@ if(isset($_POST['addRegister'])){
             $password = $_POST['password'];
             $password2 = $_POST['password2'];
 
-
-            $qry = "INSERT INTO `student_data` VALUES (NULL,'$fullname','$gender','$bgroup','$address','$city','$state','$zip','$pnumber','$email','$password')";
-            
             if($password == $password2){
                 $password = md5($password);
-                mysqli_query($conn,$query);    
+                $query = "INSERT INTO `student_data` (`ID`,`fullname`,`GENDER`,`BGROUP`,`CITY`,`STATE`,`ZIP`,`PNUMBER`,`EMAIL`,`PASSWORD`)VALUES 
+                (NULL,'$fullname','$gender','$bgroup','$address','$city','$state','$zip','$pnumber','$email','$password')";      
+                mysqli_query($conn,$query);   
+                echo $password; 
+                echo "Success";
             }else{
-                
+                echo "Error";
             }
     
         }    
