@@ -3,6 +3,7 @@
                 fullname VARCHAR(70),
                 GENDER VARCHAR(8),
                 BGROUP VARCHAR(10),
+                ADDRESS VARCHAR(100);
                 CITY VARCHAR(20),
                 STATE VARCHAR(50),
                 ZIP VARCHAR(10),

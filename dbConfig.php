@@ -33,43 +33,25 @@
             if($password == $password2){
                 $password = md5($password);
 				
-				$sql = "INSERT INTO `student_data` (ID,`fullname`,`GENDER`,`BGROUP`,`CITY`,`STATE`,`ZIP`,`PNUMBER`,`EMAIL`,`PASSWORD`) VALUES 
-                (NULL,'$fullname','$gender','$bgroup','$address','$city','$state','$zip','$pnumber','$email','$password')";      
-				
-
-				$mysqli = @new mysqli($conn);
-				if(mysqli_connect_errno())
-				{
-					echo 'connect failed';
-					exit();
-				}
-				$result = $mysqli->query($sql);
-			
-				if(!$result){
-					echo 'insert error';
-					exit();
-				}
-				echo 'query inserted';
 				 // Insert Query
-				 // $query = "INSERT INTO `student_data` (ID,`fullname`,`GENDER`,`BGROUP`,`CITY`,`STATE`,`ZIP`,`PNUMBER`,`EMAIL`,`PASSWORD`) VALUES 
-                // (NULL,'$fullname','$gender','$bgroup','$address','$city','$state','$zip','$pnumber','$email','$password')";      
+				  $query = "INSERT INTO `student_data` (ID,`fullname`,`GENDER`,`BGROUP`,`CITY`,`STATE`,`ZIP`,`PNUMBER`,`EMAIL`,`PASSWORD`) VALUES 
+                 (NULL,'$fullname','$gender','$bgroup','$address','$city','$state','$zip','$pnumber','$email','$password')";      
 				
 				//Performing Query
-				// $try = mysqli_query($conn,"INSERT INTO `student_data` (ID,`fullname`,`GENDER`,`BGROUP`,`CITY`,`STATE`,`ZIP`,`PNUMBER`,`EMAIL`,`PASSWORD`) VALUES 
-				// (NULL,'$fullname','$gender','$bgroup','$address','$city','$state','$zip','$pnumber','$email','$password')");   
-                // if($try == false){
-				//	echo "error";
-				//	mysqli_error($try);
-				// 	}
-				// else
-				// {
-				//	echo "	success";
-			//		}
-            //}else{
-             //   echo "Error";
-           // }
+				 $try = mysqli_query($conn,"INSERT INTO `student_data` (`ID`,`fullname`,`GENDER`,`BGROUP`,`CITY`,`STATE`,`ZIP`,`PNUMBER`,`EMAIL`,`PASSWORD`) VALUES 
+				 ('$fullname','$gender','$bgroup','$address','$city','$state','$zip','$pnumber','$email','$password')");   
+                 if($try == false){
+					echo "error";
+					mysqli_error($try);
+				 	}
+				 else
+				 {
+					echo "	success";
+					}
+            }else{
+                echo "Error";
+            
     
-        //}    
 
 			}
 		}
