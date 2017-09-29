@@ -2,10 +2,10 @@
 	@ob_start();
 	session_start();
 	// Database Connection
-	$databaseHost = 'localhost';
-	$databaseName = 'admission2018';
-	$databaseUsername = 'root';
-	$databasePassword = '';
+	$databaseHost = "localhost";
+	$databaseUsername = "root";
+	$databasePassword = "";
+	$databaseName = "admission2018";
 
 	$conn = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName); 
 
@@ -15,7 +15,8 @@
 	}
 
 	// User Registeration Page
-	if(isset($_POST['addRegister'])){
+	if(isset($_POST['addRegister']))
+	{
     
             $fullname = mysqli_real_escape_string($conn,$_POST['fullname']);
             $gender = mysqli_real_escape_string($conn,$_POST['gender']);
@@ -31,18 +32,45 @@
 
             if($password == $password2){
                 $password = md5($password);
-				// Insert Query
-				$query = "INSERT INTO `student_data` (`ID`,`fullname`,`GENDER`,`BGROUP`,`CITY`,`STATE`,`ZIP`,`PNUMBER`,`EMAIL`,`PASSWORD`)VALUES 
+				
+				$sql = "INSERT INTO `student_data` (ID,`fullname`,`GENDER`,`BGROUP`,`CITY`,`STATE`,`ZIP`,`PNUMBER`,`EMAIL`,`PASSWORD`) VALUES 
                 (NULL,'$fullname','$gender','$bgroup','$address','$city','$state','$zip','$pnumber','$email','$password')";      
+				
+
+				$mysqli = @new mysqli($conn);
+				if(mysqli_connect_errno())
+				{
+					echo 'connect failed';
+					exit();
+				}
+				$result = $mysqli->query($sql);
+			
+				if(!$result){
+					echo 'insert error';
+					exit();
+				}
+				echo 'query inserted';
+				 // Insert Query
+				 // $query = "INSERT INTO `student_data` (ID,`fullname`,`GENDER`,`BGROUP`,`CITY`,`STATE`,`ZIP`,`PNUMBER`,`EMAIL`,`PASSWORD`) VALUES 
+                // (NULL,'$fullname','$gender','$bgroup','$address','$city','$state','$zip','$pnumber','$email','$password')";      
+				
 				//Performing Query
-				mysqli_query($conn,$query);   
-                echo $password; 
-                echo "Success";
-            }else{
-                echo "Error";
-            }
+				// $try = mysqli_query($conn,"INSERT INTO `student_data` (ID,`fullname`,`GENDER`,`BGROUP`,`CITY`,`STATE`,`ZIP`,`PNUMBER`,`EMAIL`,`PASSWORD`) VALUES 
+				// (NULL,'$fullname','$gender','$bgroup','$address','$city','$state','$zip','$pnumber','$email','$password')");   
+                // if($try == false){
+				//	echo "error";
+				//	mysqli_error($try);
+				// 	}
+				// else
+				// {
+				//	echo "	success";
+			//		}
+            //}else{
+             //   echo "Error";
+           // }
     
-        }    
+        //}    
 
-
+			}
+		}
 ?>
