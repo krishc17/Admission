@@ -83,7 +83,7 @@
 	</h1>
 	<div class="col-lg-12 well">
 	  <div class="row">
-		<form action="regInsert.php" method="post">
+		<form action="dbConfig.php" method="post">
 		  <div class="col-sm-12">
 			<div class="row">
 			  <div class="col-sm-12 form-group">
@@ -150,10 +150,10 @@
 			  <div class="col-sm-6 form-group">
 				<label>Confirm Password
 				</label>
-				<input type="password" placeholder="Confirm Password.." class="form-control">
+				<input type="password2" placeholder="Confirm Password.." class="form-control">
 			  </div>
 			</div>
-			<button type="button" class="btn btn-lg btn-info" name="Submit" type="submit">Submit
+			<button type="button" class="btn btn-lg btn-info" name="addRegister" type="submit">Submit
 			</button>
 		  </div>
 		</form>
