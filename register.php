@@ -150,11 +150,10 @@
 			  <div class="col-sm-6 form-group">
 				<label>Confirm Password
 				</label>
-				<input type="password2" placeholder="Confirm Password.." class="form-control">
+				<input type="password" name="password2" placeholder="Confirm Password.." class="form-control">
 			  </div>
 			</div>
-			<button type="button" class="btn btn-lg btn-info" name="addRegister" type="submit">Submit
-			</button>
+			<input class="btn btn-lg btn-info" type="submit" name="addRegister"  value="Submit">
 		  </div>
 		</form>
 	  </div>
