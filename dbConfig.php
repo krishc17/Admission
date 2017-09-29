@@ -19,7 +19,7 @@
 		$email = $_POST['email'];
 		$password = $_POST['password'];
 		$password2 = $_POST['password2'];
-		echo $fullname;
+		
 		if($password == $password2){
 			
 		}else{

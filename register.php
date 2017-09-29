@@ -1,6 +1,6 @@
 <html>
-<?php include 'menu.php'; ?>
 <?php include_once 'dbConfig.php'; ?>
+<?php include 'menu.php'; ?>
 <style>
   @import "font-awesome.min.css";
   @import "font-awesome-ie7.min.css";
