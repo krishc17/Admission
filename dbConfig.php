@@ -34,10 +34,18 @@
                 $password = md5($password);
 				
 				
-				  $query = "INSERT INTO `student_data` (ID,`fullname`,`GENDER`,`BGROUP`,`CITY`,`STATE`,`ZIP`,`PNUMBER`,`EMAIL`,`PASSWORD`) VALUES 
+				  $query = "INSERT INTO `student_data` (`ID`,`fullname`,`GENDER`,`BGROUP`,`CITY`,`STATE`,`ZIP`,`PNUMBER`,`EMAIL`,`PASSWORD`) VALUES 
 				 (NULL,'$fullname','$gender','$bgroup','$address','$city','$state','$zip','$pnumber','$email','$password')";
 				 
-				 
+				$isWorking = mysqli_query($conn,$query);
+				if(!$isWorking)
+				{
+					echo 'Not Wrking';
+				}
+				else
+				{
+					echo 'Data Inserted';
+				}
 			}	
 		}
 ?>
