@@ -33,26 +33,11 @@
             if($password == $password2){
                 $password = md5($password);
 				
-				 // Insert Query
-				  $query = "INSERT INTO `student_data` (ID,`fullname`,`GENDER`,`BGROUP`,`CITY`,`STATE`,`ZIP`,`PNUMBER`,`EMAIL`,`PASSWORD`) VALUES 
-                 (NULL,'$fullname','$gender','$bgroup','$address','$city','$state','$zip','$pnumber','$email','$password')";      
 				
-				//Performing Query
-				 $try = mysqli_query($conn,"INSERT INTO `student_data` (`ID`,`fullname`,`GENDER`,`BGROUP`,`CITY`,`STATE`,`ZIP`,`PNUMBER`,`EMAIL`,`PASSWORD`) VALUES 
-				 ('$fullname','$gender','$bgroup','$address','$city','$state','$zip','$pnumber','$email','$password')");   
-                 if($try == false){
-					echo "error";
-					mysqli_error($try);
-				 	}
-				 else
-				 {
-					echo "	success";
-					}
-            }else{
-                echo "Error";
-            
-    
-
-			}
+				  $query = "INSERT INTO `student_data` (ID,`fullname`,`GENDER`,`BGROUP`,`CITY`,`STATE`,`ZIP`,`PNUMBER`,`EMAIL`,`PASSWORD`) VALUES 
+				 (NULL,'$fullname','$gender','$bgroup','$address','$city','$state','$zip','$pnumber','$email','$password')";
+				 
+				 
+			}	
 		}
 ?>
