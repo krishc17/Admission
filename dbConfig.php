@@ -1,31 +1,16 @@
 <?php
+	@ob_start();
 	session_start();
 	// Database Connection
 	$databaseHost = 'localhost';
 	$databaseName = 'admission2018';
 	$databaseUsername = 'root';
 	$databasePassword = '';
-	$mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName); 
+	$conn = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName); 
 
-	if(isset($_POST['addRegister'])){
-		$fullname = $_POST['fullname'];
-		$gender = $_POST['gender'];
-		$bgroup = $_POST['bgroup'];
-		$address = $_POST['address'];
-		$city = $_POST['city'];
-		$state = $_POST['state'];
-		$zip = $_POST['zip'];
-		$pnumber = $_POST['pnumber'];
-		$email = $_POST['email'];
-		$password = $_POST['password'];
-		$password2 = $_POST['password2'];
-		
-		if($password == $password2){
-			
-		}else{
-			// throw error
-		}
-
+	if(mysqli_connect_errno())
+	{
+		echo "Failed to Connect to the Database, Following is the error " . mysqli_connect_error();
 	}
 
 ?>
