@@ -8,15 +8,13 @@ $databaseHost = "localhost";
 $databaseUsername = "root";
 $databasePassword = "";
 $databaseName = "admission2018";
+//Register
 try
 	{
-
 	// PDO Style
-
 	$conn = new PDO("mysql:host=$databaseHost;dbname=$databaseName;", $databaseUsername, $databasePassword);
 	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	// User Registeration Page
-
 	if (isset($_POST['addRegister']))
 		{
 		$fullname = $_POST['fullname'];
@@ -33,9 +31,7 @@ try
 		if ($password == $password2)
 			{
 			$password = md5($password);
-
 			// PDO Style Insert
-
 			$sql = "INSERT INTO `student_data` VALUES 
 				(NULL,'$fullname','$gender','$bgroup','$address','$city','$state','$zip','$pnumber','$email','$password')";
 			if ($conn->query($sql))
@@ -69,7 +65,6 @@ catch(PDOException $e)
 		{
 			$sql = "SELECT FULLNAME,EMAIL,PASSWORD FROM `student_data`";
 		}
-
 	}
 
 ?>
