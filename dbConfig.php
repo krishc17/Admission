@@ -15,8 +15,6 @@ try
 
 	$conn = new PDO("mysql:host=$databaseHost;dbname=$databaseName;", $databaseUsername, $databasePassword);
 	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	echo "Connected successfully";
-
 	// User Registeration Page
 
 	if (isset($_POST['addRegister']))
@@ -55,6 +53,13 @@ try
 catch(PDOException $e)
 	{
 	echo "Connection failed: " . $e->getMessage();
+	}
+
+	if(isset($_POST['login']))
+	{
+		$email;
+		$password;
+
 	}
 
 ?>
