@@ -1,3 +1,4 @@
+<?php include 'dbConfig.php';?>
 <title>
 Navrachna Admission Portal
 </title>
@@ -58,7 +59,7 @@ $(document).ready(function(){
 	</h1>
 	<br>
 	<form>
-	  <input type="text" name="user" placeholder="Username">
+	  <input type="email" name="user" placeholder="Username">
 	  <input type="password" name="pass" placeholder="Password">
 	  <input type="submit" name="login" class="login loginmodal-submit" value="Login">
 	</form>

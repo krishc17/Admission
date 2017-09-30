@@ -54,11 +54,21 @@ catch(PDOException $e)
 	{
 	echo "Connection failed: " . $e->getMessage();
 	}
-
+	
+	// User Login
 	if(isset($_POST['login']))
 	{
-		$email;
-		$password;
+		$email = $_POST['email'];
+		$password = $_POST['password'];
+
+		if(empty($email) && empty($password))
+		{
+			// Do Nothing
+		}
+		else
+		{
+			$sql = "SELECT FULLNAME,EMAIL,PASSWORD FROM `student_data`";
+		}
 
 	}
 

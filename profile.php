@@ -2,7 +2,6 @@
 <html lang="en">
 <?php include 'home-menu.php'; ?>
     <?php include 'user-side-menu.php'; ?>
-
         <div class="container">
             <div class="col-lg-9">
                 <div class="panel panel-default">
