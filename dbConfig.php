@@ -7,45 +7,50 @@
 	$databasePassword = "";
 	$databaseName = "admission2018";
 
-	$conn = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName); 
 
-	if(mysqli_connect_errno())
-	{
-		echo "Failed to Connect to the Database, Following is the error " . mysqli_connect_error();
-	}
+	try{
+		//PDO Style
+		$conn = new PDO("mysql:host=$databaseHost;dbname=$databaseName;",$databaseUsername,$databasePassword);
+		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		echo "Connected successfully";
 
 	// User Registeration Page
 	if(isset($_POST['addRegister']))
 	{
     
-            $fullname = mysqli_real_escape_string($conn,$_POST['fullname']);
-            $gender = mysqli_real_escape_string($conn,$_POST['gender']);
-            $bgroup = mysqli_real_escape_string($conn,$_POST['bgroup']);
-            $address = mysqli_real_escape_string($conn,$_POST['address']);
-            $city = mysqli_real_escape_string($conn, $_POST['city']);
-            $state = mysqli_real_escape_string($conn,$_POST['state']);
-            $zip = mysqli_real_escape_string($conn,$_POST['zip']);
-            $pnumber = mysqli_real_escape_string($conn,$_POST['pnumber']);
-            $email = mysqli_real_escape_string($conn,$_POST['email']);
-            $password = mysqli_real_escape_string($conn,$_POST['password']);
-            $password2 = mysqli_real_escape_string($conn,$_POST['password2']);
-
-            if($password == $password2){
+            $fullname = $_POST['fullname'];
+            $gender = $_POST['gender'];
+            $bgroup = $_POST['bgroup'];
+            $address = $_POST['address'];
+            $city =  $_POST['city'];
+            $state = $_POST['state'];
+            $zip = $_POST['zip'];
+            $pnumber = $_POST['pnumber'];
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+			$password2 = $_POST['password2'];
+	
+			if($password == $password2)
+			{
                 $password = md5($password);
-				
-				
-				  $query = "INSERT INTO `student_data` (`ID`,`fullname`,`GENDER`,`BGROUP`,`CITY`,`STATE`,`ZIP`,`PNUMBER`,`EMAIL`,`PASSWORD`) VALUES 
-				 (NULL,'$fullname','$gender','$bgroup','$address','$city','$state','$zip','$pnumber','$email','$password')";
-				 
-				$isWorking = mysqli_query($conn,$query);
-				if(!$isWorking)
+				//PDO Style Insert
+
+				$sql = "INSERT INTO `student_data` VALUES 
+				(NULL,'$fullname','$gender','$bgroup','$address','$city','$state','$zip','$pnumber','$email','$password')";
+				if($conn->query($sql))
 				{
-					echo 'Not Wrking';
+					echo "Registration Successful";
 				}
 				else
 				{
-					echo 'Data Inserted';
-				}
-			}	
+					echo "An Error Occured Contact SysAdmin";	
+				}	
 		}
+	}
+}
+		catch(PDOException $e)
+		{
+		echo "Connection failed: " . $e->getMessage();
+		}
+
 ?>
