@@ -1,4 +1,5 @@
 <html>
+<?php include 'dbConfig.php'?>
 <?php include 'home-menu.php'; ?>
     <?php include 'user-side-menu.php' ; ?>
 

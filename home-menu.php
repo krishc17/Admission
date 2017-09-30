@@ -186,14 +186,6 @@ padding-right:50px;
 	 </div>
 </div>
 </nav>
-<!--
-<div id="mySidenav" class="sidenav">
-	<a href="#" id="about">Reg</a>
-	<a href="#" id="blog">Blog</a>
-	<a href="#" id="projects">Projects</a>
-	<a href="#" id="contact">Logout</a>
-</div>
--->	
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
 <div class="modal-dialog">
 	 <div class="loginmodal-container">
