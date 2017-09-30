@@ -46,16 +46,16 @@ try
 		}
 	}
 
-catch(PDOException $e)
-	{
-	echo "Connection failed: " . $e->getMessage();
-	}
+	catch(PDOException $e)
+		{
+			echo "Connection failed: " . $e->getMessage();
+		}
 	
 	// User Login
 	if(isset($_POST['login']))
 	{
 		$email = $_POST['email'];
-		$password = $_POST['password'];
+		$password = $_POST['pass'];
 
 		if(empty($email) && empty($password))
 		{
