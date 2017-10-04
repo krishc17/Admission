@@ -20,7 +20,7 @@
 				<div style="margin-left:100px;" class="collapse navbar-collapse" id="myNavbar">
 						<ul class="nav navbar-nav vertical lclass" style="text-decoration:none;">
 								<li>
-										<a class="link-3" href="home.php">Home</a>
+										<a class="link-3" href="index.php">Home</a>
 								</li>
 								<li>
 										<a class="link-3" href="profile.php">Profile</a>
