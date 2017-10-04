@@ -115,6 +115,9 @@ padding: 10px 10px;
 background-color: #B4432D;
 border-color: #080808;
 }
+.navbar-nuvcolor{
+    background-color:#B4432D; 
+}
 #mySidenav a {
 position: absolute;
 left: -80px;
