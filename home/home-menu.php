@@ -15,22 +15,18 @@
 <a href="home.php"><img class="img" src="img/nuv_logo.png" />
 				</a>
 
-<nav class="navbar-nuvcolor navbar-inverse text-center h4">
+<div class="navbar-nuvcolor navbar-inverse text-center h4">
 		<div class="container-fluid">
-
 				<div style="margin-left:100px;" class="collapse navbar-collapse" id="myNavbar">
 						<ul class="nav navbar-nav vertical lclass" style="text-decoration:none;">
 								<li>
-										<a class="link-3" href="home.php">Home
-</a>
+										<a class="link-3" href="home.php">Home</a>
 								</li>
 								<li>
-										<a class="link-3" href="profile.php">Profile
-</a>
+										<a class="link-3" href="profile.php">Profile</a>
 								</li>
 								<li>
-										<a class="link-3" href="apply.php">Apply
-</a>
+										<a class="link-3" href="apply.php">Apply</a>
 								</li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right horizontal">
@@ -39,4 +35,4 @@
 						</ul>
 				</div>
 		</div>
-</nav>
+</div>
