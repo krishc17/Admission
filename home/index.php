@@ -1,5 +1,5 @@
 <html>
-<?php include 'home-menu.php'; ?>
+<?php include 'home-menu.php';?>
 <?php include 'user-side-menu.php' ; ?>
 <div class="col-md-9">
   <!-- Website Overview -->
