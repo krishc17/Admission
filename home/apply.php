@@ -1,3 +1,13 @@
+<?php 
+	if(isset($_SESSION['email']))
+	{
+		header('Location: ../home/apply.php');
+	}
+	else
+	{
+		header('Location: ../');
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<?php include 'home-menu.php'; ?>
