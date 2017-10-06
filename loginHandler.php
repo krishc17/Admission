@@ -32,6 +32,7 @@ $errflag = false;
         $result->execute();
         $rows = $result->fetch(PDO::FETCH_NUM);
         if($rows > 0) {
+        $_SESSION['email'] = $email;
         header("Location: ../Admission/home/");
         }
         else{
