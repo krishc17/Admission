@@ -1,4 +1,3 @@
-<?php include 'dbConfig.php';?>
 <title>
 		Navrachna Admission Portal
 </title>

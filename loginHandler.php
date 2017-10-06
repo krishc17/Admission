@@ -12,10 +12,11 @@ $errflag = false;
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-    if(isset($_POST['login'])){
+        if(isset($_POST['login'])){
         $email = $_POST['email'];
-        $password = $_POST['password'];
-
+        $password = $_POST['pass'];
+        
+        $password = md5($password);
         if($email == '') {
             $errmsg_arr[] = 'You must enter your Email';
             $errflag = true;
@@ -25,13 +26,13 @@ $errflag = false;
             $errflag = true;
         }
 
-        $result = $conn->prepare("SELECT * FROM student_data WHERE email= :email AND password= :password");
-        $result->bindParam(':email', $email);
-        $result->bindParam(':password', $password);
+        $result = $conn->prepare("SELECT * FROM student_data WHERE email=? AND password=?");
+        $result->bindParam(1, $email);
+        $result->bindParam(2, $password);
         $result->execute();
         $rows = $result->fetch(PDO::FETCH_NUM);
         if($rows > 0) {
-        header("location: ../Admission/home/home.php");
+        header("Location: ../Admission/home/");
         }
         else{
             $errmsg_arr[] = 'Username and Password are not found';
@@ -40,7 +41,7 @@ $errflag = false;
         if($errflag) {
             $_SESSION['ERRMSG_ARR'] = $errmsg_arr;
             session_write_close();
-            header("location: ../Admission/home/user-side-menu.php");
+            header("location: ../Admission/");
             exit();
         }
          

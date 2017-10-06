@@ -1,12 +1,3 @@
-<?php
-session_start();
-    if(!isset($_SESSION["email"])) 
-    {
-    header('Location:../'); 
-    }
-    error_reporting(0);
-?>
-
 <section id="main">
 <div class="container">
 <div class="row">
