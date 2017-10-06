@@ -29,7 +29,7 @@
 								</li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right horizontal">
-								<a href="logout.php" data-toggle="modal" class="navbar-brand" data-target="#login-modal">Logout</a>
+								<a href="logout.php" class="navbar-brand" >Logout</a>
 						</ul>
 				</div>
 		</div>
