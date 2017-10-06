@@ -58,7 +58,7 @@ $(document).ready(function(){
     <h1>Login to Your Account
     </h1>
     <br>
-    <form method="post" action="dbConfig.php">
+    <form method="post" action="loginHandler.php">
       <input type="email" name="email" placeholder="Email" required>
       <input type="password" name="pass" placeholder="Password" required>
       <input type="submit" name="login" class="login loginmodal-submit" value="Login">
