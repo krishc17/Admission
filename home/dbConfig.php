@@ -3,7 +3,6 @@
 session_start();
 
 // Database Connection
-
 $databaseHost = "localhost";
 $databaseUsername = "root";
 $databasePassword = "";

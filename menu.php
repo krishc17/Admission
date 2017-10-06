@@ -61,7 +61,7 @@ $(document).ready(function(){
     <form method="post" action="loginHandler.php">
       <input type="email" name="email" placeholder="Email" required>
       <input type="password" name="pass" placeholder="Password" required>
-      <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+      <input type="submit" name="login" class="login loginmodal-submit navbar-inverse" value="Login">
     </form>
     <div class="login-help">
       <a href="register.php">Register
