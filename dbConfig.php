@@ -30,18 +30,27 @@ try
 		$password2 = $_POST['password2'];
 		if ($password == $password2)
 			{
-			$password = md5($password);
-			// PDO Style Insert
-			$sql = "INSERT INTO `student_data` VALUES 
-				(NULL,'$fullname','$gender','$bgroup','$address','$city','$state','$zip','$pnumber','$email','$password')";
-			if ($conn->query($sql))
-				{
-				echo "Registration Successful";
-				}
-			  else
-				{
-				echo "An Error Occured Contact SysAdmin";
-				}
+			$query = $conn->prepare( "SELECT `email` FROM `student_data` WHERE `email` = ?" );			
+			$query->bindValue( 1, $email );
+			$query->execute();
+			if($query->rowCount() > 0 )
+			{	
+				echo "This email ID is already registered";
+			}
+			else{
+				$password = md5($password);
+				// PDO Style Insert
+				$sql = "INSERT INTO `student_data` VALUES 
+					(NULL,'$fullname','$gender','$bgroup','$address','$city','$state','$zip','$pnumber','$email','$password')";
+						if ($conn->query($sql))
+						{
+						echo "Registration Successful";
+						}
+			  			else
+						{
+						echo "An Error Occured Contact SysAdmin";
+						}
+			}
 			}
 		}
 	}
