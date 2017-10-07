@@ -8,11 +8,11 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.php">Navrachna University Admin</a>
+        <a class="navbar-brand" href="admin.php">Navrachna University Admin</a>
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li><a href="index.php">Dashboard</a></li>
+          <li><a href="admin.php">Dashboard</a></li>
           <li><a href="#">Transaction</a></li>
           <li><a href="records.php">Records</a></li>
           <li><a href="test-questions.php">Test</a></li>

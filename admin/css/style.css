@@ -16,8 +16,8 @@ body{
 }
 
 .navbar-default {
-  background-color: #e74c3c;
-  border-color: #c0392b;
+  background-color: #BD0006;
+  border-color: #BD0006;
 }
 .navbar-default .navbar-brand {
   color: #ecf0f1;
@@ -70,9 +70,10 @@ body{
 }
 
 /* Custom */
+
 .main-color-bg{
-  background-color: #e74c3c !important;
-  border-color: #c0392b !important;
+  background-color: #BD0006 !important;
+  border-color: #BD0006 !important;
   color:#ffffff !important;
 }
 
