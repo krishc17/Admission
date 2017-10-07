@@ -1,3 +1,1 @@
-<html>
-	     <?php include 'menu.php'; ?>
-</html>
+<?php include 'menu.php'; ?>
