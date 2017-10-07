@@ -1,6 +1,7 @@
 <style>
 .a-color{
-    color :red;
+    text-decoration-color: black !important;
+    text-align: center;
 }
 </style>
 <section id="main">
@@ -8,11 +9,12 @@
 <div class="row">
 <div class="col-md-3">
    <div class="list-group">
-      <a href="#" class="list-group-item main-color-bg a-color navbar-nuvcolor navbar-inverse">
-      <span class="glyphicon glyphicon-cog" aria-hidden="true" style="text-decoration-color: #9d9d9d;"></span> Sidemenu</a>
+      <a href="#" class="list-group-item main-color-bg a-color navbar-nuvcolor">
+      <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Sidemenu</a>
       <a href="index.php" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Home <span class="badge"></span></a>
       <a href="profile.php" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Profile<span class="badge"></span></a>
       <a href="apply.php" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Apply<span class="badge"></span></a>
-      <a href="user-test.php" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Entrance Test <span class="badge"></span></a>
+      <a href="user-test.php" class="list-group-item"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Entrance Test <span class="badge"></span></a>
+      <a href="logout.php" class="list-group-item"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout <span class="badge"></span></a>
    </div>
 </div>
