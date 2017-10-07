@@ -53,13 +53,13 @@
                                         </div>
                                         <div class="col-sm-6 form-group">
                                             <label>Blood Group</label>
-                                            <input type="text" name="bgroup" class="form-control" value= "<?php echo $bg; ?> " disabled>
+                                            <input type="textarea" name="bgroup" class="form-control" value= "<?php echo $bg; ?> " disabled>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label>Address</label>
-                                        <input name="address" rows="3" class="form-control" value= "<?php echo $add; ?> " disabled>
+                                        <textarea name="address" rows="3" cols="4" class="form-control"  disabled> <?php echo $add; ?> </textarea>
                                     </div>
 
                                     <div class="row">
