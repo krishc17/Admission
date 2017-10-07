@@ -2,7 +2,7 @@
 	session_start();
 
 	$pdo = new PDO('mysql:host=localhost;dbname=admission2018', 'root', '');
-	$sql = "SELECT id,fullname FROM student_data";
+	$sql = "SELECT id,coursename FROM courses";
 	$stmt = $pdo->prepare($sql);
 	$stmt->execute();
 	$users = $stmt->fetchAll()
@@ -32,7 +32,7 @@
 										<label>Courses</label>
 										<select class="form-control">
 										<?php foreach($users as $user): ?>
-        								<option value="<?= $user['id']; ?>"><?= $user['fullname'];?></option>
+        								<option value="<?= $user['id']; ?>"><?= $user['coursename'];?></option>
     									<?php endforeach; ?>
 										</select>
 									</div>

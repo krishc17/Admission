@@ -10,9 +10,9 @@ $errflag = false;
 
     $conn = new PDO("mysql:host=$databaseHost;dbname=$databaseName;", $databaseUsername, $databasePassword);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-
-        if(isset($_POST['login'])){
+    
+    //login admin
+    if(isset($_POST['login'])){
         $email = $_POST['email'];
         $password = $_POST['pass'];
 
@@ -45,6 +45,32 @@ $errflag = false;
             exit();
         }
          
+    }
+    // insert course
+    if(isset($_POST['addCourse']))
+    {
+        $coursename = $_POST['cname'];
+        
+        $query = $conn->prepare( "SELECT `coursename` FROM `courses` WHERE `coursename` = ?" );			
+        $query->bindValue( 1, $coursename );
+        $query->execute();
+        if($query->rowCount() > 0 )
+        {	
+            echo "This Course Already Exists";
+        }
+        else{
+            $sql = "INSERT INTO `courses` VALUES (NULL,'$coursename')";
+                    if ($conn->query($sql))
+                    {
+                    echo "Course Inserted Successfully";
+                    }
+                      else
+                    {
+                    echo "An Error Occured Contact SysAdmin";
+                    }
+        }
+
+
     }
 
 ?>

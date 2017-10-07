@@ -12,3 +12,8 @@
                 PASSWORD VARCHAR(100),
                 UNIQUE(EMAIL)
             )
+
+            CREATE TABLE courses(
+                ID INT(2) PRIMARY KEY AUTO_INCREMENT,
+                coursename VARCHAR(20) UNIQUE
+            )
