@@ -1,3 +1,27 @@
+<?php
+    session_start();
+	if(isset($_SESSION['email']))
+	{
+        $email = $_SESSION['email'];
+
+        $databaseHost = "localhost";
+        $databaseUsername = "root";
+        $databasePassword = "";
+        $databaseName = "admission2018";
+        $mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName); 
+        $result = mysqli_query($mysqli,"SELECT * FROM student_data");
+        while($res = mysqli_fetch_array($result)){
+            $fullname = $res[1];
+            $gender = $res[2];
+            $bg = $res[3];
+            $add = $res[4];
+            $city = $res[5];
+            $state = $res[6];
+            $zip = $res[7];
+            $pnumber = $res[8];
+            $email = $res[9];
+        }
+     ?>
 <!DOCTYPE html>
 <html lang="en">
 <?php include 'home-menu.php'; ?>
@@ -15,13 +39,13 @@
                                     <div class="row">
                                         <div class="col-sm-12 form-group">
                                             <label>Fullname</label>
-                                            <input type="text" name="fullname" class="form-control" disabled>
+                                            <input type="text" name="fullname" class="form-control" value= "<?php echo $fullname; ?> " disabled>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-6 form-group">
                                             <label>Gender</label>
-                                            <input list="gender" name="gender" class="form-control" disabled>
+                                            <input list="gender" name="gender" class="form-control" value= "<?php echo $gender; ?> " disabled>
                                             <datalist id="gender">
                                                 <option value="Male">
                                                     <option value="Female">
@@ -29,40 +53,40 @@
                                         </div>
                                         <div class="col-sm-6 form-group">
                                             <label>Blood Group</label>
-                                            <input type="text" name="bgroup" class="form-control" disabled>
+                                            <input type="text" name="bgroup" class="form-control" value= "<?php echo $bg; ?> " disabled>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label>Address</label>
-                                        <textarea name="address" rows="3" class="form-control" disabled></textarea>
+                                        <input name="address" rows="3" class="form-control" value= "<?php echo $add; ?> " disabled>
                                     </div>
 
                                     <div class="row">
                                         <div class="col-sm-4 form-group">
                                             <label>City</label>
-                                            <input type="text" name="city" class="form-control" disabled>
+                                            <input type="text" name="city" class="form-control" value= "<?php echo $city; ?> " disabled>
                                         </div>
 
                                         <div class="col-sm-4 form-group">
                                             <label>State</label>
-                                            <input type="text" name="state" class="form-control" disabled>
+                                            <input type="text" name="state" class="form-control" value= "<?php echo $state; ?> " disabled>
                                         </div>
 
                                         <div class="col-sm-4 form-group">
                                             <label>Zip</label>
-                                            <input type="text" name="zip" class="form-control" disabled>
+                                            <input type="text" name="zip" class="form-control" value= "<?php echo $zip; ?> " disabled>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label>Phone Number</label>
-                                        <input type="text" name="pnumber" class="form-control" disabled>
+                                        <input type="text" name="pnumber" class="form-control" value= "<?php echo $pnumber; ?> " disabled>
                                     </div>
 
                                     <div class="form-group">
                                         <label>Email Address</label>
-                                        <input type="email" name="email" class="form-control" disabled>
+                                        <input type="email" name="email" class="form-control" value= "<?php echo $email; ?> " disabled>
                                     </div>
 
                                 </div>
@@ -208,3 +232,11 @@
         </div>
         </div>
 </html>
+<?php
+    }
+    else
+    {
+        ?><?php
+        echo 'not logged in';
+    }
+    ?>
