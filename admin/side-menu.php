@@ -9,5 +9,6 @@
         <a href="records.php" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Records <span class="badge">33</span></a>
         <a href="test-questions.php" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Test <span class="badge">203</span></a>
         <a href="#" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Profile <span class="badge"></span></a>
+        <a href="addCourse.php" class="list-group-item"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Course <span class="badge"></span></a>
     </div>
 </div>
