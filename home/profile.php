@@ -23,7 +23,7 @@
             $register_date = $res[11];
         }
 
-        $newDate = date("d-m-Y", strtotime($register_date));
+        $newDate = date("d-M-Y", strtotime($register_date));
         
      ?>
 <!DOCTYPE html>
