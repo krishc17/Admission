@@ -85,10 +85,10 @@
                                         <h3 class="panel-title">MHRM</h3>
                                     </div>
                                     <div class="panel-body">
-                                        <li>Duration - 2years</li>
-                                        <li>Program Delivery- Full Time</li>
-                                        <li>Contact Hours- 25 hours per week</li>
-                                        <li>Social, Corporate Internships</li>
+                                        <li>Duration - 2years</li><br>
+                                        <li>Program Delivery- Full Time</li><br>
+                                        <li>Contact Hours- 25 hours per week</li><br>
+                                        <li>Social, Corporate Internships</li><br>
                                         <li>Seminar Course</li>
                                         <li>Semester Long Exhaustive Research Project</li>
                                         <li>Placement Assistance</li>
@@ -136,11 +136,9 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
