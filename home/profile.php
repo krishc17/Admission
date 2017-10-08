@@ -20,7 +20,11 @@
             $zip = $res[7];
             $pnumber = $res[8];
             $email = $res[9];
+            $register_date = $res[11];
         }
+
+        $newDate = date("d-m-Y", strtotime($register_date));
+        
      ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -87,6 +91,11 @@
                                     <div class="form-group">
                                         <label>Email Address</label>
                                         <input type="email" name="email" class="form-control" value= "<?php echo $email; ?> " disabled>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Registration Date</label>
+                                        <input type="text" name="reg_date" class="form-control" value= "<?php echo $newDate; ?> " disabled>
                                     </div>
 
                                 </div>

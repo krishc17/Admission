@@ -10,6 +10,7 @@
                 PNUMBER VARCHAR(11),
                 EMAIL VARCHAR(60),
                 PASSWORD VARCHAR(100),
+                register_date datetime,
                 UNIQUE(EMAIL)
             )
 

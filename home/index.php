@@ -10,8 +10,7 @@
   <!-- Website Overview -->
   <div class="panel panel-default">
     <div class="panel-heading main-color-bg">
-      <h3 class="panel-title">Instructions
-      </h3>
+      <h3 class="panel-title">Instructions </h3>
     </div>
     <div class="panel-body">
       <p>1. Once registered on the portal you can apply for individual Courses given in the options 
@@ -25,23 +24,8 @@
     </div>
   </div>
 </div>
+</div>
 <!-- To add same code before the last div -- >
-<!-- Payment Instructions -->
-
-  <div class="panel panel-default">
-    <div class="panel-heading main-color-bg">
-      <h3 class="panel-title">Payment Instructions
-      </h3>
-    </div>
-    <div class="panel-body">
-      <p> 1. Form Fees : Rs. 1000/- Nonrefundable ( payment mode : online by master/visa card OR offline at university ) 
-      </p>
-      <p> 2. Do not refresh (F5)form while filling data. 
-      </p>
-    </div>
-  </div>
-</div>
-</div>
 </html>
 <?php
   }

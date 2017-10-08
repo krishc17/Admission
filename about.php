@@ -8,8 +8,33 @@
     </div>
     <div class="panel-body">
     The Navrachana Education Society (NES) is a registered Charitable Trust established in 1965. It is headed by a Board of Trustees comprising of educationists, philanthropists and administrators. With 50 Years of Excellence in Education, the Society is acclaimed for its achievements - for having imparted through its Institutions, quality education for over four decades. Navrachana Education Society is professionally managed by an Executive Committee, vastly experienced in administration and modern-day education management
+    
+    <br><br>
+    <div class="col-md-6">
+  <div class="panel panel-default">
+    <div class="panel-heading main-color-bg">
+      <h3 class="panel-title">Vision</h3>
+    </div>
+    <div class="panel-body">
+    To develop knowledgeable, technologically competent and socially responsible individuals capable of facing challenges of the professional and personal worlds of today and tomorrow  
+    <br><br> <br>  
     </div>
   </div>
+</div>
+
+<div class="col-md-6">
+  <div class="panel panel-default">
+    <div class="panel-heading main-color-bg">
+      <h3 class="panel-title">Mission</h3>
+    </div>
+    <div class="panel-body">
+    Our mission is to create leaders who can bring about a change in local and national conditions, and create a difference, internationally through the power of high quality education grounded in interdisciplinary thinking without sacrificing disciplinary education, while inculcating a sense of care for the user, the profession, the society and the environment
+     </div>
+  </div>
+</div>
+    </div>
+  </div>
+  
 </div>
 <!--end-->
 
@@ -64,6 +89,7 @@
     </div>
     <div class="panel-body" align="justify">
     T-Shape graduates and post graduates who have a breadth of knowledge though general and inter-disciplinary education, and a depth of knowledge though focused disciplinary education.
+    <br><br>
     </div>
   </div>
 </div>
