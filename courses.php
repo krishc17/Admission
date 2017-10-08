@@ -4,18 +4,27 @@
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading main-color-bg">
-                <h3 class="panel-title"> School of Business and Law</h3>
+                <h3 class="panel-title"> 
+                
+                School of Business and Law
+                
+                </h3>
             </div>
             <div class="panel-body">
                 Working in close association with the industrial and academic experts, right from Curriculum development to student's projects, internships and work placements, School of Business and Law at NUV offers several unique under-graduate and post-graduate programs in the field of Management (BBA and MBA), Law (BBA-LLB Integrated), Human Resources (MHRM), and Computer Science and Applications (BCA and MScIT).
                 <br>
                 <br>
                 <br>
-                <div style="margin:0 auto" class="col-md-12">
+                <div class="col-md-12">       
+                <div id="accordion">    
                     <div class="panel panel-default">
                         <div class="panel-heading main-color-bg">
-                            <h3 class="panel-title">Courses</h3>
+                            <h3 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Courses</a>
+                            </h3>
                         </div>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in">
                         <div class="panel-body">
                             <!-- start SBL Courses -->
                             <div class="col-md-4">
@@ -34,7 +43,6 @@
                                         <li>Placement Assistance</li>
                                         <li>6 Semesters - 40 Courses - 150 credits</li>
                                         <br> <li>Extra-mural activities to encourage students' interest in field of technology, art and culture</li>
-
                                     </div>
                                 </div>
                             </div>
@@ -111,9 +119,7 @@
                                             <li>4 Semesters - 8 Modules 45 Courses - 108 credits</li>
                                             <li>MBA with Specialization in - - Marketing - Finance - OB and HRM - Family Business Management - Systems and ICT</li>
                                             <li>Placement Assistance</li>
-
                                         </ul>
-
                                     </div>
                                 </div>
                             </div>
@@ -177,7 +183,6 @@
                 <h3 class="panel-title">School of Environmental Design and Architecture</h3>
             </div>
             <div class="panel-body">
-
                 The School of Environmental Design and Architecture (SEDA) is at the cutting-edge of ingenuity and it provides a dynamic and challenging environment for students to study architecture and design and fosters creativity, critical thinking, intellectual development, ability to respond to our natural environment and cater to spatial needs and aspirations of individuals and the society. The School has been established to offer broad-based Design Programs in Architecture and Interior Design with focused education to meet the challenges of the design profession.
             </div>
         </div>
