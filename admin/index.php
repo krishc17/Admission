@@ -1,3 +1,4 @@
+<title>Admin Area | Login</title>
 <link rel="stylesheet" href="css/login.css">
 <div class="modal-dialog login-center"> 
   <div class="loginmodal-container">
@@ -8,8 +9,7 @@
       <input type="password" name="pass" placeholder="Password" required>
       <input type="submit" name="login" class="login loginmodal-submit navbar-inverse" value="Login">
     </form>
-    <div class="login-help">
-      <a href="register.php">Register </a> - 
+    <div class="login-help"> 
       <a href="#">Forgot Password </a>
     </div>
   </div>

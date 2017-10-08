@@ -7,7 +7,7 @@
       <h3 class="panel-title">Vision and Mission</h3>
     </div>
     <div class="panel-body">
-		<!-- Information Here -->
+    The Navrachana Education Society (NES) is a registered Charitable Trust established in 1965. It is headed by a Board of Trustees comprising of educationists, philanthropists and administrators. With 50 Years of Excellence in Education, the Society is acclaimed for its achievements - for having imparted through its Institutions, quality education for over four decades. Navrachana Education Society is professionally managed by an Executive Committee, vastly experienced in administration and modern-day education management
     </div>
   </div>
 </div>
@@ -20,7 +20,57 @@
       <h3 class="panel-title">NUV Philosophy</h3>
     </div>
     <div class="panel-body">
-		<!-- Information Here -->
+    NUV integrates into its educational philosophy, the principles of excellence, professionalism, equity and Participatory Management. We propagate a culture of excellence through a continual process of introspection, questioning, self and mutual discovery. Navrachana University (NUV) is reinventing higher education through an interdisciplinary focus that unites disciplinary interests to create a rich and synergistic educational experience. 
+    </div>
+  </div>
+</div>
+<!--end-->
+
+
+<!--start-->
+<div class="col-md-12">
+  <div class="panel panel-default">
+    <div class="panel-heading main-color-bg">
+      <h3 class="panel-title">NUV Strives to</h3>
+    </div>
+    <div class="panel-body">
+
+    <div class="col-md-4">
+  <div class="panel panel-default">
+    <div class="panel-heading main-color-bg">
+      <h3 class="panel-title">Pursue</h3>
+    </div>
+    <div class="panel-body" align="justify">
+    Innovative and inclusive learning pathways with an interdisciplinary approach towards seeking and generating knowledge, and in the process create sound professionals who can innovate by combining knowledge across disparate disciplines
+    </div>
+  </div>
+</div>
+    
+<div class="col-md-4">
+  <div class="panel panel-default">
+    <div class="panel-heading main-color-bg">
+      <h3 class="panel-title">Provide</h3>
+    </div>
+    <div class="panel-body" align="justify">
+    The means to both academicians and the students to transform education into the experience of learning. The education paradigm at nuv provokes every individual to take a step into the unknown, develop an inquiry in the mind and feel the urge to resolve
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="panel panel-default">
+    <div class="panel-heading main-color-bg">
+      <h3 class="panel-title">Prepare</h3>
+    </div>
+    <div class="panel-body" align="justify">
+    T-Shape graduates and post graduates who have a breadth of knowledge though general and inter-disciplinary education, and a depth of knowledge though focused disciplinary education.
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
     </div>
   </div>
 </div>

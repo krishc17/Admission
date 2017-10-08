@@ -27,21 +27,7 @@
 </div>
 <!-- To add same code before the last div -- >
 <!-- Payment Instructions -->
-<div class="col-md-9">
-  <div class="panel panel-default">
-    <div class="panel-heading main-color-bg">
-      <h3 class="panel-title">Admission Instructions
-      </h3>
-    </div>
-    <div class="panel-body">
-      <p> 1. 
-      </p>
-      <p> 2.  
-      </p>
-      <p> 3. 
-      </p>
-    </div>
-  </div>
+
   <div class="panel panel-default">
     <div class="panel-heading main-color-bg">
       <h3 class="panel-title">Payment Instructions

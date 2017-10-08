@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php 
+	session_start();
+	if(isset($_SESSION['email']))
+	{
+    ?>
 <html lang="en">
    <head>
       <meta charset="utf-8">
@@ -161,3 +165,11 @@
       <script src="js/bootstrap.min.js"></script>
    </body>
 </html>
+<?php
+  }
+else{
+?> 
+  <?php
+echo 'not logged in ';
+}
+?>

@@ -1,3 +1,8 @@
+<?php 
+	session_start();
+	if(isset($_SESSION['email']))
+	{
+    ?>
 <html lang="en">
 <head>
    <meta charset="utf-8">
@@ -57,11 +62,13 @@
    </div>
    </div>
    </section>
-   <script>
-      CKEDITOR.replace( 'editor1' );
-   </script>
-   <!-- Bootstrap core JavaScript
-      ================================================== -->
-   <!-- Placed at the end of the document so the pages load faster -->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-   <script src="js/bootstrap.min.js"></script>
+
+   </html>
+   <?php
+  }
+else{
+?> 
+  <?php
+echo 'not logged in ';
+}
+?>
