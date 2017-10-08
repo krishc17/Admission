@@ -8,9 +8,9 @@
     </div>
     <div class="panel-body">
     The Navrachana Education Society (NES) is a registered Charitable Trust established in 1965. It is headed by a Board of Trustees comprising of educationists, philanthropists and administrators. With 50 Years of Excellence in Education, the Society is acclaimed for its achievements - for having imparted through its Institutions, quality education for over four decades. Navrachana Education Society is professionally managed by an Executive Committee, vastly experienced in administration and modern-day education management
-    
     <br><br>
-    <div class="col-md-6">
+    
+  <div class="col-md-6">
   <div class="panel panel-default">
     <div class="panel-heading main-color-bg">
       <h3 class="panel-title">Vision</h3>
