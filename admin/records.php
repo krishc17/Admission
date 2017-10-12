@@ -49,6 +49,7 @@
          </div>
          <div class="panel-body">
             <div class="row">
+            <form action="" method="post">
                <div class="col-md-4">
                   <div class="form-group">
                      <label for="exampleSelect1">Select Year</label>
@@ -64,10 +65,8 @@
                
                <div class="col-md-4">
                   <div class="form-group">
-
                      <label for="exampleSelect1">Select Course</label>
                      <select class='form-control' id='exampleSelect1'>
-                            
                      <?php
                           $mysqli = mysqli_connect($databaseHost,$databaseUsername,$databasePassword,$databaseName);
                           $query = "SELECT * FROM courses";
@@ -88,6 +87,7 @@
                   </div>
                </div>
             </div>
+            </form>
             <br>
             <table class="table table-striped table-hover table-bordered">
                <tr>
@@ -98,6 +98,7 @@
                   <th>Joined On</th>
                </tr>
                <?php
+                if (isset($_POST['searchQuery'])){
                 $mysqli = mysqli_connect($databaseHost,$databaseUsername,$databasePassword,$databaseName);
                 $query = "SELECT * FROM student_data";
                 $result = mysqli_query($mysqli,$query);       
@@ -111,8 +112,8 @@
                     echo "<td>Msc (IT)</td>";
                     echo "<td>$newDate</td>";
                     echo "</tr>";
-
                   }
+                }
                   ?>
             </table>
          </div>
