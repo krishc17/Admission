@@ -74,7 +74,6 @@
                           while($addrow = mysqli_fetch_array($result)) 
                           {
                             echo "<option>$addrow[1]</option>";
-
                           }
                      ?>
                     </select>
@@ -98,21 +97,22 @@
                   <th>Joined On</th>
                </tr>
                <?php
-                if (isset($_POST['searchQuery'])){
                 $mysqli = mysqli_connect($databaseHost,$databaseUsername,$databasePassword,$databaseName);
                 $query = "SELECT * FROM student_data";
                 $result = mysqli_query($mysqli,$query);       
                 while($addrow = mysqli_fetch_array($result)) 
-                  {
-                    $newDate = date('d-M-Y',strtotime($addrow[11]));
-                    echo "<tr>";
-                    echo "<td>$addrow[0]</td>";
-                    echo "<td>$addrow[1]</td>";
-                    echo "<td>$addrow[9]</td>";
-                    echo "<td>Msc (IT)</td>";
-                    echo "<td>$newDate</td>";
-                    echo "</tr>";
-                  }
+                {
+                  $newDate = date('d-M-Y',strtotime($addrow[11]));
+                  echo "<tr>";
+                  echo "<td>$addrow[0]</td>";
+                  echo "<td>$addrow[1]</td>";
+                  echo "<td>$addrow[9]</td>";
+                  echo "<td>Msc (IT)</td>";
+                  echo "<td>$newDate</td>";
+                  echo "</tr>";
+                }
+                if (isset($_POST['searchQuery'])){
+                  // TODO: Echo Results of Query
                 }
                   ?>
             </table>
