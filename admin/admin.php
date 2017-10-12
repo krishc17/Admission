@@ -7,6 +7,21 @@
     $databaseUsername = "root";
     $databasePassword = "";
     $databaseName = "admission2018";  
+
+    $mysqli = new mysqli($databaseHost,$databaseUsername,$databasePassword,$databaseName);
+    $query = "SELECT count(*) FROM student_data"; 
+    // Count of Student Data
+    $result = $mysqli->query($query) or die($mysqli->error);
+    if($result->num_rows > 0) 
+    {
+      while($row = $result->fetch_assoc()) 
+      {
+        foreach($row as $val) 
+        {
+                
+          }
+        }   
+    }
 ?>
 <html lang="en">
    <head>
@@ -50,7 +65,9 @@
             <div class="panel-body">
                <div class="col-md-6">
                   <div class="well dash-box">
-                     <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 203</h2>
+                     <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span>                 
+                      <?php echo $val; ?>
+                     </h2>
                      <h4>Admissions</h4>
                   </div>
                </div>
