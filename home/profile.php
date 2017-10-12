@@ -2,13 +2,14 @@
     session_start();
 	if(isset($_SESSION['email']))
 	{
+        //function this
         $email = $_SESSION['email'];
         $databaseHost = "localhost";
         $databaseUsername = "root";
         $databasePassword = "";
         $databaseName = "admission2018";
-        
         $mysqli = new mysqli($databaseHost,$databaseUsername,$databasePassword,$databaseName);
+        //
         $query = "SELECT * FROM student_data WHERE email = '{$_SESSION['email']}'"; 
         $result = $mysqli->query($query) or die($mysqli->error);
         if($result->num_rows > 0) {
