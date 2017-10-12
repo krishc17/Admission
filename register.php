@@ -2,6 +2,7 @@
 <?php include_once 'dbConfig.php'; ?>
 <?php include 'menu.php'; ?>
 <link rel="stylesheet" type="text/css" href="css/regForm.css">
+
 <body>
 	<div class="container">
 		<h1 class="well">Registration Form
@@ -40,17 +41,21 @@
 							</textarea>
 						</div>
 						<div class="row">
-							<div class="col-sm-4 form-group">
+							<div class="col-sm-3 form-group">
+                                <label>Date of Birth</label>
+                                <input type="text" data-format="dd/MM/yyy" data-provide="datepicker" name="dob" class="form-control"  required>
+                            </div>
+							<div class="col-sm-3 form-group">
 								<label>City
 								</label>
 								<input type="text" name="city" placeholder="Enter City Name Here.." class="form-control" required>
 							</div>
-							<div class="col-sm-4 form-group">
+							<div class="col-sm-3 form-group">
 								<label>State
 								</label>
 								<input type="text" name="state" placeholder="Enter State Name Here.." class="form-control" required>
 							</div>
-							<div class="col-sm-4 form-group">
+							<div class="col-sm-3 form-group">
 								<label>Zip
 								</label>
 								<input type="text"  name="zip" placeholder="Enter Zip Code Here.." class="form-control" required>

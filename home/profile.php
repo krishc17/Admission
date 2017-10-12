@@ -7,6 +7,12 @@
         $databaseUsername = "root";
         $databasePassword = "";
         $databaseName = "admission2018";
+        
+        // PDO Connection
+        $conn = new PDO("mysql:host=$databaseHost;dbname=$databaseName;", $databaseUsername, $databasePassword);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);  
+        
+        // MySQLi Connection     
         $mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName); 
         $result = mysqli_query($mysqli,"SELECT * FROM student_data LIMIT 1");
         while($res = mysqli_fetch_array($result)){
@@ -20,10 +26,16 @@
             $zip = $res[7];
             $pnumber = $res[8];
             $email = $res[9];
+            $dob='';
             $register_date = $res[11];
 
             if(isset($_POST['submitEducationDetails'])){
-                echo $fullname.' '.$id.' '.$email ;
+                $query = $conn->prepare("SELECT `id` from `student_data` WHERE `id` = ?");
+                $query->bindValue(1,$id);
+                $query->execute();
+                if($query->Count() > 0){
+                    echo "We Alread";
+                }
             }
         }
 
@@ -71,22 +83,32 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-sm-4 form-group">
+
+                                        <div class="col-sm-3 form-group">
+                                            <label>Date of Birth</label>
+                                            <input type="text" name="pnumber" class="form-control" value= "<?php echo $dob; ?> " disabled>
+                                        </div>
+                                     
+                                        <div class="col-sm-3 form-group">
                                             <label>City</label>
                                             <input type="text" name="city" class="form-control" value= "<?php echo $city; ?> " disabled>
                                         </div>
 
-                                        <div class="col-sm-4 form-group">
+                                        <div class="col-sm-3 form-group">
                                             <label>State</label>
                                             <input type="text" name="state" class="form-control" value= "<?php echo $state; ?> " disabled>
                                         </div>
 
-                                        <div class="col-sm-4 form-group">
+                                        <div class="col-sm-3 form-group">
                                             <label>Zip</label>
                                             <input type="text" name="zip" class="form-control" value= "<?php echo $zip; ?> " disabled>
                                         </div>
+
                                     </div>
 
+
+                    
+                                    
                                     <div class="form-group">
                                         <label>Phone Number</label>
                                         <input type="text" name="pnumber" class="form-control" value= "<?php echo $pnumber; ?> " disabled>

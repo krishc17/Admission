@@ -9,18 +9,42 @@
     <link rel="stylesheet" href="css/login.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-      <script>
-        $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip();
-        });
-
-        $('ul.nav li.dropdown').hover(function() {
+     
+<!-- Dropdown -->
+<script>
+  $(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+    });
+        
+  $('ul.nav li.dropdown').hover(function() {
   $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
-}, function() {
+  }, 
+  
+  function() {
   $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+  });
+</script>
+    
+<!-- Date picker JS-->
+<script>
+$(function () {
+    var startDate = new Date('1965-01-01'),
+        endDate = new Date('2001-01-01');
+    $('#from-datepicker').datetimepicker({
+        weekStart: 1,
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 4,
+        keyboardNavigation: 1,
+        minView: 2,
+        forceParse: 0,
+        startDate: startDate,
+        endDate: endDate,
+        setDate: startDate
+    });
 });
-    </script>
-
+</script>
   
       <div class="navbar-nuvcolor navbar-inverse text-center h4">
         <div class="container-fluid">
@@ -34,17 +58,16 @@
           <div class="collapse navbar-collapse dropdown" id="myNavbar">
             <ul class="nav navbar-nav vertical" style="text-decoration:none;">
               <li>
-                <a class="link-3" href="index.php">Home
-      </a>
+                <a class="link-3" href="index.php">Home</a>
               </li>
+
               <li>
-                <a class="link-3" href="about.php">
-                  About
-                </a>
+                <a class="link-3" href="about.php"> About </a>
               </li>
+
               <li class="dropdown" style="color:rgba(8, 8, 8, 0.09);">
                   <a href="courses.php" class="dropdown-toggle" data-toggle="dropdown"> Courses</a>
-               <ul class="dropdown-menu">
+                  <ul class="dropdown-menu">
                     <li><a href="#">School Of Business And Law</a></li>
                     <li><a href="set.php">School of Engineering and Technology</a></li>
                     <li><a href="#">School of Liberal Studies and Education</a></li>
@@ -54,12 +77,8 @@
               </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <a href="#" data-toggle="modal" class="navbar-brand" data-target="#login-modal">
-                Login
-              </a>
-              <a class="navbar-brand" href="register.php">
-                Register
-            </a>
+              <a href="#" data-toggle="modal" class="navbar-brand" data-target="#login-modal"> Login</a>
+              <a class="navbar-brand" href="register.php"> Register </a>
             </ul>
           </div>
         </div>
@@ -76,7 +95,6 @@
                     </form>
                     <div class="login-help">
                       <a href="register.php">Register </a> - 
-    
                       <a href="#">Forgot Password </a>
                     </div>
                   </div>
