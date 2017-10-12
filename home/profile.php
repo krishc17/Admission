@@ -3,14 +3,14 @@
 	if(isset($_SESSION['email']))
 	{
         $email = $_SESSION['email'];
-
         $databaseHost = "localhost";
         $databaseUsername = "root";
         $databasePassword = "";
         $databaseName = "admission2018";
         $mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName); 
-        $result = mysqli_query($mysqli,"SELECT * FROM student_data");
+        $result = mysqli_query($mysqli,"SELECT * FROM student_data LIMIT 1");
         while($res = mysqli_fetch_array($result)){
+            $id = $res[0];
             $fullname = $res[1];
             $gender = $res[2];
             $bg = $res[3];
@@ -21,6 +21,10 @@
             $pnumber = $res[8];
             $email = $res[9];
             $register_date = $res[11];
+
+            if(isset($_POST['submitEducationDetails'])){
+                echo $fullname.' '.$id.' '.$email ;
+            }
         }
 
         $newDate = date("d-M-Y", strtotime($register_date));
@@ -113,7 +117,7 @@
                     <div class="panel-body">
                         <div class="col-lg-12">
                             <div class="row">
-                                <form action="" method="post">
+                                <form action="profile.php" method="post">
                                     <table class="table">
                                         <thead class="thead-inverse" style="background-color:#000;color:#fff;">
                                             <tr>
@@ -229,10 +233,10 @@
                                                     </select>
                                                 </td>
                                             </tr>
-
                                         </tbody>
                                     </table>
                             </div>
+                            <input type="submit" name="submitEducationDetails" class="form-control">
 							</form>
                         </div>
                     </div>
