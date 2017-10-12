@@ -2,6 +2,12 @@
 	session_start();
 	if(isset($_SESSION['email']))
 	{
+    $email = $_SESSION['email'];
+    $databaseHost = "localhost";
+    $databaseUsername = "root";
+    $databasePassword = "";
+    $databaseName = "admission2018";  
+
     ?>
 <html lang="en">
 <head>
@@ -44,7 +50,7 @@
          </div>
          <div class="panel-body">
             <div class="row">
-               <div class="col-md-6">
+               <div class="col-md-10">
                   <form action="adminLoginHandler.php" method="post">
                   <div class="form-group">
                      <label>Enter Course Name</label>
@@ -52,6 +58,34 @@
 						</div>
                      <input class="btn btn-info" type="submit" name="addCourse" value="Submit">
                      </form>
+                     <div class="panel panel-default">
+            <div class="panel-heading">
+               <h3 class="panel-title">Available Courses</h3>
+            </div>
+            <div class="panel-body">
+               <table class="table table-striped table-hover table-bordered">
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Action</th>
+                  </tr>
+                <?php
+                $mysqli = mysqli_connect($databaseHost,$databaseUsername,$databasePassword,$databaseName);
+                $query = "SELECT * FROM courses ORDER BY id DESC LIMIT 5 ";
+                $result = mysqli_query($mysqli,$query);       
+                while($addrow = mysqli_fetch_array($result)) 
+                  {
+                    echo "<tr>";
+                    echo "<td>$addrow[0]</td>";
+                    echo "<td>$addrow[1]</td>";
+                    echo "<td> Delete </td>";
+                    echo "</tr>";
+                  }
+                  ?>
+               </table>
+             </div>
+         </div>
+
                   </div>
                </div>
                </div>

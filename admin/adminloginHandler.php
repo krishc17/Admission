@@ -57,9 +57,10 @@ $errflag = false;
         if($query->rowCount() > 0 )
         {	
             echo "This Course Already Exists";
+            header("Location: addCourse.php");
         }
         else{
-            $sql = "INSERT INTO `courses` VALUES (NULL,'$coursename')";
+            $sql = "INSERT INTO `courses` (`coursename`)VALUES ('$coursename')";
                     if ($conn->query($sql))
                     {
                     echo "Course Inserted Successfully";

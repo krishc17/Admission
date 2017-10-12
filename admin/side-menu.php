@@ -10,6 +10,8 @@
         
         $mysqli = new mysqli($databaseHost,$databaseUsername,$databasePassword,$databaseName);
         $query = "SELECT count(*) FROM student_data"; 
+        $q2 = "SELECT count(*) FROM courses";
+        // Count of Student Data
         $result = $mysqli->query($query) or die($mysqli->error);
 		if($result->num_rows > 0) 
 		{
@@ -20,7 +22,19 @@
                     
                 }
             }   
-		}
+        }
+        // Count of Course Data
+        $result2 = $mysqli->query($q2) or die($mysqli->error);
+        if($result2->num_rows > 0) 
+		{
+			while($row2 = $result2->fetch_assoc()) 
+			{
+				foreach($row2 as $val2) 
+				{
+                    
+                }
+            }   
+        }
 	}
 ?>
 <section id="main">
@@ -34,6 +48,6 @@
         <a href="records.php" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Records <span class="badge"><?php echo $val;?></span></a>
         <a href="test-questions.php" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Test <span class="badge">203</span></a>
         <a href="#" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Profile <span class="badge"></span></a>
-        <a href="addCourse.php" class="list-group-item"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Course <span class="badge"></span></a>
+        <a href="addCourse.php" class="list-group-item"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Course <span class="badge"><?php echo $val2;?> </span></a>
     </div>
 </div>
