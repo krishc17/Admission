@@ -1,7 +1,12 @@
 <?php 
 	session_start();
-	if(isset($_SESSION['email']))
-	{
+    if(isset($_SESSION['email']))
+    {
+      $email = $_SESSION['email'];
+      $databaseHost = "localhost";
+      $databaseUsername = "root";
+      $databasePassword = "";
+      $databaseName = "admission2018";
     ?>
 <html lang="en">
 <head>
@@ -44,7 +49,7 @@
          </div>
          <div class="panel-body">
             <div class="row">
-               <div class="col-md-6">
+               <div class="col-md-4">
                   <div class="form-group">
                      <label for="exampleSelect1">Select Year</label>
                      <select class="form-control" id="exampleSelect1">
@@ -57,18 +62,29 @@
                   </div>
                </div>
                
-               <div class="col-md-6">
+               <div class="col-md-4">
                   <div class="form-group">
+
                      <label for="exampleSelect1">Select Course</label>
-                     <select class="form-control" id="exampleSelect1">
-                        <option>BCA</option>
-                        <option>BBA</option>
-                        <option>MBA</option>
-                        <option>MSC (IT)</option>
-                        <option>MSC (LS)</option>
-                        <option>MHRM</option>
-                        <option>MSW</option>
-                     </select>
+                     <select class='form-control' id='exampleSelect1'>
+                            
+                     <?php
+                          $mysqli = mysqli_connect($databaseHost,$databaseUsername,$databasePassword,$databaseName);
+                          $query = "SELECT * FROM courses";
+                          $result = mysqli_query($mysqli,$query);       
+                          while($addrow = mysqli_fetch_array($result)) 
+                          {
+                            echo "<option>$addrow[1]</option>";
+
+                          }
+                     ?>
+                    </select>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="form-group">
+                     <label>Search</label>
+                      <input type="submit" name="searchQuery" class="form-control" value="Search">
                   </div>
                </div>
             </div>
@@ -77,24 +93,27 @@
                <tr>
                   <th>ID</th>
                   <th>Student Name</th>
+                  <th>Email</th>
                   <th>Course</th>
-                  <th>Year</th>
-                  <th>Test Result </th>
+                  <th>Joined On</th>
                </tr>
-               <tr>
-                  <td>1</td>
-                  <td>Yash Karanke</td>
-                  <td>MSC (IT)</td>
-                  <td>2018</td>
-                  <td>20</td>
-               </tr>
-               <tr>
-                  <td>1</td>
-                  <td>Yash Karanke</td>
-                  <td>MSC (IT)</td>
-                  <td>2018</td>
-                  <td>20</td>
-               </tr>
+               <?php
+                $mysqli = mysqli_connect($databaseHost,$databaseUsername,$databasePassword,$databaseName);
+                $query = "SELECT * FROM student_data";
+                $result = mysqli_query($mysqli,$query);       
+                while($addrow = mysqli_fetch_array($result)) 
+                  {
+                    $newDate = date('d-M-Y',strtotime($addrow[11]));
+                    echo "<tr>";
+                    echo "<td>$addrow[0]</td>";
+                    echo "<td>$addrow[1]</td>";
+                    echo "<td>$addrow[9]</td>";
+                    echo "<td>Msc (IT)</td>";
+                    echo "<td>$newDate</td>";
+                    echo "</tr>";
+
+                  }
+                  ?>
             </table>
          </div>
       </div>
