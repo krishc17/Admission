@@ -22,7 +22,7 @@
             }   
 		}
 	}
-     ?>
+?>
 
 <title>
 		Navrachna Admission Portal
