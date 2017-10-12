@@ -2,7 +2,12 @@
 	session_start();
 	if(isset($_SESSION['email']))
 	{
-    ?>
+    $email = $_SESSION['email'];
+    $databaseHost = "localhost";
+    $databaseUsername = "root";
+    $databasePassword = "";
+    $databaseName = "admission2018";  
+?>
 <html lang="en">
    <head>
       <meta charset="utf-8">
@@ -55,13 +60,6 @@
                      <h4>Test Questions</h4>
                   </div>
                </div>
-            <!--   <div class="col-md-4">
-                  <div class="well dash-box">
-                     <h2><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 33</h2>
-                     <h4>Posts</h4>
-                  </div>
-               </div> -->
-
             </div>
          </div>
          <!-- Latest Users -->
@@ -78,41 +76,31 @@
                      <th>Course</th>
                      <th>Joined</th>
                   </tr>
+                <?php
+                $mysqli = mysqli_connect($databaseHost,$databaseUsername,$databasePassword,$databaseName);
+                $query = "SELECT * FROM student_data ORDER BY id DESC LIMIT 5 ";
+                $result = mysqli_query($mysqli,$query);       
+                while($addrow = mysqli_fetch_array($result)) 
+                  {
+                    $newDate = date('d-M-Y',strtotime($addrow[11]));
+                    echo "<tr>";
+                    echo "<td>$addrow[0]</td>";
+                    echo "<td>$addrow[1]</td>";
+                    echo "<td>$addrow[9]</td>";
+                    echo "<td>Msc (IT)</td>";
+                    echo "<td>$newDate</td>";
+                    echo "</tr>";
 
-                  <tr>
-                    <td>1</td>
-                     <td>Yash Karanke</td>
-                     <td>yashkaranke@gmail.com</td>
-                     <td>Msc (IT)</td>
-                     <td>27-Sep-2017</td>
-                  </tr>
-
-                  <tr>
-                     <td>2</td>
-                     <td>Jay Pakhadiwala</td>
-                     <td>jayp@gmail.com</td>
-                     <td>Msc (IT)</td>
-                     <td>27-Sep-2017</td>
-                  </tr>
-
-                  <tr>
-                    <td>3</td>
-                     <td>Shaileen Earnest</td>
-                     <td>shaileener@gmail.com</td>
-                     <td>Msc (IT)</td>
-                     <td>27-Sep-2017</td>
-                  </tr>
-
-
+                  }
+                  ?>
                </table>
-            </div>
+             </div>
          </div>
       </div>
       </div>
       </div>
       </section>
       <footer id="footer">
-
       </footer>
       <!-- Modals -->
       <!-- Add Page -->
@@ -165,11 +153,10 @@
       <script src="js/bootstrap.min.js"></script>
    </body>
 </html>
-<?php
+<?php 
+  } 
+  else
+    {
+    echo 'not logged in ';
   }
-else{
-?> 
-  <?php
-echo 'not logged in ';
-}
 ?>

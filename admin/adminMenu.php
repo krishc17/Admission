@@ -1,4 +1,28 @@
+<?php
 
+	if(isset($_SESSION['email']))
+	{
+        $email = $_SESSION['email'];
+        $databaseHost = "localhost";
+        $databaseUsername = "root";
+        $databasePassword = "";
+        $databaseName = "admission2018";
+        
+        $mysqli = new mysqli($databaseHost,$databaseUsername,$databasePassword,$databaseName);
+        $query = "SELECT * FROM admins WHERE email = '{$_SESSION['email']}'"; 
+        $result = $mysqli->query($query) or die($mysqli->error);
+		if($result->num_rows > 0) 
+		{
+			while($row = $result->fetch_assoc()) 
+			{
+				foreach($row as $val) 
+				{
+                    $details[] = $val;
+        }
+      }   
+		}
+	}
+?>
     <nav class="navbar navbar-default">
     <div class="container">
       <div class="navbar-header">
@@ -18,7 +42,7 @@
           <li><a href="test-questions.php">Test</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Welcome, Admin</a></li>
+          <li><a href="#">Welcome, <?php echo $details[1];?> </a></li>
           <li><a href="#"> Profile </a></li>
           <li><a href="logout.php">Logout</a></li>
         </ul>
