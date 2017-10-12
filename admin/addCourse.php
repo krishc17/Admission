@@ -54,8 +54,8 @@
                   <form action="adminLoginHandler.php" method="post">
                   <div class="form-group">
                      <label>Enter Course Name</label>
-							<input type="text" name='cname' placeholder="Enter Course Name Here.." class="form-control" required>
-						</div>
+							        <input type="text" name='cname' placeholder="Enter Course Name Here.." class="form-control" required>
+						      </div>
                      <input class="btn btn-info" type="submit" name="addCourse" value="Submit">
                      </form>
                      <div class="panel panel-default">
