@@ -27,6 +27,7 @@ try
 		$pnumber = $_POST['pnumber'];
 		$email = $_POST['email'];
 		$password = $_POST['password'];
+		$dob=$_POST['dob'];
 		$password2 = $_POST['password2'];
 		if ($password == $password2)
 			{
@@ -41,7 +42,7 @@ try
 				$password = md5($password);
 				// PDO Style Insert
 				$sql = "INSERT INTO `student_data` VALUES 
-					(NULL,'$fullname','$gender','$bgroup','$address','$city','$state','$zip','$pnumber','$email','$password',NOW())";
+					(NULL,'$fullname','$gender','$bgroup','$address','$city','$state','$zip','$pnumber','$email','$password',NOW(),'$dob')";
 						if ($conn->query($sql))
 						{
 						echo "Registration Successful";
