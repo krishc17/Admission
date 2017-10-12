@@ -8,40 +8,16 @@
         $databasePassword = "";
         $databaseName = "admission2018";
         
-        // PDO Connection
-        $conn = new PDO("mysql:host=$databaseHost;dbname=$databaseName;", $databaseUsername, $databasePassword);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);  
-        
-        // MySQLi Connection     
-        $mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName); 
-        $result = mysqli_query($mysqli,"SELECT * FROM student_data WHERE email = {$_SESSION['email']}") or die(mysql_error);
-        while($res = mysqli_fetch_array($result)){
-            $id = $res[0];
-            $fullname = $res[1];
-            $gender = $res[2];
-            $bg = $res[3];
-            $add = $res[4];
-            $city = $res[5];
-            $state = $res[6];
-            $zip = $res[7];
-            $pnumber = $res[8];
-            $email = $res[9];
-            // res[10] is md5 password
-            $register_date = $res[11];
-            $dob=$res[12];
-            echo $dob;
-            if(isset($_POST['submitEducationDetails'])){
-                $query = $conn->prepare("SELECT `id` from `student_data` WHERE `id` = ?");
-                $query->bindValue(1,$id);
-                $query->execute();
-             //   if($query->Count() > 0){
-              //      echo "We Alread";
-               // }
-            }
+        $mysqli = new mysqli($databaseHost,$databaseUsername,$databasePassword,$databaseName);
+        $query = "SELECT * FROM student_data WHERE email = '{$_SESSION['email']}'"; 
+        $result = $mysqli->query($query) or die($mysqli->error);
+        if($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                foreach($row as $val) {
+                    $details[] = $val;
+                }
+            }   
         }
-
-        $newDate = date("d-M-Y", strtotime($register_date));
-        $dobStr = date("d-M-Y",strtotime($dob));
      ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,15 +34,16 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="row">
+
                                         <div class="col-sm-12 form-group">
                                             <label>Fullname</label>
-                                            <input type="text" name="fullname" class="form-control" value= "<?php echo $fullname; ?> " disabled>
+                                            <input type="text" name="fullname" class="form-control" value= "<?php echo $details[1]; ?> " disabled>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-6 form-group">
                                             <label>Gender</label>
-                                            <input list="gender" name="gender" class="form-control" value= "<?php echo $gender; ?> " disabled>
+                                            <input list="gender" name="gender" class="form-control" value= "<?php echo $details[2]; ?> " disabled>
                                             <datalist id="gender">
                                                 <option value="Male">
                                                     <option value="Female">
@@ -74,55 +51,51 @@
                                         </div>
                                         <div class="col-sm-6 form-group">
                                             <label>Blood Group</label>
-                                            <input type="textarea" name="bgroup" class="form-control" value= "<?php echo $bg; ?> " disabled>
+                                            <input type="textarea" name="bgroup" class="form-control" value= "<?php echo $details[3]; ?> " disabled>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label>Address</label>
-                                        <textarea name="address" rows="3" cols="4" class="form-control"  disabled> <?php echo $add; ?> </textarea>
+                                        <textarea name="address" rows="3" cols="4" class="form-control"  disabled> <?php echo $details[4]; ?> </textarea>
                                     </div>
 
                                     <div class="row">
 
                                         <div class="col-sm-3 form-group">
                                             <label>Date of Birth</label>
-                                            <input type="text" name="dob" class="form-control" value= "<?php echo $dobStr; ?> " disabled>
+                                            <input type="text" name="pnumber" class="form-control" value= "<?php echo $details[12]; ?> " disabled>
                                         </div>
                                      
                                         <div class="col-sm-3 form-group">
                                             <label>City</label>
-                                            <input type="text" name="city" class="form-control" value= "<?php echo $city; ?> " disabled>
+                                            <input type="text" name="city" class="form-control" value= "<?php echo $details[5]; ?> " disabled>
                                         </div>
 
                                         <div class="col-sm-3 form-group">
                                             <label>State</label>
-                                            <inpFut type="text" name="state" class="form-control" value= "<?php echo $state; ?> " disabled>
+                                            <input type="text" name="state" class="form-control" value= "<?php echo $details[6]; ?> " disabled>
                                         </div>
 
                                         <div class="col-sm-3 form-group">
                                             <label>Zip</label>
-                                            <input type="text" name="zip" class="form-control" value= "<?php echo $zip; ?> " disabled>
+                                            <input type="text" name="zip" class="form-control" value= "<?php echo $details[7]; ?> " disabled>
                                         </div>
 
-                                    </div>
-
-
-                    
-                                    
+                                    </div>                               
                                     <div class="form-group">
                                         <label>Phone Number</label>
-                                        <input type="text" name="pnumber" class="form-control" value= "<?php echo $pnumber; ?> " disabled>
+                                        <input type="text" name="pnumber" class="form-control" value= "<?php echo $details[8]; ?> " disabled>
                                     </div>
 
                                     <div class="form-group">
                                         <label>Email Address</label>
-                                        <input type="email" name="email" class="form-control" value= "<?php echo $email; ?> " disabled>
+                                        <input type="email" name="email" class="form-control" value= "<?php echo $details[9]; ?> " disabled>
                                     </div>
 
                                     <div class="form-group">
                                         <label>Registration Date</label>
-                                        <input type="text" name="reg_date" class="form-control" value= "<?php echo $newDate; ?> " disabled>
+                                        <input type="text" name="reg_date" class="form-control" value= "<?php echo $details[11]; ?> " disabled>
                                     </div>
 
                                 </div>
@@ -268,9 +241,9 @@
         </div>
         </div>
 </html>
-<?php
-    }
-    else
+    <?php
+        }
+        else
     {
         ?><?php
         echo 'not logged in';
