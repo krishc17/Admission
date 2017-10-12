@@ -27,7 +27,7 @@
       <div class="container">
          <div class="row">
             <div class="col-md-10">
-               <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Search Records </h1>
+               <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Add Courses </h1>
             </div>
          </div>
       </div>
@@ -37,7 +37,7 @@
    <section id="breadcrumb">
       <div class="container">
          <ol class="breadcrumb">
-            <li class="active">Records</li>
+            <li class="active">Courses</li>
          </ol>
       </div>
    </section>
