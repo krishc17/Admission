@@ -14,7 +14,7 @@
         
         // MySQLi Connection     
         $mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName); 
-        $result = mysqli_query($mysqli,"SELECT * FROM student_data LIMIT 1");
+        $result = mysqli_query($mysqli,"SELECT * FROM student_data WHERE email = {$_SESSION['email']}") or die(mysql_error);
         while($res = mysqli_fetch_array($result)){
             $id = $res[0];
             $fullname = $res[1];
@@ -26,21 +26,22 @@
             $zip = $res[7];
             $pnumber = $res[8];
             $email = $res[9];
-            $dob='';
+            // res[10] is md5 password
             $register_date = $res[11];
-
+            $dob=$res[12];
+            echo $dob;
             if(isset($_POST['submitEducationDetails'])){
                 $query = $conn->prepare("SELECT `id` from `student_data` WHERE `id` = ?");
                 $query->bindValue(1,$id);
                 $query->execute();
-                if($query->Count() > 0){
-                    echo "We Alread";
-                }
+             //   if($query->Count() > 0){
+              //      echo "We Alread";
+               // }
             }
         }
 
         $newDate = date("d-M-Y", strtotime($register_date));
-        
+        $dobStr = date("d-M-Y",strtotime($dob));
      ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -86,7 +87,7 @@
 
                                         <div class="col-sm-3 form-group">
                                             <label>Date of Birth</label>
-                                            <input type="text" name="pnumber" class="form-control" value= "<?php echo $dob; ?> " disabled>
+                                            <input type="text" name="dob" class="form-control" value= "<?php echo $dobStr; ?> " disabled>
                                         </div>
                                      
                                         <div class="col-sm-3 form-group">
@@ -96,7 +97,7 @@
 
                                         <div class="col-sm-3 form-group">
                                             <label>State</label>
-                                            <input type="text" name="state" class="form-control" value= "<?php echo $state; ?> " disabled>
+                                            <inpFut type="text" name="state" class="form-control" value= "<?php echo $state; ?> " disabled>
                                         </div>
 
                                         <div class="col-sm-3 form-group">
