@@ -13,6 +13,12 @@
                 register_date datetime,
                 UNIQUE(EMAIL)
             )
+            INSERT INTO education_information (ID,ssc_board,ssc_school,ssc_per,ssc_attempt,
+                                                hsc_board,hsc_school,hsc_per,hsc_attempt,
+                                                grad_deg,grad_board,grad_school,grad_year,grad_attempt,
+                                                pgrad_deg,pgrad_board,pgrad_school,pgrad_year,pgrad_attempt)
+                                                VALUES
+                                                ()
 
                 CREATE TABLE education_information(
                     E_ID INT(3) NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -48,3 +54,5 @@
                 ID INT(2) PRIMARY KEY AUTO_INCREMENT,
                 coursename VARCHAR(20) UNIQUE
             )
+
+            

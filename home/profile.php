@@ -19,6 +19,21 @@
                 }
             }   
         }
+
+        if(isset($_POST['submitEducationDetails'])){
+            $id = $details[0];
+            $insertEducationQry = "INSERT INTO 
+                                   education_information 
+                                        (ID,ssc_board,ssc_school,ssc_per,ssc_attempt,
+                                        hsc_board,hsc_school,hsc_per,hsc_attempt,
+                                        grad_deg,grad_board,grad_school,grad_year,grad_attempt,
+                                        pgrad_deg,pgrad_board,pgrad_school,pgrad_year,pgrad_attempt)
+                    
+                                        VALUES
+                                        
+                                        ('$id',)";
+
+        }
      ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -16,7 +16,7 @@
 								<label>Fullname
 								</label>
 								<input type="text" name="fullname" placeholder="Enter Full Name Here.." class="form-control" required>
-							</div>
+							</div>	
 						</div>
 						<div class="row">
 							<div class="col-sm-6 form-group">
