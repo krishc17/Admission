@@ -43,12 +43,12 @@
 						<div class="row">
 							<div class="col-sm-3 form-group">
                                 <label>Date of Birth</label>
-                                <input type="text" data-format="dd/MM/yyy" data-provide="datepicker" name="dob" class="form-control"  required>
-                            </div>
+                                <input type="text" data-format="dd/MM/yyy" id="datepicker"  placeholder="dd-MM-yyyy"  name="dob" class="form-control"  required>
+							</div>
 							<div class="col-sm-3 form-group">
 								<label>City
 								</label>
-								<input type="text" name="city" placeholder="Enter City Name Here.." class="form-control" required>
+								<input type="text" name="city" placeholder="Enter City Name Here.."class="form-control" required>
 							</div>
 							<div class="col-sm-3 form-group">
 								<label>State

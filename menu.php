@@ -1,15 +1,20 @@
 <!-- No Need of session_start(); just yet -->
-<a href="index.php">
-<img src="img/nuv_logo.png" />
-</a>
+<a href="index.php"> <img src="img/nuv_logo.png" /> </a>
 <title> Navrachna Admission Portal </title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="style.css" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css" type="text/css">
   <link rel="stylesheet" href="css/nuv-color.css" type="text/css">
-    <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="css/login.css">
+  
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
      
+<!-- Jquery -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 <!-- Dropdown -->
 <script>
   $(document).ready(function(){
@@ -27,24 +32,13 @@
     
 <!-- Date picker JS-->
 <script>
-$(function () {
-    var startDate = new Date('1965-01-01'),
-        endDate = new Date('2001-01-01');
-    $('#from-datepicker').datetimepicker({
-        weekStart: 1,
-        todayBtn: 1,
-        autoclose: 1,
-        todayHighlight: 1,
-        startView: 4,
-        keyboardNavigation: 1,
-        minView: 2,
-        forceParse: 0,
-        startDate: startDate,
-        endDate: endDate,
-        setDate: startDate
+  $( function() {
+    $( "#datepicker" ).datepicker({
+      dateFormat: 'dd-mm-yy'
     });
-});
-</script>
+  } );
+  </script>
+
   
       <div class="navbar-nuvcolor navbar-inverse text-center h4">
         <div class="container-fluid">
