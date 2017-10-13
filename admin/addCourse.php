@@ -71,7 +71,7 @@
                   </tr>
                 <?php
                 $mysqli = mysqli_connect($databaseHost,$databaseUsername,$databasePassword,$databaseName);
-                $query = "SELECT * FROM courses ORDER BY id DESC LIMIT 5 ";
+                $query = "SELECT * FROM courses ORDER BY id";
                 $result = mysqli_query($mysqli,$query);       
                 while($addrow = mysqli_fetch_array($result)) 
                   {

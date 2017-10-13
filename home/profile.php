@@ -41,7 +41,11 @@
             <div class="col-lg-9">
 <!-- Insert Tabs Cod Here -->
 <ul class="nav nav-tabs">
+<li class="active"><a data-toggle="tab" href="#home">Basic Information</a></li>
+    <li><a data-toggle="tab" href="#edu">Submit Education Details</a></li>
+    <li><a data-toggle="tab" href="#be">Submit Education Details (B.Tech)</a></li>
 </ul>
+<div id="#home" class"tab-pane fade in active">
                 <div class="panel panel-default">
                     <div class="panel-heading main-color-bg">
                         <h3 class="panel-title"><b>Basic Information</b></h3>
@@ -61,8 +65,8 @@
                                             <label>Gender</label>
                                             <input list="gender" name="gender" class="form-control" value= "<?php echo $details[2]; ?> " disabled>
                                             <datalist id="gender">
-                                                <option value="Male">
-                                                    <option value="Female">
+                                                <option value="Male"></option>
+                                                <option value="Female"></option>
                                             </datalist>
                                         </div>
                                         <div class="col-sm-6 form-group">
@@ -118,7 +122,10 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            
                 <!-- Educational Details -->
+                <div id="#edu" class"tab-pane fade in active">
                 <div class="panel panel-default">
                     <div class="panel-heading main-color-bg">
                         <h3 class="panel-title"><b>Educational Information</b></h3>
@@ -243,16 +250,17 @@
                                                 </td>
                                             </tr>
                                         </tbody>
-                                    </table>
-                         <!-- row close-->   </div>
+                                    </table>                         
                             <input type="submit" name="submitEducationDetails" class="form-control">
 							</form>
 <!--col - lg close-->  </div>
+</div>
                         </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         </div>
 </html>
