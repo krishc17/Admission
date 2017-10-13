@@ -45,7 +45,7 @@ try
 					(NULL,'$fullname','$gender','$bgroup','$address','$city','$state','$zip','$pnumber','$email','$password',NOW(),'$dob',1)";
 						if ($conn->query($sql))
 						{
-						echo "Registration Successful";
+						echo "Registration Successful. You Can register now";
 						}
 			  			else
 						{
