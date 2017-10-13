@@ -42,7 +42,7 @@ try
 				$password = md5($password);
 				// PDO Style Insert
 				$sql = "INSERT INTO `student_data` VALUES 
-					(NULL,'$fullname','$gender','$bgroup','$address','$city','$state','$zip','$pnumber','$email','$password',NOW(),'$dob')";
+					(NULL,'$fullname','$gender','$bgroup','$address','$city','$state','$zip','$pnumber','$email','$password',NOW(),'$dob',1)";
 						if ($conn->query($sql))
 						{
 						echo "Registration Successful";
