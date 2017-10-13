@@ -56,3 +56,8 @@
             )
 
             
+CREATE TABLE selected_courses(
+     S_ID INT(2) PRIMARY KEY AUTO_INCREMENT, 
+     ID INT(3) NOT NULL REFERENCES student_data(ID), 
+     coursename VARCHAR(20) NOT NULL, 
+     isAvailable BOOLEAN )

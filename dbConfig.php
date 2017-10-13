@@ -37,6 +37,7 @@ try
 			if($query->rowCount() > 0 )
 			{	
 				echo "This email ID is already registered";
+
 			}
 			else{
 				$password = md5($password);
