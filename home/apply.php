@@ -26,8 +26,8 @@
 				<div class="panel-body">
 					<div class="col-lg-12">
 						<div class="row">
-							<div class="col-lg-9">
-								<form action="" method="post">
+							<div class="col-lg-10">
+								<form action="apply.php" method="post">
 									<div class="col-sm-12 form-group">
 										<label>Courses</label>
 										<select class="form-control">
@@ -36,11 +36,16 @@
     									<?php endforeach; ?>
 										</select>
 									</div>
+									<input class="btn btn-info" type="submit" name="applyCourse"  value="Submit">
 								</form>
 							</div>
+
 						</div>
+
 					</div>
+
 				</div>
+
 			</div>
 		</div>
 	</div>
