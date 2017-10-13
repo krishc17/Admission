@@ -34,23 +34,14 @@
 
         }
      ?>
-<!DOCTYPE html>
-<html lang="en">  
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-  $( function() {
-    $( "#tabs" ).tabs();
-  } );
-  </script>
 
 <?php include 'home-menu.php'; ?>
     <?php include 'user-side-menu.php'; ?>
         <div class="container">
             <div class="col-lg-9">
 <!-- Insert Tabs Cod Here -->
+<ul class="nav nav-tabs">
+</ul>
                 <div class="panel panel-default">
                     <div class="panel-heading main-color-bg">
                         <h3 class="panel-title"><b>Basic Information</b></h3>
