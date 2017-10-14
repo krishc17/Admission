@@ -2,6 +2,7 @@
     session_start();
 	if(isset($_SESSION['email']))
 	{
+        $msg = "  ";
         //function this
         $email = $_SESSION['email'];
         $databaseHost = "localhost";
@@ -39,7 +40,7 @@
             $gC = $_POST['gradcoll'];
             $gG = $_POST['gradgrade'];
             $gY = $_POST['gradyearp'];
-            $gA = $_POST['gradattemp'];
+            $gA = $_POST['gradattempt'];
             //pgrad
             $pD = $_POST['pdegree'];
             $pU = $_POST['puniv'];
@@ -49,21 +50,44 @@
             $pA = $_POST['pattemp'];
             //queries
             $id = $details[0];
+            $conn = new PDO("mysql:host=$databaseHost;dbname=$databaseName;", $databaseUsername, $databasePassword);
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $eQuery = $conn->prepare( "SELECT `ID` FROM `education_information` WHERE `ID` = ?" );			
+			$eQuery->bindValue( 1, $details[0]);
+            $eQuery->execute();
+            if($eQuery->rowCount() > 0 )
+			{	
+				$msg = "We Already Have Your Details";
+
+			}
+			else{
+			try{
             $insertEducationQry = "INSERT INTO 
                                    education_information 
-                                        (ID,ssc_board,ssc_school,ssc_per,ssc_attempt,
-                                        hsc_board,hsc_school,hsc_per,hsc_attempt,
-                                        grad_deg,grad_board,grad_school,grad_year,grad_attempt,
-                                        pgrad_deg,pgrad_board,pgrad_school,pgrad_year,pgrad_attempt)
                     
                                         VALUES
                                         
-                                        ('$id','$sU','$sC','$sG','$sY','$sA',
+                                        (NULL,'$id',
+                                         '$sU','$sC','$sG','$sY','$sA',
                                          '$hU','$hC','$hG','$hY','$hA',
                                          '$gD','$gU','$gC','$gG','$gY','$gA',
-                                         '$pD','$pU','$pC','$pG','$pY','$pA')";
+                                         '$pD','$pU','$pC','$pG','$pY','$pA',
+                                         1)";
+                if ($conn->query($insertEducationQry))
+                        {
+                            $msg = "Data Collected Successful. You Can Apply now";
+                        }
+                        else
+                        {
+                            $msg = "An Error Occured Contact SysAdmin";
+                        }
+                    }
+                    catch(PDOException $e){
+                        echo $e;
+                    }
 
-        }
+            }}
      ?>
 
 <?php include 'home-menu.php'; ?>
@@ -76,7 +100,7 @@
                     <div class="panel-body">
                         <div class="col-lg-12">
                             <div class="row">
-                                <form action="educaional_details.php" method="post">
+                                <form action="educational_details.php" method="post">
                                     <table class="table">
                                         <thead class="thead-inverse" style="background-color:#000;color:#fff;">
                                             <tr>
@@ -157,8 +181,8 @@
                                                     <input type="number" name="gradyearp" class="form-control">
                                                 </td>
                                                 <td>
-                                                    <select class="form-control">
-                                                        <option value="Select Attempt" name="gradattemp">Select..</option>
+                                                    <select class="form-control" name="gradattempt">
+                                                        <option value="Select Attempt">Select..</option>
                                                         <option value="First">First</option>
                                                         <option value="Second">Second</option>
                                                     </select>
@@ -195,6 +219,7 @@
                                         </tbody>
                                     </table>                         
                             <input type="submit" name="submitEducationDetails" class="form-control">
+                            <input type="text" class="form-control" value="<?php echo $msg;?>" disabled>
 							</form>
 </div>
 </div>
