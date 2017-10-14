@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 12, 2017 at 06:12 PM
+-- Generation Time: Oct 14, 2017 at 08:55 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -34,15 +34,17 @@ CREATE TABLE `admins` (
   `email` varchar(125) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `isActive` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `admins`
 --
 
-INSERT INTO `admins` (`id`, `name`, `email`, `password`, `created_at`, `updated_at`) VALUES
-(1, 'Admin1', '16564017@nuv.ac.in', '1337x', NULL, NULL);
+INSERT INTO `admins` (`id`, `name`, `email`, `password`, `created_at`, `updated_at`, `isActive`) VALUES
+(1, 'Admin1', '16564017@nuv.ac.in', '1337x', NULL, NULL, NULL),
+(2, 'yash karanke', 'll@ll.com', 'random', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -52,19 +54,22 @@ INSERT INTO `admins` (`id`, `name`, `email`, `password`, `created_at`, `updated_
 
 CREATE TABLE `courses` (
   `ID` int(2) NOT NULL,
-  `coursename` varchar(20) DEFAULT NULL
+  `coursename` varchar(20) DEFAULT NULL,
+  `isActive` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `courses`
 --
 
-INSERT INTO `courses` (`ID`, `coursename`) VALUES
-(20, 'BBA'),
-(19, 'BCA'),
-(22, 'MBA'),
-(21, 'MHRM'),
-(18, 'MscIT');
+INSERT INTO `courses` (`ID`, `coursename`, `isActive`) VALUES
+(18, 'MscIT', NULL),
+(19, 'BCA', NULL),
+(20, 'BBA', NULL),
+(21, 'MHRM', NULL),
+(22, 'MBA', NULL),
+(23, 'MXA', NULL),
+(24, 'MMM', NULL);
 
 -- --------------------------------------------------------
 
@@ -96,8 +101,43 @@ CREATE TABLE `education_information` (
   `pgrad_school` varchar(70) DEFAULT NULL,
   `pgrad_per` varchar(3) DEFAULT NULL,
   `pgrad_year` varchar(5) DEFAULT NULL,
-  `pgrad_attempt` varchar(7) DEFAULT NULL
+  `pgrad_attempt` varchar(7) DEFAULT NULL,
+  `isActive` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `education_information`
+--
+
+INSERT INTO `education_information` (`E_ID`, `ID`, `ssc_board`, `ssc_school`, `ssc_per`, `ssc_year`, `ssc_attempt`, `hsc_board`, `hsc_school`, `hsc_per`, `hsc_year`, `hsc_attempt`, `grad_deg`, `grad_board`, `grad_school`, `grad_per`, `grad_year`, `grad_attempt`, `pgrad_deg`, `pgrad_board`, `pgrad_school`, `pgrad_per`, `pgrad_year`, `pgrad_attempt`, `isActive`) VALUES
+(1, 2, 'TEST DATA', 'TEST DATA', 'a', '2010', 'First', 'TEST DATA', 'TEST DATA', 'a', '2010', 'First', 'bca', 'TEST DATA', 'TEST DATA', 'a', '2010', 'First', '', '', '', '', '', 'First', 1),
+(2, 4, 'Dummy Data', 'Dummy Data', 'A', '2012', 'First', 'Dummy Data', 'Dummy Data', 'A', '2012', 'First', '', '', '', '', '', 'Select ', '', '', '', '', '', 'Select ', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `selected_courses`
+--
+
+CREATE TABLE `selected_courses` (
+  `S_ID` int(2) NOT NULL,
+  `ID` int(3) NOT NULL,
+  `coursename` varchar(20) NOT NULL,
+  `isAvailable` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `selected_courses`
+--
+
+INSERT INTO `selected_courses` (`S_ID`, `ID`, `coursename`, `isAvailable`) VALUES
+(1, 2, 'MHRM', 1),
+(2, 0, 'BCA', 1),
+(3, 0, 'BCA', 1),
+(4, 2, 'MMM', 1),
+(5, 2, 'MscIT', 1),
+(6, 2, 'MscIT', 1),
+(7, 4, 'MHRM', 1);
 
 -- --------------------------------------------------------
 
@@ -118,17 +158,19 @@ CREATE TABLE `student_data` (
   `EMAIL` varchar(60) DEFAULT NULL,
   `PASSWORD` varchar(100) DEFAULT NULL,
   `register_date` datetime DEFAULT NULL,
-  `dob` varchar(10) DEFAULT NULL
+  `dob` varchar(10) DEFAULT NULL,
+  `isActive` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `student_data`
 --
 
-INSERT INTO `student_data` (`ID`, `FULLNAME`, `GENDER`, `BGROUP`, `ADDRESS`, `CITY`, `STATE`, `ZIP`, `PNUMBER`, `EMAIL`, `PASSWORD`, `register_date`, `dob`) VALUES
-(1, 'YASH KARANKE', 'MALE', 'B+VE', 'VADODARA							', 'VADODARA', 'GUJARAT', '390001', '9714574465', 'dex.papa@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', NULL, NULL),
-(2, 'YASH KARANKE', 'MALE', 'B+VE', 'VADODARA							', 'VADAODARA', 'GJ', '390001', '9714574465', 'dex@dex.com', '81dc9bdb52d04dc20036dbd8313ed055', '2017-10-08 13:38:22', NULL),
-(3, 'Shashi Karanke', 'Male', 'B+VE', 'Vadodara							', 'Vadodara', 'Vadodara', '390007', '9998290920', 'shashi.karanke@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2017-10-12 15:28:26', '20-08-1997');
+INSERT INTO `student_data` (`ID`, `FULLNAME`, `GENDER`, `BGROUP`, `ADDRESS`, `CITY`, `STATE`, `ZIP`, `PNUMBER`, `EMAIL`, `PASSWORD`, `register_date`, `dob`, `isActive`) VALUES
+(1, 'YASH KARANKE', 'MALE', 'B+VE', 'VADODARA							', 'VADODARA', 'GUJARAT', '390001', '9714574465', 'dex.papa@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', NULL, NULL, NULL),
+(2, 'YASH KARANKE', 'MALE', 'B+VE', 'VADODARA							', 'VADAODARA', 'GJ', '390001', '9714574465', 'dex@dex.com', '81dc9bdb52d04dc20036dbd8313ed055', '2017-10-08 13:38:22', NULL, NULL),
+(3, 'Shashi Karanke', 'Male', 'B+VE', 'Vadodara							', 'Vadodara', 'Vadodara', '390007', '9998290920', 'shashi.karanke@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2017-10-12 15:28:26', '20-08-1997', NULL),
+(4, 'Dummy Man', 'Male', 'B+VE', 'VADODARA', 'VADODARA', 'VADODARA', '390011', '9714574665', 'dex@google.om', '81dc9bdb52d04dc20036dbd8313ed055', '2017-10-15 00:16:11', '01-10-1997', 1);
 
 --
 -- Indexes for dumped tables
@@ -155,6 +197,12 @@ ALTER TABLE `education_information`
   ADD PRIMARY KEY (`E_ID`);
 
 --
+-- Indexes for table `selected_courses`
+--
+ALTER TABLE `selected_courses`
+  ADD PRIMARY KEY (`S_ID`);
+
+--
 -- Indexes for table `student_data`
 --
 ALTER TABLE `student_data`
@@ -169,22 +217,27 @@ ALTER TABLE `student_data`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `ID` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `ID` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT for table `education_information`
 --
 ALTER TABLE `education_information`
-  MODIFY `E_ID` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `E_ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `selected_courses`
+--
+ALTER TABLE `selected_courses`
+  MODIFY `S_ID` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `student_data`
 --
 ALTER TABLE `student_data`
-  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;COMMIT;
+  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
