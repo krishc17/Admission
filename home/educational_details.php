@@ -65,9 +65,7 @@
 			try{
             $insertEducationQry = "INSERT INTO 
                                    education_information 
-                    
-                                        VALUES
-                                        
+                                        VALUES                 
                                         (NULL,'$id',
                                          '$sU','$sC','$sG','$sY','$sA',
                                          '$hU','$hC','$hG','$hY','$hA',
