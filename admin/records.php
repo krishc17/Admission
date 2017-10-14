@@ -100,7 +100,7 @@
                 $mysqli = mysqli_connect($databaseHost,$databaseUsername,$databasePassword,$databaseName);
                 $query = "select student_data.id,student_data.FULLNAME,student_data.EMAIL,selected_courses.coursename,student_data.register_date FROM student_data JOIN selected_courses ON student_data.ID=selected_courses.ID";
                 $result = mysqli_query($mysqli,$query);       
-                while($addrow = mysqli_fetch_array($result)) 
+                while($addrow = mysqli_fetch_array($result))
                 {
                   $newDate = date('d-M-Y',strtotime($addrow[4]));
                   echo "<tr>";
