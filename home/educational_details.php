@@ -73,13 +73,13 @@
                                          '$pD','$pU','$pC','$pG','$pY','$pA',
                                          1)";
                 if ($conn->query($insertEducationQry))
-                        {
+                {
                             $msg = "Data Collected Successful. You Can Apply now";
-                        }
-                        else
-                        {
+                }
+                else
+                {
                             $msg = "An Error Occured Contact SysAdmin";
-                        }
+                }
                     }
                     catch(PDOException $e){
                         echo $e;

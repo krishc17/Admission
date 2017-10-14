@@ -1,11 +1,50 @@
 <?php 
 	session_start();
+	$email = $_SESSION['email'];
+	$msg=" ";
 	if(isset($_SESSION['email'])){
-	$pdo = new PDO('mysql:host=localhost;dbname=admission2018', 'root', '');
+	
+	$databaseHost = "localhost";
+	$databaseUsername = "root";
+	$databasePassword = "";
+	$databaseName = "admission2018";
+		
+
+	$conn = new PDO("mysql:host=$databaseHost;dbname=$databaseName;", $databaseUsername, $databasePassword);
+	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	
 	$sql = "SELECT id,coursename FROM courses";
-	$stmt = $pdo->prepare($sql);
+	$stmt = $conn->prepare($sql);
 	$stmt->execute();
-	$users = $stmt->fetchAll()
+	$users = $stmt->fetchAll();
+	//id
+
+	$mysqli = new mysqli($databaseHost,$databaseUsername,$databasePassword,$databaseName);
+	//
+	$query = "SELECT * FROM student_data WHERE email = '{$_SESSION['email']}'"; 
+	$result = $mysqli->query($query) or die($mysqli->error);
+	if($result->num_rows > 0) {
+		while($row = $result->fetch_assoc()) {
+			foreach($row as $val) {
+				$details[] = $val;
+			}
+		}   
+	}
+	//selected course
+	$id = $details[0];
+	$selectedCourse = $_POST['selectedCourse'];
+	if(isset($_POST['applyCourse'])){
+		$insertQuery = "INSERT INTO selected_courses values(NULL,'$details[0]','$selectedCourse',1)";
+		if ($conn->query($insertQuery))
+		{
+					$msg = "Application Succesful";
+		}
+		else
+		{
+					$msg = "An Error Occured Contact SysAdmin";
+		}
+		
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,16 +69,18 @@
 								<form action="apply.php" method="post">
 									<div class="col-sm-12 form-group">
 										<label>Courses</label>
-										<select class="form-control">
+										<select class="form-control" name="selectedCourse">
 										<?php foreach($users as $user): ?>
-        								<option value="<?= $user['id']; ?>"><?= $user['coursename'];?></option>
+        								<option value="<?= $user['coursename']; ?>"><?= $user['coursename'];?></option>
     									<?php endforeach; ?>
 										</select>
 									</div>
 									<input class="btn btn-info" type="submit" name="applyCourse"  value="Submit">
 								</form>
+								<p><?php echo $msg;?></p>
 							</div>
-
+							<div class="col-sm-12 form-group">
+							</div>
 						</div>
 
 					</div>
