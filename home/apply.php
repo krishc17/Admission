@@ -32,8 +32,9 @@
 	}
 	//selected course
 	$id = $details[0];
-	$selectedCourse = $_POST['selectedCourse'];
+
 	if(isset($_POST['applyCourse'])){
+		$selectedCourse = $_POST['selectedCourse'];
 		$insertQuery = "INSERT INTO selected_courses values(NULL,'$details[0]','$selectedCourse',1)";
 		if ($conn->query($insertQuery))
 		{
