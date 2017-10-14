@@ -19,7 +19,35 @@
                 }
             }   
         }
+
         if(isset($_POST['submitEducationDetails'])){
+            // SSC
+            $sU = $_POST['sscuniv'];
+            $sC = $_POST['ssccoll'];
+            $sG = $_POST['sscgrade'];
+            $sY = $_POST['sscyearp'];
+            $sA =$_POST['sscattemp'];
+            //hsc
+            $hU = $_POST['hscuniv'];
+            $hC = $_POST['hsccoll'];
+            $hG = $_POST['hscgrade'];
+            $hY = $_POST['hscyearp'];
+            $hA = $_POST['hscattemp'];
+            //grad
+            $gD = $_POST['graddegree'];
+            $gU = $_POST['graduniv'];
+            $gC = $_POST['gradcoll'];
+            $gG = $_POST['gradgrade'];
+            $gY = $_POST['gradyearp'];
+            $gA = $_POST['gradattemp'];
+            //pgrad
+            $pD = $_POST['pdegree'];
+            $pU = $_POST['puniv'];
+            $pC = $_POST['pcoll'];
+            $pG = $_POST['pgrade'];
+            $pY = $_POST['pyearp'];
+            $pA = $_POST['pattemp'];
+            //queries
             $id = $details[0];
             $insertEducationQry = "INSERT INTO 
                                    education_information 
@@ -30,7 +58,10 @@
                     
                                         VALUES
                                         
-                                        ('$id',)";
+                                        ('$id','$sU','$sC','$sG','$sY','$sA',
+                                         '$hU','$hC','$hG','$hY','$hA',
+                                         '$gD','$gU','$gC','$gG','$gY','$gA',
+                                         '$pD','$pU','$pC','$pG','$pY','$pA')";
 
         }
      ?>
@@ -110,7 +141,7 @@
                                             <tr align="center">
                                                 <td>Graduation
                                                     <br>
-                                                    <font size="-2">Degree</font>
+                                                    <font size="-2">Degree(optional)</font>
                                                     <input type="text" size="10" class="form-control" name="graddegree">
                                                 </td>
                                                 <td>
@@ -138,23 +169,23 @@
                                             <tr align="center">
                                                 <td>Post Graduation
                                                     <br>
-                                                    <font size="-2" face="Verdana">Degree</font>
-                                                    <input type="text" size="10" class="form-control" tabindex="24" name="postgdegree">
+                                                    <font size="-2" face="Verdana">Degree(optional)</font>
+                                                    <input type="text" size="10" class="form-control" tabindex="24" name="pdegree">
                                                 </td>
                                                 <td>
-                                                    <input type="text" name="postgraduniv" class="form-control">
+                                                    <input type="text" name="puniv" class="form-control">
                                                 </td>
                                                 <td>
-                                                    <input type="text" name="postgradcoll" class="form-control">
+                                                    <input type="text" name="pcoll" class="form-control">
                                                 </td>
                                                 <td>
-                                                    <input type="text" size="5" name="postgradgrade" style="width:50px;" class="form-control">
+                                                    <input type="text" size="5" name="pgrade" style="width:50px;" class="form-control">
                                                 </td>
                                                 <td>
-                                                    <input type="number" name="postgradyearp" class="form-control">
+                                                    <input type="number" name="pyearp" class="form-control">
                                                 </td>
                                                 <td>
-                                                    <select class="form-control" name="postgradattemp">
+                                                    <select class="form-control" name="pattemp">
                                                         <option value="Select Attempt">Select..</option>
                                                         <option value="First">First</option>
                                                         <option value="Second">Second</option>
