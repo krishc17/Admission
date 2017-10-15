@@ -115,19 +115,19 @@
                                             <tr align="center">
                                                 <td>S.S.C</td>
                                                 <td>
-                                                    <input type="text" name="sscuniv" class="form-control">
+                                                    <input type="text" name="sscuniv" class="form-control" required>
                                                 </td>
                                                 <td>
-                                                    <input type="text" name="ssccoll" class="form-control">
+                                                    <input type="text" name="ssccoll" class="form-control" required>
                                                 </td>
                                                 <td>
-                                                    <input type="text" size="5" name="sscgrade" style="width:50px;" class="form-control">
+                                                    <input type="text" size="5" name="sscgrade" style="width:50px;" class="form-control" required>
                                                 </td>
                                                 <td>
-                                                    <input type="number" name="sscyearp" class="form-control">
+                                                    <input type="number" name="sscyearp" class="form-control" required>
                                                 </td>
                                                 <td>
-                                                    <select class="form-control" name="sscattemp">
+                                                    <select class="form-control" name="sscattemp" required>
                                                         <option value="Select Attempt">Select..</option>
                                                         <option value="First">First</option>
                                                         <option value="Second">Second</option>
@@ -139,19 +139,19 @@
                                             <tr align="center">
                                                 <td>H.S.C</td>
                                                 <td>
-                                                    <input type="text" name="hscuniv" class="form-control">
+                                                    <input type="text" name="hscuniv" class="form-control" required>
                                                 </td>
                                                 <td>
-                                                    <input type="text" name="hsccoll" class="form-control">
+                                                    <input type="text" name="hsccoll" class="form-control" required>
                                                 </td>
                                                 <td>
-                                                    <input type="text" size="5" name="hscgrade" style="width:50px;" class="form-control">
+                                                    <input type="text" size="5" name="hscgrade" style="width:50px;" class="form-control" required>
                                                 </td>
                                                 <td>
-                                                    <input type="number" name="hscyearp" class="form-control">
+                                                    <input type="number" name="hscyearp" class="form-control" required>
                                                 </td>
                                                 <td>
-                                                    <select class="form-control" name="hscattemp">
+                                                    <select class="form-control" name="hscattemp" required>
                                                         <option value="Select Attempt">Select..</option>
                                                         <option value="First">First</option>
                                                         <option value="Second">Second</option>
@@ -217,7 +217,7 @@
                                         </tbody>
                                     </table>                         
                             <input type="submit" name="submitEducationDetails" class="form-control">
-                            <input type="text" class="form-control" value="<?php echo $msg;?>" disabled>
+                            <?php echo $msg;?>
 							</form>
 </div>
 </div>

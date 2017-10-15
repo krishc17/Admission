@@ -38,11 +38,11 @@
 		$insertQuery = "INSERT INTO selected_courses values(NULL,'$details[0]','$selectedCourse',1)";
 		if ($conn->query($insertQuery))
 		{
-					$msg = "Application Succesful";
+			$msg = "<p style='text-align:center; color:green;'>Application Successful/p>";
 		}
 		else
 		{
-					$msg = "An Error Occured Contact SysAdmin";
+			$msg = "<p style='text-align:center; color:red;'>An Error Occured Contact SysAdmin</p>";
 		}
 		
 	}
