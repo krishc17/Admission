@@ -45,10 +45,16 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="row">
-                                        <div class="col-sm-12 form-group">
+                                        <div class="col-sm-6 form-group">
                                             <label>Fullname</label>
                                             <input type="text" name="fullname" class="form-control" value= "<?php echo $details[1]; ?> " disabled>
                                         </div>
+                                        <div class="col-sm-6 form-group">
+                                            <label>Image</label>
+                                        <?php 
+                                            echo $details[13]?>
+                                            </div>
+                              
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-6 form-group">

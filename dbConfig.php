@@ -37,18 +37,20 @@ $msg = " ";
 // User Registeration Page
 if (isset($_POST['addRegister']))
 	{
-	$fullname = $_POST['fullname'];
-	$gender = $_POST['gender'];
-	$bgroup = $_POST['bgroup'];
-	$address = $_POST['address'];
-	$city = $_POST['city'];
-	$state = $_POST['state'];
-	$zip = $_POST['zip'];
-	$pnumber = $_POST['pnumber'];
-	$email = $_POST['email'];
-	$password = $_POST['password'];
-	$dob=$_POST['dob'];
-	$password2 = $_POST['password2'];
+	$fullname = $_REQUEST['fullname'];
+	$gender = $_REQUEST['gender'];
+	$bgroup = $_REQUEST['bgroup'];
+	$address = $_REQUEST['address'];
+	$city = $_REQUEST['city'];
+	$state = $_REQUEST['state'];
+	$zip = $_REQUEST['zip'];
+	$pnumber = $_REQUEST['pnumber'];
+	$email = $_REQUEST['email'];
+	$password = $_REQUEST['password'];
+	$dob=$_REQUEST['dob'];
+	$profile_image=$_FILES['profile_image']['tmp_name'];
+	$imgContent = addslashes(file_get_contents($image));
+	$password2 = $_REQUEST['password2'];
 	if ($password == $password2){
 		$query = $conn->prepare( "SELECT `email` FROM `student_data` WHERE `email` = ?" );			
 		$query->bindValue( 1, $email );
@@ -61,7 +63,7 @@ if (isset($_POST['addRegister']))
 			$password = md5($password);
 			// PDO Style Insert
 			$sql = "INSERT INTO `student_data` VALUES 
-				(NULL,'$fullname','$gender','$bgroup','$address','$city','$state','$zip','$pnumber','$email','$password',NOW(),'$dob',1)";
+				(NULL,'$fullname','$gender','$bgroup','$address','$city','$state','$zip','$pnumber','$email','$password',NOW(),'$dob','$imgContent',1)";
 					if ($conn->query($sql))
 					{
 					$msg = "<p style='text-align:center; color:green;'>Registration Successful. You Can Login now</p>";

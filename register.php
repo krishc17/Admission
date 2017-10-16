@@ -8,13 +8,18 @@
 			<?php echo $msg;?>
 		<div class="col-lg-12 well">
 			<div class="row">
-				<form action="register.php" method="post">
+				<form action="register.php" enctype="multipart/form-data" method="post">
 					<div class="col-sm-12">
 						<div class="row">
-							<div class="col-sm-12 form-group">
+							<div class="col-sm-6 form-group">
 								<label>Fullname</label>
 								<input type="text" name="fullname" placeholder="Enter Full Name Here.." class="form-control" required>
 							</div>	
+
+							<div class="col-sm-6 form-group">
+								<label>Image</label>
+								<input type="file" name="profile_image" accept="image/*" required>
+							</div>
 						</div>
 						<div class="row">
 							<div class="col-sm-6 form-group">
