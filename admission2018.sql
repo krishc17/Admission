@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 14, 2017 at 08:55 PM
+-- Generation Time: Oct 16, 2017 at 08:34 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -111,7 +111,8 @@ CREATE TABLE `education_information` (
 
 INSERT INTO `education_information` (`E_ID`, `ID`, `ssc_board`, `ssc_school`, `ssc_per`, `ssc_year`, `ssc_attempt`, `hsc_board`, `hsc_school`, `hsc_per`, `hsc_year`, `hsc_attempt`, `grad_deg`, `grad_board`, `grad_school`, `grad_per`, `grad_year`, `grad_attempt`, `pgrad_deg`, `pgrad_board`, `pgrad_school`, `pgrad_per`, `pgrad_year`, `pgrad_attempt`, `isActive`) VALUES
 (1, 2, 'TEST DATA', 'TEST DATA', 'a', '2010', 'First', 'TEST DATA', 'TEST DATA', 'a', '2010', 'First', 'bca', 'TEST DATA', 'TEST DATA', 'a', '2010', 'First', '', '', '', '', '', 'First', 1),
-(2, 4, 'Dummy Data', 'Dummy Data', 'A', '2012', 'First', 'Dummy Data', 'Dummy Data', 'A', '2012', 'First', '', '', '', '', '', 'Select ', '', '', '', '', '', 'Select ', 1);
+(2, 4, 'Dummy Data', 'Dummy Data', 'A', '2012', 'First', 'Dummy Data', 'Dummy Data', 'A', '2012', 'First', '', '', '', '', '', 'Select ', '', '', '', '', '', 'Select ', 1),
+(3, 5, '', '', '', '', 'Select ', '', '', '', '', 'Select ', '', '', '', '', '', 'Select ', '', '', '', '', '', 'Select ', 1);
 
 -- --------------------------------------------------------
 
@@ -159,6 +160,7 @@ CREATE TABLE `student_data` (
   `PASSWORD` varchar(100) DEFAULT NULL,
   `register_date` datetime DEFAULT NULL,
   `dob` varchar(10) DEFAULT NULL,
+  `profile_image` varchar(100) DEFAULT NULL,
   `isActive` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -166,11 +168,22 @@ CREATE TABLE `student_data` (
 -- Dumping data for table `student_data`
 --
 
-INSERT INTO `student_data` (`ID`, `FULLNAME`, `GENDER`, `BGROUP`, `ADDRESS`, `CITY`, `STATE`, `ZIP`, `PNUMBER`, `EMAIL`, `PASSWORD`, `register_date`, `dob`, `isActive`) VALUES
-(1, 'YASH KARANKE', 'MALE', 'B+VE', 'VADODARA							', 'VADODARA', 'GUJARAT', '390001', '9714574465', 'dex.papa@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', NULL, NULL, NULL),
-(2, 'YASH KARANKE', 'MALE', 'B+VE', 'VADODARA							', 'VADAODARA', 'GJ', '390001', '9714574465', 'dex@dex.com', '81dc9bdb52d04dc20036dbd8313ed055', '2017-10-08 13:38:22', NULL, NULL),
-(3, 'Shashi Karanke', 'Male', 'B+VE', 'Vadodara							', 'Vadodara', 'Vadodara', '390007', '9998290920', 'shashi.karanke@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2017-10-12 15:28:26', '20-08-1997', NULL),
-(4, 'Dummy Man', 'Male', 'B+VE', 'VADODARA', 'VADODARA', 'VADODARA', '390011', '9714574665', 'dex@google.om', '81dc9bdb52d04dc20036dbd8313ed055', '2017-10-15 00:16:11', '01-10-1997', 1);
+INSERT INTO `student_data` (`ID`, `FULLNAME`, `GENDER`, `BGROUP`, `ADDRESS`, `CITY`, `STATE`, `ZIP`, `PNUMBER`, `EMAIL`, `PASSWORD`, `register_date`, `dob`, `profile_image`, `isActive`) VALUES
+(1, 'YASH KARANKE', 'MALE', 'B+VE', 'VADODARA							', 'VADODARA', 'GUJARAT', '390001', '9714574465', 'dex.papa@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', NULL, NULL, '', NULL),
+(2, 'YASH KARANKE', 'MALE', 'B+VE', 'VADODARA							', 'VADAODARA', 'GJ', '390001', '9714574465', 'dex@dex.com', '81dc9bdb52d04dc20036dbd8313ed055', '2017-10-08 13:38:22', NULL, '', NULL),
+(3, 'Shashi Karanke', 'Male', 'B+VE', 'Vadodara							', 'Vadodara', 'Vadodara', '390007', '9998290920', 'shashi.karanke@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2017-10-12 15:28:26', '20-08-1997', '', NULL),
+(4, 'Dummy Man', 'Male', 'B+VE', 'VADODARA', 'VADODARA', 'VADODARA', '390011', '9714574665', 'dex@google.om', '81dc9bdb52d04dc20036dbd8313ed055', '2017-10-15 00:16:11', '01-10-1997', '', 1),
+(5, 'Shashi Karanke', 'Male', 'b+ve', 'hogwards', 'Vadodara', 'Gujarat', '390015', '8154036295', '15102009@nuv.ac.in', '8af76326814e1566929ad87a80435880', '2017-10-15 16:10:38', '19-08-1997', '', 1),
+(6, 'Yash Karanke', 'Male', 'B+VE', 'Vadodara', 'Vadodara', 'Gujarat', '390001', '9714574465', 'dex@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2017-10-16 09:43:19', '20-12-1995', '', 1),
+(7, 'Shane Paryan', 'Male', 'B+E', 'Vadodara', 'Vadodara', 'Gujarat', '390001', '9715744655', 'shane@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2017-10-16 10:18:29', '15-10-1981', 'Shane.png', 1),
+(8, 'Shane Paryan', 'Male', 'B+VE', 'VADODARA', 'VADODARA', 'Gujarat', '390001', '9714574665', 'shane.p@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2017-10-16 10:29:27', '15-10-1997', 'L', 1),
+(9, 'Shane Paryan', 'Male', 'B+VE', 'Vadodara', 'Vadodara', 'Gujarat', '39001', '9714574465', 'sha@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2017-10-16 10:36:05', '05-10-1999', '', 1),
+(10, 'Shane Paryan', 'Male', 'B+VE', 'VADODARA', 'VADODARA', 'VADODARA', '390001', '9714574465', 'sha2@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2017-10-16 20:37:38', '07-10-1981', 'D:xampp	mpphp9972.tmp', 1),
+(11, 'Shane', 'Male', 'B+VE', 'VADODARA', 'VADODARA', 'VADODARA', '3900011', '9714574465', 'sss@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2017-10-16 20:47:28', '11-10-1995', '', 1),
+(12, 'Shane', 'Male', 'B+VE', 'VADODARA', 'VADODARA', 'Gujarat', '390001', '9714574465', '999@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2017-10-16 20:56:38', '09-10-1996', 'D:xampp	mpphpFE61.tmp', 1),
+(13, 'Shane', 'Male', 'B+VE', 'VADODARA', 'VADODARA', 'VADODARA', '390001', '9714574465', 'dexxx@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2017-10-16 21:01:33', '05-03-1986', '/profile_imagesShane.png', 1),
+(14, 'Shane', 'Male', 'B+VE', 'Vadodara', 'Vadodara', 'Gujarat', '3900011', '9714574465', 'de@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2017-10-16 21:05:06', '20-12-1992', 'profile_images/Shane.png', 1),
+(15, 'Shane', 'Male', 'B+VE', 'VADODARA', 'vadodara', 'Gujarat', '3900011', '9714574465', 'dee@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2017-10-16 21:06:31', '20-12-1995', 'profile_images/Shane.png', 1);
 
 --
 -- Indexes for dumped tables
@@ -227,7 +240,7 @@ ALTER TABLE `courses`
 -- AUTO_INCREMENT for table `education_information`
 --
 ALTER TABLE `education_information`
-  MODIFY `E_ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `E_ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `selected_courses`
 --
@@ -237,7 +250,7 @@ ALTER TABLE `selected_courses`
 -- AUTO_INCREMENT for table `student_data`
 --
 ALTER TABLE `student_data`
-  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;COMMIT;
+  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
