@@ -42,9 +42,7 @@
     });
   } );
   </script>
-
-  
-      <div class="navbar-nuvcolor navbar-inverse text-center h4">
+  <div class="navbar-nuvcolor navbar-inverse text-center h4">
         <div class="container-fluid">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">

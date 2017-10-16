@@ -27,11 +27,5 @@
 </div>
 <!-- To add same code before the last div -- >
 </html>
-<?php
-  }
-else{
-?> 
-  <?php
-echo 'not logged in ';
-}
-?>
+<?php } else { ?>
+<?php  header("Location:../index.php"); } ?>

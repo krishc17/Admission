@@ -115,11 +115,5 @@
             </div>
 </div>
     
-    <?php
-        }
-        else
-    {
-        ?><?php
-        echo 'not logged in';
-    }
-    ?>
+<?php } else { ?>
+<?php  header("Location:../index.php"); } ?>

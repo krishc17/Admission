@@ -98,7 +98,7 @@
 		{
 		?>	
 		<?php
-		echo 'not logged in';
+			header("Location:../index.php ");
 		}
 		?>
 	

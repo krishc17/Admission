@@ -219,13 +219,7 @@
                             <input type="submit" name="submitEducationDetails" class="form-control">
                             <?php echo $msg;?>
 							</form>
-</div>
-</div>
-<?php
-        }
-        else
-    {
-        ?><?php
-        echo 'not logged in';
-    }
-    ?>
+                    </div>
+            </div>        
+<?php } else { ?>
+<?php  header("Location:../index.php"); } ?>
