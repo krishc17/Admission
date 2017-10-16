@@ -40,7 +40,7 @@
                                         </div>
                                         <div class="col-sm-6 form-group">
                                             <label>Image</label> <br>
-                                            <img src="<?php echo '../' . $details[13];?>" height=200px width=200px>
+                                            <img src="<?php echo '../' . $details[13];?>" height="200" width="200">
                                             </div>
                               
                                     </div>
