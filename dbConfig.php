@@ -1,7 +1,7 @@
 <?php
 @ob_start();
 session_start();
-
+$path = "../profile_images";
 // Database Connection
 
 $databaseHost = "localhost";
@@ -48,8 +48,8 @@ if (isset($_POST['addRegister']))
 	$email = $_REQUEST['email'];
 	$password = $_REQUEST['password'];
 	$dob=$_REQUEST['dob'];
+		// profile image
 	$profile_image=$_FILES['profile_image']['tmp_name'];
-	$imgContent = addslashes(file_get_contents($image));
 	$password2 = $_REQUEST['password2'];
 	if ($password == $password2){
 		$query = $conn->prepare( "SELECT `email` FROM `student_data` WHERE `email` = ?" );			
@@ -59,11 +59,16 @@ if (isset($_POST['addRegister']))
 		{	
 			$msg = "<p style='text-align:center; color:red;'>This Email ID is already registered. Try Login</p>";
 		}
-		else{
+		else{	
+			
 			$password = md5($password);
 			// PDO Style Insert
+			$final_save_dir = 'profile_images/';
+			move_uploaded_file($_FILES['profile_image']['tmp_name'], $final_save_dir . $_FILES['profile_image']['name']);
+			$image = $final_save_dir . $_FILES['profile_image']['name'];
+
 			$sql = "INSERT INTO `student_data` VALUES 
-				(NULL,'$fullname','$gender','$bgroup','$address','$city','$state','$zip','$pnumber','$email','$password',NOW(),'$dob','$imgContent',1)";
+				(NULL,'$fullname','$gender','$bgroup','$address','$city','$state','$zip','$pnumber','$email','$password',NOW(),'$dob','$image',1)";
 					if ($conn->query($sql))
 					{
 					$msg = "<p style='text-align:center; color:green;'>Registration Successful. You Can Login now</p>";
@@ -72,10 +77,13 @@ if (isset($_POST['addRegister']))
 					{
 					$msg = "An Error Occured Contact SysAdmin";
 					}
+				}
+			
 			}
 		}
+
 	}
-}
+
 
 catch(PDOException $e)
 	{

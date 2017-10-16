@@ -1,5 +1,6 @@
 <?php
     session_start();
+
 	if(isset($_SESSION['email']))
 	{
         //function this
@@ -19,20 +20,8 @@
                 }
             }   
         }
-        if(isset($_POST['submitEducationDetails'])){
-            $id = $details[0];
-            $insertEducationQry = "INSERT INTO 
-                                   education_information 
-                                        (ID,ssc_board,ssc_school,ssc_per,ssc_attempt,
-                                        hsc_board,hsc_school,hsc_per,hsc_attempt,
-                                        grad_deg,grad_board,grad_school,grad_year,grad_attempt,
-                                        pgrad_deg,pgrad_board,pgrad_school,pgrad_year,pgrad_attempt)
-                    
-                                        VALUES
-                                        
-                                        ('$id',)";
 
-        }
+
      ?>
 <?php include 'home-menu.php'; ?>
     <?php include 'user-side-menu.php'; ?>
@@ -50,9 +39,8 @@
                                             <input type="text" name="fullname" class="form-control" value= "<?php echo $details[1]; ?> " disabled>
                                         </div>
                                         <div class="col-sm-6 form-group">
-                                            <label>Image</label>
-                                        <?php 
-                                            echo $details[13]?>
+                                            <label>Image</label> <br>
+                                            <img src="<?php echo '../' . $details[13];?>" height=200px width=200px>
                                             </div>
                               
                                     </div>
