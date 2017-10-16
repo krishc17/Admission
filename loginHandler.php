@@ -44,8 +44,6 @@ $errflag = false;
             session_write_close();
             header("location: ../Admission/");
             exit();
-        }
-         
+        }    
     }
-
 ?>
