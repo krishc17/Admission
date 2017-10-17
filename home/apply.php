@@ -36,7 +36,7 @@
 	if(isset($_POST['applyCourse'])){
 		$selectedCourse = $_POST['selectedCourse'];
 		
-		$query = $conn->prepare( "SELECT coursename from selected_courses where id=?");			
+		$query = $conn->prepare( "SELECT coursename from selected_courses where id=? and ");			
 		$query->bindValue( 1, $id );
 		// $query->bindValue( 1, $email );
 		$query->execute();
