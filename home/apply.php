@@ -35,16 +35,27 @@
 
 	if(isset($_POST['applyCourse'])){
 		$selectedCourse = $_POST['selectedCourse'];
-		$insertQuery = "INSERT INTO selected_courses values(NULL,'$details[0]','$selectedCourse',1)";
+		
+		$query = $conn->prepare( "SELECT coursename from selected_courses where id=?");			
+		$query->bindValue( 1, $id );
+		// $query->bindValue( 1, $email );
+		$query->execute();
+		if($query->rowCount() > 0 )
+		{	
+			$msg = "<p style='text-align:center; color:red;'>Course Alredy Selected  </p>";
+			
+		}
+		else{
+			$insertQuery = "INSERT INTO selected_courses values(NULL,'$details[0]','$selectedCourse',1)";
 		if ($conn->query($insertQuery))
 		{
-			$msg = "<p style='text-align:center; color:green;'>Application Successful/p>";
+			$msg = "<p style='text-align:center; color:green;'>Application Successful </p>";
 		}
 		else
 		{
 			$msg = "<p style='text-align:center; color:red;'>An Error Occured Contact SysAdmin</p>";
 		}
-		
+	}		
 	}
 ?>
 <!DOCTYPE html>
