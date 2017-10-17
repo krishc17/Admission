@@ -3,7 +3,7 @@
 	$email = $_SESSION['email'];
 	$msg=" ";
 	if(isset($_SESSION['email'])){
-	
+
 	$databaseHost = "localhost";
 	$databaseUsername = "root";
 	$databasePassword = "";
@@ -21,7 +21,8 @@
 
 	$mysqli = new mysqli($databaseHost,$databaseUsername,$databasePassword,$databaseName);
 	//
-	$query = "SELECT * FROM student_data WHERE email = '{$_SESSION['email']}'"; 
+	$query = "SELECT id FROM student_data WHERE email = '{$_SESSION['email']}'"; 
+	
 	$result = $mysqli->query($query) or die($mysqli->error);
 	if($result->num_rows > 0) {
 		while($row = $result->fetch_assoc()) {
@@ -30,20 +31,19 @@
 			}
 		}   
 	}
-	//selected course
 	$id = $details[0];
 
 	if(isset($_POST['applyCourse'])){
 		$selectedCourse = $_POST['selectedCourse'];
 		
-		$query = $conn->prepare( "SELECT coursename from selected_courses where id=? and ");			
-		$query->bindValue( 1, $id );
-		// $query->bindValue( 1, $email );
-		$query->execute();
-		if($query->rowCount() > 0 )
-		{	
-			$msg = "<p style='text-align:center; color:red;'>Course Alredy Selected  </p>";
-			
+		 $query = $conn->prepare("SELECT id,coursename from selected_courses where id=? AND coursename=?");			
+		 $query->bindValue(1, $id );
+		 $query->bindValue(2, $selectedCourse);
+		 $query->execute();
+
+		 if($query->rowCount() > 0 )
+		{
+			$msg = "<p style='text-align:center; color:red;'>Course Alredy Selected</p>";
 		}
 		else{
 			$insertQuery = "INSERT INTO selected_courses values(NULL,'$details[0]','$selectedCourse',1)";
@@ -56,7 +56,7 @@
 			$msg = "<p style='text-align:center; color:red;'>An Error Occured Contact SysAdmin</p>";
 		}
 	}		
-	}
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
