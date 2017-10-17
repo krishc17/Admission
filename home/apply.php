@@ -1,5 +1,6 @@
 <?php 
 	session_start();
+	include 'home-menu.php';
 	$email = $_SESSION['email'];
 	$msg=" ";
 	if(isset($_SESSION['email'])){
@@ -30,12 +31,12 @@
 				$details[] = $val;
 			}
 		}   
+		
 	}
-	$id = $details[0];
 
 	if(isset($_POST['applyCourse'])){
 		$selectedCourse = $_POST['selectedCourse'];
-		
+		$id = $details[0];		
 		 $query = $conn->prepare("SELECT id,coursename from selected_courses where id=? AND coursename=?");			
 		 $query->bindValue(1, $id );
 		 $query->bindValue(2, $selectedCourse);
@@ -46,7 +47,7 @@
 			$msg = "<p style='text-align:center; color:red;'>Course Alredy Selected</p>";
 		}
 		else{
-			$insertQuery = "INSERT INTO selected_courses values(NULL,'$details[0]','$selectedCourse',1)";
+			$insertQuery = "INSERT INTO selected_courses values(NULL,'$id','$selectedCourse',1)";
 		if ($conn->query($insertQuery))
 		{
 			$msg = "<p style='text-align:center; color:green;'>Application Successful </p>";
@@ -60,7 +61,7 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-	<?php include 'home-menu.php'; ?>
+	<?php  ?>
 	<?php include 'user-side-menu.php'; ?>
 	<link rel="stylesheet" href="css/apply.css" type="text/css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
@@ -96,9 +97,7 @@
 						</div>
 
 					</div>
-
 				</div>
-
 			</div>
 		</div>
 	</div>
