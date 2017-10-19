@@ -1,4 +1,4 @@
-<!-- No Need of session_start(); just yet -->
+<!-- No Need of session_start();-->
 <a href="index.php"> <img src="img/nuv_logo.png" /> </a>
 <title> Navrachna Admission Portal </title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -54,13 +54,10 @@
           <div class="collapse navbar-collapse dropdown" id="myNavbar">
             <ul class="nav navbar-nav vertical" style="text-decoration:none;">
               <li>
-                <a class="link-3" href="index.php">Home</a>
-              </li>
+                <a class="link-3" href="index.php">Home</a></li>
 
               <li>
-                <a class="link-3" href="about.php"> About </a>
-              </li>
-
+                <a class="link-3" href="about.php"> About </a></li>
               <li class="dropdown" style="color:rgba(8, 8, 8, 0.09);">
                   <a href="courses.php" class="dropdown-toggle" data-toggle="dropdown"> Courses</a>
                   <ul class="dropdown-menu">
