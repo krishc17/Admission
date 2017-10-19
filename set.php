@@ -3,13 +3,13 @@
     <!--start-->
     <div class="col-md-12">
         <div class="panel panel-default">
-            <div class="panel-heading main-color-bg">
-                <h3 class="panel-title"> 
-                School of Engineering and Technology
-                </h3>
+            <div class="panel-heading">
+                <h3 class="panel-title">School of Engineering and Technology</h3>
             </div>
             <div class="panel-body">
-            To emerge as a center of excellence for holistic higher education, the University has established a top-class School of Science and Engineering as a key provider of knowledge through teaching, research and industry connect in the field of Engineering and Technology. The B.Tech Program has the concept of pure and applied research as well as application of engineering theory into practice as its core philosophy.
+            To emerge as a center of excellence for holistic higher education, 
+            the University has established a top-class School of Science and Engineering 
+            as a key provider of knowledge through teaching, research and industry connect in the field of Engineering and Technology. The B.Tech Program has the concept of pure and applied research as well as application of engineering theory into practice as its core philosophy.
                 <br>
                 <br>
                 <br>
@@ -21,7 +21,6 @@
                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Courses</a>
                             </h3>
                         </div>
-                        
                         <div id="collapseOne" class="panel-collapse collapse in">
                         <div class="panel-body">
                             <!-- start SBL Courses -->
