@@ -64,10 +64,10 @@
               <li class="dropdown" style="color:rgba(8, 8, 8, 0.09);">
                   <a href="courses.php" class="dropdown-toggle" data-toggle="dropdown"> Courses</a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">School Of Business And Law</a></li>
+                    <li><a href="sbl.php">School Of Business And Law</a></li>
                     <li><a href="set.php">School of Engineering and Technology</a></li>
-                    <li><a href="#">School of Liberal Studies and Education</a></li>
-                    <li><a href="#">School of Environmental Design and Architecture</a></li>
+                    <li><a href="seda.php">School of Environmental Design and Architecture</a></li>
+                    <li><a href="slse.php">School of Liberal Studies and Education</a></li>
                 </ul>
                 </a>
               </li>
