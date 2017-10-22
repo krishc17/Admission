@@ -109,6 +109,6 @@
 else{
 ?> 
   <?php
-echo 'not logged in ';
+ header("Location: ../admin/");
 }
 ?>
