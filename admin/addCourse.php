@@ -2,9 +2,24 @@
 	session_start();
 	if(isset($_SESSION['email']))
 	{
-    include 'adminLoginHandler.php';
-    $msg='';  
+    $email = $_SESSION['email'];
+    $databaseHost = "localhost";
+    $databaseUsername = "root";
+    $databasePassword = "";
+    $databaseName = "admission2018";  
+
     ?>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Admin Area | Dashboard</title>
+   <!-- Bootstrap core CSS -->
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+   <link href="css/style.css" rel="stylesheet">
+   <script src="http://cdn.ckeditor.com/4.6.1/standard/ckeditor.js"></script>
+</head>
 <body>
    <!-- Almost Common for Every Page -->
    <?php include'adminMenu.php' ?>
@@ -40,7 +55,6 @@
                   <div class="form-group">
                      <label>Enter Course Name</label>
 							        <input type="text" name='cname' placeholder="Enter Course Name Here.." class="form-control" required>
-                      <p> <?php echo $msg;?> </p>
 						      </div>
                      <input class="btn btn-info" type="submit" name="addCourse" value="Submit">
                      </form>
@@ -49,29 +63,29 @@
                <h3 class="panel-title">Available Courses</h3>
             </div>
             <div class="panel-body">
-               <table class="table table-striped table-hover table-bordered">
-                  <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Action</th>
-                  </tr>
-                <?php
-                $mysqli = mysqli_connect($databaseHost,$databaseUsername,$databasePassword,$databaseName);
-                $query = "SELECT * FROM courses ORDER BY id";
-                $result = mysqli_query($mysqli,$query);       
-                while($addrow = mysqli_fetch_array($result)) 
-                  {
-                    ?>
-                    <tr>
-                    <td><?php echo $addrow[0];?></td>
-                    <td><?php echo $addrow[1];?></td>
-                    <td> <a href='deleteCourse.php?id=<?php echo $addrow[0]; ?>'> Delete </a> </td>
-                    </tr>
-                <?php }
-                  ?>
-               </table>
-             </div>
-         </div>
+            <table class="table table-striped table-hover table-bordered">
+               <tr>
+                 <th>ID</th>
+                 <th>Name</th>
+                 <th>Action</th>
+               </tr>
+             <?php
+             $mysqli = mysqli_connect($databaseHost,$databaseUsername,$databasePassword,$databaseName);
+             $query = "SELECT * FROM courses ORDER BY id";
+             $result = mysqli_query($mysqli,$query);       
+             while($addrow = mysqli_fetch_array($result)) 
+               {
+                 ?>
+                 <tr>
+                 <td><?php echo $addrow[0];?></td>
+                 <td><?php echo $addrow[1];?></td>
+                 <td> <a href='deleteCourse.php?id=<?php echo $addrow[0]; ?>'> Delete </a> </td>
+                 </tr>
+             <?php }
+               ?>
+            </table>
+          </div>
+      </div>
 
                   </div>
                </div>

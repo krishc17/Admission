@@ -1,21 +1,13 @@
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Admin Area | Dashboard</title>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
-	<script src="http://cdn.ckeditor.com/4.6.1/standard/ckeditor.js"></script>
-</head>
-
 <?php
+session_start();
 $errmsg_array = array();
 $errflag = false;   
+
     $databaseHost = "localhost";
     $databaseUsername = "root";
     $databasePassword = "";
     $databaseName = "admission2018";
+
     $conn = new PDO("mysql:host=$databaseHost;dbname=$databaseName;", $databaseUsername, $databasePassword);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
@@ -23,6 +15,7 @@ $errflag = false;
     if(isset($_POST['login'])){
         $email = $_POST['email'];
         $password = $_POST['pass'];
+
         if($email == '') {
             $errmsg_arr[] = 'You must enter your Email';
             $errflag = true;
@@ -31,6 +24,7 @@ $errflag = false;
             $errmsg_arr[] = 'You must enter your Password';
             $errflag = true;
         }
+
         $result = $conn->prepare("SELECT * FROM admins WHERE email=? AND password=?");
         $result->bindParam(1, $email);
         $result->bindParam(2, $password);
@@ -62,21 +56,22 @@ $errflag = false;
         $query->execute();
         if($query->rowCount() > 0 )
         {	
-            $msg ="This Course Already Exists";
+            echo "This Course Already Exists";
             header("Location: addCourse.php");
         }
         else{
             $sql = "INSERT INTO `courses` (`coursename`)VALUES ('$coursename')";
                     if ($conn->query($sql))
                     {
-                    $msg = "Course Inserted Successfully";
-                    header("Location: addCourse.php");
+                    echo "Course Inserted Successfully";
                     }
                       else
                     {
-                    $msg = "An Error Occured Contact SysAdmin";
-                    header("Location: addCourse.php");
+                    echo "An Error Occured Contact SysAdmin";
                     }
         }
+
+
     }
+
 ?>
