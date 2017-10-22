@@ -3,10 +3,7 @@
 	if(isset($_SESSION['email']))
 	{
         $email = $_SESSION['email'];
-        $databaseHost = "localhost";
-        $databaseUsername = "root";
-        $databasePassword = "";
-        $databaseName = "admission2018";
+        include 'adminLoginHandler.php';
         
         $mysqli = new mysqli($databaseHost,$databaseUsername,$databasePassword,$databaseName);
         $query = "SELECT * FROM admins WHERE email = '{$_SESSION['email']}'"; 
