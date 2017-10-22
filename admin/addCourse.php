@@ -6,7 +6,8 @@
     $databaseHost = "localhost";
     $databaseUsername = "root";
     $databasePassword = "";
-    $databaseName = "admission2018";  
+    $databaseName = "admission2018";
+    $msg='';  
     ?>
 <html lang="en">
 <head>
@@ -54,6 +55,7 @@
                   <div class="form-group">
                      <label>Enter Course Name</label>
 							        <input type="text" name='cname' placeholder="Enter Course Name Here.." class="form-control" required>
+                      <p> <?php echo $msg;?> </p>
 						      </div>
                      <input class="btn btn-info" type="submit" name="addCourse" value="Submit">
                      </form>

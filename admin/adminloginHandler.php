@@ -56,18 +56,20 @@ $errflag = false;
         $query->execute();
         if($query->rowCount() > 0 )
         {	
-            echo "This Course Already Exists";
+            $msg ="This Course Already Exists";
             header("Location: addCourse.php");
         }
         else{
             $sql = "INSERT INTO `courses` (`coursename`)VALUES ('$coursename')";
                     if ($conn->query($sql))
                     {
-                    echo "Course Inserted Successfully";
+                    $msg = "Course Inserted Successfully";
+                    header("Location: addCourse.php");
                     }
                       else
                     {
-                    echo "An Error Occured Contact SysAdmin";
+                    $msg = "An Error Occured Contact SysAdmin";
+                    header("Location: addCourse.php");
                     }
         }
 
