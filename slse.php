@@ -3,7 +3,7 @@
 <div class="col-md-12">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">School of Business and Law</h3>
+            <h3 class="panel-title">School of Liberal Studies and Education</h3>
         </div>
         <div class="panel-body">
             Working in close association with the industrial and academic experts, right from Curriculum development to student's projects, internships and work placements, School of Business and Law at NUV offers several unique under-graduate and post-graduate programs in the field of Management (BBA and MBA), Law (BBA-LLB Integrated), Human Resources (MHRM), and Computer Science and Applications (BCA and MScIT)

@@ -49,7 +49,6 @@
 											<h3 class="panel-title"> BLAD </h3>
 										</div>
 										<div class="panel-body">
-
 											The Bachelor course in Landscape Architectural Design (BLAD) is a full-time four year degree program. It deals with design and planning of Landscapes at various levels, from domestic to regional. The discipline of Landscape is concerned with design of Physical environment, similar to courses like B.Arch. and B. Design. It offers opportunity to shape not only the manmade environment the but also the natural environment. It is complementary to the discipline of Architecture and shares several common concerns. Hence, there are multiple collaborative possibilities offered between the two courses in form of studios and other subject
 										</div>
 									</div>
