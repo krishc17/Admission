@@ -49,24 +49,25 @@
          </div>
          <div class="panel-body">
             <div class="row">
-            <form action="" method="post">
-               <div class="col-md-4">
-                  <div class="form-group">
-                     <label for="exampleSelect1">Select Year</label>
-                     <select class="form-control" id="exampleSelect1">
-                        <option>2017</option>
-                        <option>2018</option>
-                        <option>2019</option>
-                        <option>2020</option>
-                        <option>2021</option>
-                     </select>
-                  </div>
-               </div>
-               
-               <div class="col-md-4">
-                  <div class="form-group">
-                     <label for="exampleSelect1">Select Course</label>
-                     <select class='form-control' id='exampleSelect1'>
+            <form action="records.php" method="post">
+						<div class="col-md-3">
+							<div class="form-group">
+								<label for="">From</label>
+								<input type="text" data-format="dd/MM/yyy" id="datepicker" placeholder="dd-MM-yyyy" name="from" class="form-control" required>
+							</div>
+						</div>
+
+						<div class="col-md-3">
+							<div class="form-group">
+								<label for="">To</label>
+								<input type="text" data-format="dd/MM/yyy" id="datepicker" placeholder="dd-MM-yyyy" name="to" class="form-control" required>
+							</div>
+						</div>
+
+						<div class="col-md-3">
+							<div class="form-group">
+								<label for="exampleSelect1">Select Course</label>
+								<select class='form-control' id='exampleSelect1'>
                      <?php
                           $mysqli = mysqli_connect($databaseHost,$databaseUsername,$databasePassword,$databaseName);
                           $query = "SELECT * FROM courses";
@@ -77,15 +78,16 @@
                           }
                      ?>
                     </select>
-                  </div>
-               </div>
-               <div class="col-md-4">
-                  <div class="form-group">
-                     <label>Search</label>
-                      <input type="submit" name="searchQuery" class="form-control" value="Search">
-                  </div>
-               </div>
-            </div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-group">
+								<label>Search</label>
+								<input type="submit" name="searchQuery" class="form-control" value="Search">
+							</div>
+						</div>
+				</div>
+		
             </form>
             <br>
             <table class="table table-striped table-hover table-bordered">
