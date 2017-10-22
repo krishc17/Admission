@@ -1,4 +1,6 @@
-<?php include 'menu.php'; ?>
+<?php
+include 'menu.php';
+?>
 
 <!--start-->
 <div class="col-md-12">
