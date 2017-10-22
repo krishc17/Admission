@@ -19,51 +19,50 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 	<script src="http://cdn.ckeditor.com/4.6.1/standard/ckeditor.js"></script>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-<!-- Date picker JS-->
+	<!-- Date picker JS-->
 
-  <script>
-  $( function() {
-    var dateFormat = "dd-mm-yy",
-      from = $( "#from" )
-        .datepicker({
-          defaultDate: "+1w",
-          changeMonth: true,
-          numberOfMonths: 3,
-          changeMonth: true,
-          changeYear: true,
-          dateFormat: 'dd-mm-yy'
-        })
-        .on( "change", function() {
-          to.datepicker( "option", "minDate", getDate( this ) );
-        }),
-      to = $( "#to" ).datepicker({
-        defaultDate: "+1w",
-        changeMonth: true,
-        numberOfMonths: 3,
-        changeMonth: true,
-        changeYear: true,
-        dateFormat: 'dd-mm-yy'
-      })
-      .on( "change", function() {
-        from.datepicker( "option", "maxDate", getDate( this ) );
-      });
- 
-    function getDate( element ) {
-      var date;
-      try {
-        date = $.datepicker.parseDate( dateFormat, element.value );
-      } catch( error ) {
-        date = null;
-      }
-      return date;
-    }
-  } );
-  </script>
+	<script>
+	$(function() {
+		var dateFormat = "dd-mm-yy",
+			from = $("#from")
+			.datepicker({
+				defaultDate: "+1w",
+				changeMonth: true,
+				numberOfMonths: 3,
+				changeMonth: true,
+				changeYear: true
+
+			})
+			.on("change", function() {
+				to.datepicker("option", "minDate", getDate(this));
+			}),
+			to = $("#to").datepicker({
+				defaultDate: "+1w",
+				changeMonth: true,
+				numberOfMonths: 3,
+				changeMonth: true,
+				changeYear: true
+			})
+			.on("change", function() {
+				from.datepicker("option", "maxDate", getDate(this));
+			});
+
+		function getDate(element) {
+			var date;
+			try {
+				date = $.datepicker.parseDate(dateFormat, element.value);
+			} catch (error) {
+				date = null;
+			}
+			return date;
+		}
+	});
+	</script>
 
 </head>
 
@@ -115,7 +114,7 @@
 						<div class="col-md-3">
 							<div class="form-group">
 								<label for="exampleSelect1">Select Course</label>
-								<select class='form-control' id='exampleSelect1'>
+								<select class='form-control' id='exampleSelect1' name='cname'>
                      <?php
                           $mysqli = mysqli_connect($databaseHost,$databaseUsername,$databasePassword,$databaseName);
                           $query = "SELECT * FROM courses";
@@ -148,22 +147,44 @@
 					</tr>
 					<?php
                 $mysqli = mysqli_connect($databaseHost,$databaseUsername,$databasePassword,$databaseName);
-                $query = "select student_data.id,student_data.FULLNAME,student_data.EMAIL,selected_courses.coursename,student_data.register_date FROM student_data JOIN selected_courses ON student_data.ID=selected_courses.ID";
-                $result = mysqli_query($mysqli,$query);       
-                while($addrow = mysqli_fetch_array($result))
-                {
-                  $newDate = date('d-M-Y',strtotime($addrow[4]));
-                  echo "<tr>";
-                  echo "<td>$addrow[0]</td>";
-                  echo "<td>$addrow[1]</td>";
-                  echo "<td>$addrow[2]</td>";
-                  echo "<td>$addrow[3]</td>";
-                  echo "<td>$newDate</td>";
-                  echo "</tr>";
-                }
                 if (isset($_POST['searchQuery'])){
                   // TODO: Echo Results of Query
                   //SELECT * FROM `student_data` WHERE register_date BETWEEN '2017-03-01' and '2017-10-30'
+                  $from = $_POST['from'];
+                  $to = $_POST['to'];
+                  $cname =$_POST['cname'];
+                  $query = "select student_data.id,student_data.FULLNAME,student_data.EMAIL,selected_courses.coursename,student_data.register_date FROM student_data JOIN selected_courses ON student_data.ID=selected_courses.ID
+                            WHERE  student_data.register_date BETWEEN '$from' AND '$to'
+                            ";
+                            echo $from . ' ' . $to.' '. $cname;
+                  while($addrow = mysqli_fetch_array($result))
+                  {
+                              $newDate = date('d-M-Y',strtotime($addrow[4]));
+                              echo "<tr>";
+                              echo "<td>$addrow[0]</td>";
+                              echo "<td>$addrow[1]</td>";
+                              echo "<td>$addrow[2]</td>";
+                              echo "<td>$addrow[3]</td>";
+                              echo "<td>$newDate</td>";
+                              echo "</tr>";
+                            }
+
+                }
+                else{
+
+                  $query = "select student_data.id,student_data.FULLNAME,student_data.EMAIL,selected_courses.coursename,student_data.register_date FROM student_data JOIN selected_courses ON student_data.ID=selected_courses.ID";
+                  $result = mysqli_query($mysqli,$query);       
+                  while($addrow = mysqli_fetch_array($result))
+                  {
+                    $newDate = date('d-M-Y',strtotime($addrow[4]));
+                    echo "<tr>";
+                    echo "<td>$addrow[0]</td>";
+                    echo "<td>$addrow[1]</td>";
+                    echo "<td>$addrow[2]</td>";
+                    echo "<td>$addrow[3]</td>";
+                    echo "<td>$newDate</td>";
+                    echo "</tr>";
+                  }
                 }
             ?>
 				</table>
@@ -173,8 +194,7 @@
 	</div>
 	</div>
 	</section>
-	<script>
-	CKEDITOR.replace('editor1');
+
 	<?php
   }
 else{
