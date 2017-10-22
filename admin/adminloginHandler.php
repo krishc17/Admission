@@ -8,15 +8,14 @@
 	<link href="css/style.css" rel="stylesheet">
 	<script src="http://cdn.ckeditor.com/4.6.1/standard/ckeditor.js"></script>
 </head>
+
 <?php
 $errmsg_array = array();
 $errflag = false;   
-
     $databaseHost = "localhost";
     $databaseUsername = "root";
     $databasePassword = "";
     $databaseName = "admission2018";
-
     $conn = new PDO("mysql:host=$databaseHost;dbname=$databaseName;", $databaseUsername, $databasePassword);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
@@ -24,7 +23,6 @@ $errflag = false;
     if(isset($_POST['login'])){
         $email = $_POST['email'];
         $password = $_POST['pass'];
-
         if($email == '') {
             $errmsg_arr[] = 'You must enter your Email';
             $errflag = true;
@@ -33,7 +31,6 @@ $errflag = false;
             $errmsg_arr[] = 'You must enter your Password';
             $errflag = true;
         }
-
         $result = $conn->prepare("SELECT * FROM admins WHERE email=? AND password=?");
         $result->bindParam(1, $email);
         $result->bindParam(2, $password);
@@ -81,8 +78,5 @@ $errflag = false;
                     header("Location: addCourse.php");
                     }
         }
-
-
     }
-
 ?>
