@@ -10,8 +10,7 @@ $errflag = false;
 
     $conn = new PDO("mysql:host=$databaseHost;dbname=$databaseName;", $databaseUsername, $databasePassword);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-
+    
         if(isset($_POST['login'])){
         $email = $_POST['email'];
         $password = $_POST['pass'];
