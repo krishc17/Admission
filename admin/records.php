@@ -116,17 +116,16 @@
                                 <div class="form-group">
                                     <label for="exampleSelect1">Select Course</label>
                                     <select class='form-control' id='exampleSelect1' name='cname'>
-                     <?php
-                          $mysqli = mysqli_connect($databaseHost,$databaseUsername,$databasePassword,$databaseName);
-                          $query = "SELECT * FROM courses";
-                          $result = mysqli_query($mysqli,$query);
-                          while($addrow = mysqli_fetch_array($result))
-                          {
-                            echo "<option>$addrow[1]</option>";
-                          }
-                     ?>
-                    </select>
-                                </div>
+								                     <?php
+								                          $mysqli = mysqli_connect($databaseHost,$databaseUsername,$databasePassword,$databaseName);
+								                          $query = "SELECT * FROM courses";
+								                          $result = mysqli_query($mysqli,$query);
+								                          while($addrow = mysqli_fetch_array($result)){
+								                            echo "<option>$addrow[1]</option>";
+								                          }
+								                     ?>
+                    						</select>
+                              </div>
                             </div>
 
                             <div class="col-md-3">
@@ -136,7 +135,6 @@
                                 </div>
                             </div>
                     </div>
-
 
                     <br/>
                     <table class="table table-striped table-hover table-bordered">
@@ -159,8 +157,7 @@
                             WHERE  student_data.register_date BETWEEN '$from' AND '$to'
                             ";
                             echo $from . ' ' . $to.' '. $cname;
-                  while($addrow = mysqli_fetch_array($result))
-                  {
+                  while($addrow = mysqli_fetch_array($result)){
                               $newDate = date('d-M-Y',strtotime($addrow[4]));
                               echo "<tr>";
                               echo "<td>$addrow[0]</td>";
@@ -170,15 +167,12 @@
                               echo "<td>$newDate</td>";
                               echo "</tr>";
                             }
-
                 }
 
                 else{
-
                   $query = "select student_data.id,student_data.FULLNAME,student_data.EMAIL,selected_courses.coursename,student_data.register_date FROM student_data JOIN selected_courses ON student_data.ID=selected_courses.ID";
                   $result = mysqli_query($mysqli,$query);
-                  while($addrow = mysqli_fetch_array($result))
-                  {
+                  while($addrow = mysqli_fetch_array($result)){
                     $newDate = date('d-M-Y',strtotime($addrow[4]));
                     echo "<tr>";
                     echo "<td>$addrow[0]</td>";
@@ -203,7 +197,6 @@
   }
 else{
 ?>
-            <?php
- header("Location: ../admin/");
+<?php header("Location: ../admin/");
 }
 ?>
