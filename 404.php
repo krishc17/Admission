@@ -12,6 +12,6 @@
                         <center> The page you're looking for does not exist or you may have made a typo. Click <a href="/index.php">here</a> to go home page </center>
                 </div>
             </div>
-		</div>
+          </div>
      </body>
-        </html>
+</html>
