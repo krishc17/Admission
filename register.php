@@ -32,7 +32,7 @@
 							</div>
 							<div class="col-sm-6 form-group">
 								<label>Blood Group</label>
-								<select id="bgroup" name="bgroupp" placeholder="Select Bloodgroup" class="form-control" required>
+								<select id="bgroup" name="bgroup" placeholder="Select Bloodgroup" class="form-control" required>
 									<option> A+VE </option>
 									<option> A-VE </option>
 									<option> B+VE </option>
