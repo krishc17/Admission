@@ -195,11 +195,59 @@
             <!-- Priority -->
             <div class="panel panel-default">
                 <div class="panel-heading main-color-bg">
-                    <h3 class="panel-title"> <b>Branch Applied for</b> </h3> </div>
+                    <h3 class="panel-title"> <b>Branch Applied for</b> </h3>
+                </div>
                 <div class="panel-body">
                     <div class="col-lg-12">
                         <div class="row">
-                        
+                            <p style="color:#BD0006;"> Branch Applied For (ME - Mechanical, CE- Civil, EE- Electrical, CSE- Computer Science and Engineering) </p>
+                            <div class="row">
+
+                                <div class="col-sm-3 form-group">
+                                    <label> P1  </label>
+                                    <select name="p1" id="" class="form-control" style="width:auto;">
+                                        <option value="Select">Select</option>
+                                        <option value="ME">ME</option>
+                                        <option value="CE">CE</option>
+                                        <option value="EE">EE</option>
+                                        <option value="CSE">CSE</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-sm-3 form-group">
+                                    <label> P2  </label>
+                                    <select name="p2" id="" class="form-control" style="width:auto;">
+                            <option value="Select">Select</option>
+                            <option value="ME">ME</option>
+                            <option value="CE">CE</option>
+                            <option value="EE">EE</option>
+                            <option value="CSE">CSE</option>
+                        </select>
+                                </div>
+
+                                <div class="col-sm-3 form-group">
+                                    <label> P3  </label>
+                                    <select name="p3" id="" class="form-control" style="width:auto;">
+                            <option value="Select">Select</option>
+                            <option value="ME">ME</option>
+                            <option value="CE">CE</option>
+                            <option value="EE">EE</option>
+                            <option value="CSE">CSE</option>
+                        </select>
+                                </div>
+
+                                <div class="col-sm-3 form-group">
+                                    <label> P4  </label>
+                                    <select name="p4" id="" class="form-control" style="width:auto;">
+                            <option value="Select">Select</option>
+                            <option value="ME">ME</option>
+                            <option value="CE">CE</option>
+                            <option value="EE">EE</option>
+                            <option value="CSE">CSE</option>
+                        </select>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
