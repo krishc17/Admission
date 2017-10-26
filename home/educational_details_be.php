@@ -19,14 +19,11 @@
                 }
             }   
         }
-        if(isset($_POST['submitEducationDetails'])){
+        if(isset($_POST['submitEducationDetails_BE'])){
             $id = $details[0];
             $insertEducationQry = "INSERT INTO 
-                                   education_information 
-                                        (ID,ssc_board,ssc_school,ssc_per,ssc_attempt,
-                                        hsc_board,hsc_school,hsc_per,hsc_attempt,
-                                        grad_deg,grad_board,grad_school,grad_year,grad_attempt,
-                                        pgrad_deg,pgrad_board,pgrad_school,pgrad_year,pgrad_attempt)
+                                   education_information_be 
+
                     
                                         VALUES
                                         
@@ -72,7 +69,7 @@
                                             </td>
 
                                             <td>
-                                                -
+                                     
                                             </td>
 
                                             <td>
@@ -132,22 +129,22 @@
                                     <!--JEE-->
                                     <tr align="center">
                                         <td>
-                                            <input type="text" name="" class="form-control">
+                                            <input type="text" name="rollnobe" class="form-control">
                                         </td>
                                         <td>
-                                            <input type="text" name="" style="width:50px;" class="form-control">
-                                        </td>
-
-                                        <td>
-                                            <input type="text" name="" style="width:50px;" class="form-control">
+                                            <input type="text" name="phybe" style="width:50px;" class="form-control">
                                         </td>
 
                                         <td>
-                                            <input type="text" name="" style="width:50px;" class="form-control">
+                                            <input type="text" name="chembe" style="width:50px;" class="form-control">
                                         </td>
 
                                         <td>
-                                            <input type="text" name="" style="width:50px;" class="form-control">
+                                            <input type="text" name="matbe" style="width:50px;" class="form-control">
+                                        </td>
+
+                                        <td>
+                                            <input type="text" name="totbe" style="width:50px;" class="form-control">
                                         </td>
                                     </tr>
                                 </tbody>
@@ -166,23 +163,23 @@
                                     <!--JEE ACPC-->
                                     <tr align="center">
                                         <td>
-                                            <input type="text" name="" class="form-control">
+                                            <input type="text" name="rankbe" class="form-control">
                                         </td>
 
                                         <td>
-                                            <input type="text" name="" class="form-control">
+                                            <input type="text" name="c1be" class="form-control">
                                         </td>
 
                                         <td>
-                                            <input type="text" name="" class="form-control">
+                                            <input type="text" name="c2be" class="form-control">
                                         </td>
 
                                         <td>
-                                            <input type="text" name="" class="form-control">
+                                            <input type="text" name="acpcregbe" class="form-control">
                                         </td>
 
                                         <td>
-                                            <input type="text" name="" class="form-control">
+                                            <input type="text" name="acpcmeritbe" class="form-control">
                                         </td>
                                     </tr>
                                 </tbody>
@@ -260,6 +257,6 @@
     {
         ?>
                 <?php
-        echo 'not logged in';
+header("Location: ../index.php");
     }
     ?>
