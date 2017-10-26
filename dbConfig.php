@@ -9,7 +9,7 @@ $databaseUsername = "root";
 $databasePassword = "";
 $databaseName = "admission2018";
 	
-$conn = new PDO("mysql:host=$databaseHost;dbname=$databaseName;", $databaseUsername, $databasePassword);	
+	$conn = new PDO("mysql:host=$databaseHost;dbname=$databaseName;", $databaseUsername, $databasePassword);	
 	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	// User Login
 	if(isset($_POST['login']))
