@@ -105,98 +105,113 @@
                                         </tr>
                                     </tbody>
                                 </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- JEE and ACPC Information -->
+            <div class="panel panel-default">
+                <div class="panel-heading main-color-bg">
+                    <h3 class="panel-title"> <b>JEE(Main)/ACPC-Information</b> </h3>
+                </div>
+                <div class="panel-body">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <table class="table">
+                                <thead class="thead-inverse" style="background-color:#000;color:#fff;">
+                                    <tr>
+                                        <th>Roll Number</th>
+                                        <th>Physics</th>
+                                        <th>Chemistry</th>
+                                        <th>Mathematics</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
 
+                                <tbody>
+                                    <!--JEE-->
+                                    <tr align="center">
+                                        <td>
+                                            <input type="text" name="" class="form-control">
+                                        </td>
+                                        <td>
+                                            <input type="text" name="" style="width:50px;" class="form-control">
+                                        </td>
 
-                                <div class="panel panel-default">
-                                    <div class="panel-heading main-color-bg">
-                                        <h3 class="panel-title"> <b>JEE(Main)/ACPC-Information</b> </h3>
-                                    </div>
-                                    <div class="panel-body">
-                                        <div class="col-lg-12">
-                                            <div class="row">
-                                                <form action="educational_details_be.php" method="post">
-                                                    <table class="table">
-                                                        <thead class="thead-inverse" style="background-color:#000;color:#fff;">
-                                                            <tr>
-                                                                <th>Roll Number</th>
-                                                                <th>Physics</th>
-                                                                <th>Chemistry</th>
-                                                                <th>Mathematics</th>
-                                                                <th>Total</th>
-                                                            </tr>
-                                                        </thead>
+                                        <td>
+                                            <input type="text" name="" style="width:50px;" class="form-control">
+                                        </td>
 
-                                                        <tbody>
-                                                            <!--JEE-->
-                                                            <tr align="center">
-                                                                <td>
-                                                                    <input type="text" name="" class="form-control">
-                                                                </td>
-                                                                <td>
-                                                                    <input type="text" name="" style="width:50px;" class="form-control">
-                                                                </td>
+                                        <td>
+                                            <input type="text" name="" style="width:50px;" class="form-control">
+                                        </td>
 
-                                                                <td>
-                                                                    <input type="text" name="" style="width:50px;" class="form-control">
-                                                                </td>
+                                        <td>
+                                            <input type="text" name="" style="width:50px;" class="form-control">
+                                        </td>
+                                    </tr>
+                                </tbody>
 
-                                                                <td>
-                                                                    <input type="text" name="" style="width:50px;" class="form-control">
-                                                                </td>
+                                <thead class="thead-inverse" style="background-color:#000;color:#fff;">
+                                    <tr>
+                                        <th>JEE main Rank</th>
+                                        <th>Contact No. 1</th>
+                                        <th>Contact No. 2</th>
+                                        <th>ACPC Registration No.(optional)</th>
+                                        <th>ACPC Merit No.(optional)</th>
+                                    </tr>
+                                </thead>
 
-                                                                <td>
-                                                                    <input type="text" name="" style="width:50px;" class="form-control">
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
+                                <tbody>
+                                    <!--JEE ACPC-->
+                                    <tr align="center">
+                                        <td>
+                                            <input type="text" name="" class="form-control">
+                                        </td>
 
-                                                        <thead class="thead-inverse" style="background-color:#000;color:#fff;">
-                                                            <tr>
-                                                                <th>JEE main Rank</th>
-                                                                <th>Contact No. 1</th>
-                                                                <th>Contact No. 2</th>
-                                                                <th>ACPC Registration No.(optional)</th>
-                                                                <th>ACPC Merit No.(optional)</th>
-                                                            </tr>
-                                                        </thead>
-                                                        
-                                                        <tbody>
-                                                            <!--JEE ACPC-->
-                                                            <tr align="center">
-                                                                <td>
-                                                                    <input type="text" name="" class="form-control">
-                                                                </td>
+                                        <td>
+                                            <input type="text" name="" class="form-control">
+                                        </td>
 
-                                                                <td>
-                                                                    <input type="text" name="" class="form-control">
-                                                                </td>
+                                        <td>
+                                            <input type="text" name="" class="form-control">
+                                        </td>
 
-                                                                <td>
-                                                                    <input type="text" name="" class="form-control">
-                                                                </td>
+                                        <td>
+                                            <input type="text" name="" class="form-control">
+                                        </td>
 
-                                                                <td>
-                                                                    <input type="text" name="" class="form-control">
-                                                                </td>
+                                        <td>
+                                            <input type="text" name="" class="form-control">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                                                                <td>
-                                                                    <input type="text" name="" class="form-control">
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                    <input type="submit" name="submitEducationDetails_BE" class="form-control">
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                <?php
+            <!-- Priority -->
+            <div class="panel panel-default">
+                <div class="panel-heading main-color-bg">
+                    <h3 class="panel-title"> <b>Branch Applied for</b> </h3> </div>
+                <div class="panel-body">
+                    <div class="col-lg-12">
+                        <div class="row">
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="submit" style="color:#BD0006;" name="submitEducationDetails_BE" class="form-control">
+            </form>
+            <?php
         }
         else
     {
         ?>
-                                    <?php
+                <?php
         echo 'not logged in';
     }
     ?>
