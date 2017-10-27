@@ -1,7 +1,6 @@
 <?php 
 	session_start();
 	$d;
-	include 'home-menu.php'; 
 	$email = $_SESSION['email'];
 	$msg=" ";
 	if(isset($_SESSION['email'])){
