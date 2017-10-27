@@ -1,6 +1,7 @@
 <?php
     session_start();
-	if(isset($_SESSION['email']))
+    $a="";
+    if(isset($_SESSION['email']))
 	{
         $msg = "  ";
         //function this
@@ -58,7 +59,8 @@
             $eQuery->execute();
             if($eQuery->rowCount() > 0 )
 			{	
-				$msg = "We Already Have Your Details";
+                $msg = "We Already Have Your Details";
+                $a = "readonly";
 
 			}
 			else{
@@ -115,19 +117,19 @@
                                             <tr align="center">
                                                 <td>S.S.C</td>
                                                 <td>
-                                                    <input type="text" name="sscuniv" class="form-control" required>
+                                                    <input type="text" name="sscuniv" class="form-control" required <?php echo $a?>>
                                                 </td>
                                                 <td>
-                                                    <input type="text" name="ssccoll" class="form-control" required>
+                                                    <input type="text" name="ssccoll" class="form-control" required <?php echo $a?>>
                                                 </td>
                                                 <td>
-                                                    <input type="text" size="5" name="sscgrade" style="width:50px;" class="form-control" required>
+                                                    <input type="text" size="5" name="sscgrade" style="width:50px;" class="form-control" required <?php echo $a?>>
                                                 </td>
                                                 <td>
-                                                    <input type="number" name="sscyearp" class="form-control" required>
+                                                    <input type="number" name="sscyearp" class="form-control" required <?php echo $a?>>
                                                 </td>
                                                 <td>
-                                                    <select class="form-control" name="sscattemp" required>
+                                                    <select class="form-control" name="sscattemp" required <?php echo $a?>>
                                                         <option value="Select Attempt">Select..</option>
                                                         <option value="First">First</option>
                                                         <option value="Second">Second</option>
@@ -139,19 +141,19 @@
                                             <tr align="center">
                                                 <td>H.S.C</td>
                                                 <td>
-                                                    <input type="text" name="hscuniv" class="form-control" required>
+                                                    <input type="text" name="hscuniv" class="form-control" required <?php echo $a?>>
                                                 </td>
                                                 <td>
-                                                    <input type="text" name="hsccoll" class="form-control" required>
+                                                    <input type="text" name="hsccoll" class="form-control" required<?php echo $a?>>
                                                 </td>
                                                 <td>
-                                                    <input type="text" size="5" name="hscgrade" style="width:50px;" class="form-control" required>
+                                                    <input type="text" size="5" name="hscgrade" style="width:50px;" class="form-control" required <?php echo $a?>>
                                                 </td>
                                                 <td>
-                                                    <input type="number" name="hscyearp" class="form-control" required>
+                                                    <input type="number" name="hscyearp" class="form-control" required <?php echo $a?>>
                                                 </td>
                                                 <td>
-                                                    <select class="form-control" name="hscattemp" required>
+                                                    <select class="form-control" name="hscattemp" required <?php echo $a?>>
                                                         <option value="Select Attempt">Select..</option>
                                                         <option value="First">First</option>
                                                         <option value="Second">Second</option>
@@ -164,19 +166,19 @@
                                                 <td>Graduation
                                                     <br>
                                                     <font size="-2">Degree(optional)</font>
-                                                    <input type="text" size="10" class="form-control" name="graddegree">
+                                                    <input type="text" size="10" class="form-control" name="graddegree" <?php echo $a?>>
                                                 </td>
                                                 <td>
-                                                    <input type="text" name="graduniv" class="form-control">
+                                                    <input type="text" name="graduniv" class="form-control" <?php echo $a?>>
                                                 </td>
                                                 <td>
-                                                    <input type="text" name="gradcoll" class="form-control">
+                                                    <input type="text" name="gradcoll" class="form-control" <?php echo $a?>>
                                                 </td>
                                                 <td>
-                                                    <input type="text" size="5" name="gradgrade" style="width:50px;" class="form-control">
+                                                    <input type="text" size="5" name="gradgrade" style="width:50px;" class="form-control" <?php echo $a?>>
                                                 </td>
                                                 <td>
-                                                    <input type="number" name="gradyearp" class="form-control">
+                                                    <input type="number" name="gradyearp" class="form-control" <?php echo $a?>>
                                                 </td>
                                                 <td>
                                                     <select class="form-control" name="gradattempt">
@@ -192,22 +194,22 @@
                                                 <td>Post Graduation
                                                     <br>
                                                     <font size="-2" face="Verdana">Degree(optional)</font>
-                                                    <input type="text" size="10" class="form-control" tabindex="24" name="pdegree">
+                                                    <input type="text" size="10" class="form-control" tabindex="24" name="pdegree" <?php echo $a?>>
                                                 </td>
                                                 <td>
-                                                    <input type="text" name="puniv" class="form-control">
+                                                    <input type="text" name="puniv" class="form-control" <?php echo $a?>>
                                                 </td>
                                                 <td>
                                                     <input type="text" name="pcoll" class="form-control">
                                                 </td>
                                                 <td>
-                                                    <input type="text" size="5" name="pgrade" style="width:50px;" class="form-control">
+                                                    <input type="text" size="5" name="pgrade" style="width:50px;" class="form-control" <?php echo $a?>>
                                                 </td>
                                                 <td>
-                                                    <input type="number" name="pyearp" class="form-control">
+                                                    <input type="number" name="pyearp" class="form-control" <?php echo $a?>>
                                                 </td>
                                                 <td>
-                                                    <select class="form-control" name="pattemp">
+                                                    <select class="form-control" name="pattemp" <?php echo $a?>>
                                                         <option value="Select Attempt">Select..</option>
                                                         <option value="First">First</option>
                                                         <option value="Second">Second</option>

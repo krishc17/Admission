@@ -1,5 +1,6 @@
 <?php 
 	session_start();
+	$d;
 	include 'home-menu.php'; 
 	$email = $_SESSION['email'];
 	$msg=" ";
@@ -35,6 +36,18 @@
 	}
 
 	if(isset($_POST['applyCourse'])){
+		
+		$eQuery = $conn->prepare( "SELECT `ID` FROM `education_information` WHERE `ssc_per` = ?" );			
+		$eQuery->bindValue( 1, $d);
+		$eQuery->execute();
+		if(!$eQuery->rowCount() > 0 )
+		{	
+			header("Location: ../home/educational_details.php");
+
+		}
+		else{
+
+
 		$selectedCourse = $_POST['selectedCourse'];
 		$id = $details[0];		
 		 $query = $conn->prepare("SELECT id,coursename from selected_courses where id=? AND coursename=?");			
@@ -55,6 +68,7 @@
 		else
 		{
 			$msg = "<p style='text-align:center; color:red;'>An Error Occured Contact SysAdmin</p>";
+		}
 		}
 	}		
 }
