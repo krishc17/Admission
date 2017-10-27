@@ -75,7 +75,7 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-	<?php  ?>
+	<?php include 'home-menu.php';?>
 	<?php include 'user-side-menu.php'; ?>
 	<link rel="stylesheet" href="css/apply.css" type="text/css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
