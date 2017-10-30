@@ -45,14 +45,14 @@
 
 		}
 		else{
-		$selectedCourse = $_POST['selectedCourse'];
-		$id = $details[0];		
+		 $selectedCourse = $_POST['selectedCourse'];
+		 $id = $details[0];		
 		 $query = $conn->prepare("SELECT id,coursename from selected_courses where id=? AND coursename=?");			
 		 $query->bindValue(1, $id );
 		 $query->bindValue(2, $selectedCourse);
 		 $query->execute();
 
-		 if($query->rowCount() > 0 )
+		if($query->rowCount() > 0 )
 		{
 			$msg = "<p style='text-align:center; color:red;'>Course Alredy Selected</p>";
 		}
@@ -66,7 +66,7 @@
 			$msg = "<p style='text-align:center; color:red;'>An Error Occured Contact SysAdmin</p>";
 		}
 		}
-	}		
+		}
 }
 ?>
 <!DOCTYPE html>

@@ -26,11 +26,12 @@
         if(isset($_POST['submitEducationDetails_BE'])){
             // hardcoding in variables
 
-            //queries
+            //queries_setting user ID
             $id = $details[0];
+            //Connection
             $conn = new PDO("mysql:host=$databaseHost;dbname=$databaseName;", $databaseUsername, $databasePassword);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+            //Query to check education information
             $eQuery = $conn->prepare( "SELECT `ID` FROM `education_information` WHERE `ID` = ?" );			
 			$eQuery->bindValue( 1, $details[0]);
             $eQuery->execute();
@@ -41,12 +42,15 @@
 
 			}
 			else{
-			try{
-            $insertEducationQry_be = "INSERT INTO 
+			    try{
+
+
+                    $insertEducationQry_be = "INSERT INTO 
                                    education_information_be 
                                         VALUES                 
                                         (NULL,'$id')";
-                if ($conn->query($insertEducationQry))
+                    $insertAppliedCourse_BE="";
+                if ($conn->query($insertEducationQry_be))
                 {
                             $msg = "Data Collected Successful. You Can Apply now";
                 }
