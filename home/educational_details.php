@@ -1,9 +1,10 @@
 <?php
     session_start();
     $a="";
+    $msg="";
     if(isset($_SESSION['email']))
 	{
-        $msg = "  ";
+
         //function this
         $email = $_SESSION['email'];
         $databaseHost = "localhost";

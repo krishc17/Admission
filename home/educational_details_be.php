@@ -1,7 +1,10 @@
 <?php
     session_start();
-	if(isset($_SESSION['email']))
-	{
+    $a="";
+    $msg="";
+    if(isset($_SESSION['email']))
+    {        
+        
         //function this
         $email = $_SESSION['email'];
         $databaseHost = "localhost";
@@ -19,16 +22,44 @@
                 }
             }   
         }
+
         if(isset($_POST['submitEducationDetails_BE'])){
+            // hardcoding in variables
+
+            //queries
             $id = $details[0];
-            $insertEducationQry = "INSERT INTO 
+            $conn = new PDO("mysql:host=$databaseHost;dbname=$databaseName;", $databaseUsername, $databasePassword);
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $eQuery = $conn->prepare( "SELECT `ID` FROM `education_information` WHERE `ID` = ?" );			
+			$eQuery->bindValue( 1, $details[0]);
+            $eQuery->execute();
+            if($eQuery->rowCount() > 0 )
+			{	
+                $msg = "We Already Have Your Details";
+                $a = "readonly";
+
+			}
+			else{
+			try{
+            $insertEducationQry_be = "INSERT INTO 
                                    education_information_be 
+                                        VALUES                 
+                                        (NULL,'$id')";
+                if ($conn->query($insertEducationQry))
+                {
+                            $msg = "Data Collected Successful. You Can Apply now";
+                }
+                else
+                {
+                            $msg = "An Error Occured Contact SysAdmin";
+                }
+                    }
+                    catch(PDOException $e){
+                        echo $e;
+                    }
 
-                    
-                                        VALUES
-                                        
-                                        ('$id',)";
-
+            }
         }
      ?>
 
@@ -61,23 +92,23 @@
                                         <tr align="center">
                                             <td>S.S.C</td>
                                             <td>
-                                                <input type="text" name="sscboardbe" class="form-control">
+                                                <input type="text" name="sscboardbe" class="form-control" required <?php echo $a?>>
                                             </td>
 
                                             <td>
-                                                <input type="text" name="sscyearpassbe" class="form-control">
+                                                <input type="text" name="sscyearpassbe" class="form-control"  required <?php echo $a?>>
                                             </td>
 
                                             <td>
-                                     
+                                            
                                             </td>
 
                                             <td>
-                                                <input type="text" name="sscperbe" style="width:50px;" class="form-control">
+                                                <input type="text" name="sscperbe" style="width:50px;" class="form-control"  required <?php echo $a?>>
                                             </td>
 
                                             <td>
-                                                <input type="text" name="sscgradebe" class="form-control">
+                                                <input type="text" name="sscgradebe" class="form-control"  required <?php echo $a?>>
                                             </td>
                                         </tr>
 
@@ -85,19 +116,19 @@
                                         <tr align="center">
                                             <td>H.S.C</td>
                                             <td>
-                                                <input type="text" name="hscboardbe" class="form-control">
+                                                <input type="text" name="hscboardbe" class="form-control"  required <?php echo $a?>>
                                             </td>
                                             <td>
-                                                <input type="text" name="hscyearpassbe" class="form-control">
+                                                <input type="text" name="hscyearpassbe" class="form-control"  required <?php echo $a?>>
                                             </td>
                                             <td>
-                                                <input type="text" name="hscpcm" style="width:50px;" class="form-control">
+                                                <input type="text" name="hscpcm" style="width:50px;" class="form-control"  required <?php echo $a?>>
                                             </td>
                                             <td>
-                                                <input type="number" name="hscperbe" style="width:50px;" class="form-control">
+                                                <input type="number" name="hscperbe" style="width:50px;" class="form-control"  required <?php echo $a?>>
                                             </td>
                                             <td>
-                                                <input type="text" name="hscgradebe" class="form-control">
+                                                <input type="text" name="hscgradebe" class="form-control"  required <?php echo $a?>>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -129,22 +160,22 @@
                                     <!--JEE-->
                                     <tr align="center">
                                         <td>
-                                            <input type="text" name="rollnobe" class="form-control">
+                                            <input type="text" name="rollnobe" class="form-control" required <?php echo $a?>>
                                         </td>
                                         <td>
-                                            <input type="text" name="phybe" style="width:50px;" class="form-control">
-                                        </td>
-
-                                        <td>
-                                            <input type="text" name="chembe" style="width:50px;" class="form-control">
+                                            <input type="text" name="phybe" style="width:50px;" class="form-control" required <?php echo $a?>>
                                         </td>
 
                                         <td>
-                                            <input type="text" name="matbe" style="width:50px;" class="form-control">
+                                            <input type="text" name="chembe" style="width:50px;" class="form-control" required <?php echo $a?>>
                                         </td>
 
                                         <td>
-                                            <input type="text" name="totbe" style="width:50px;" class="form-control">
+                                            <input type="text" name="matbe" style="width:50px;" class="form-control" required <?php echo $a?>>
+                                        </td>
+
+                                        <td>
+                                            <input type="text" name="totbe" style="width:50px;" class="form-control" required <?php echo $a?>>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -163,23 +194,23 @@
                                     <!--JEE ACPC-->
                                     <tr align="center">
                                         <td>
-                                            <input type="text" name="rankbe" class="form-control">
+                                            <input type="text" name="rankbe" class="form-control" required <?php echo $a?>>
                                         </td>
 
                                         <td>
-                                            <input type="text" name="c1be" class="form-control">
+                                            <input type="text" name="c1be" class="form-control" required <?php echo $a?>>
                                         </td>
 
                                         <td>
-                                            <input type="text" name="c2be" class="form-control">
+                                            <input type="text" name="c2be" class="form-control" required <?php echo $a?>>
                                         </td>
 
                                         <td>
-                                            <input type="text" name="acpcregbe" class="form-control">
+                                            <input type="text" name="acpcregbe" class="form-control" required <?php echo $a?>>
                                         </td>
 
                                         <td>
-                                            <input type="text" name="acpcmeritbe" class="form-control">
+                                            <input type="text" name="acpcmeritbe" class="form-control" required <?php echo $a?>>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -202,7 +233,7 @@
 
                                 <div class="col-sm-3 form-group">
                                     <label> P1  </label>
-                                    <select name="p1" id="" class="form-control" style="width:auto;">
+                                    <select name="p1" id="" class="form-control" style="width:auto;" required <?php echo $a?>> 
                                         <option value="Select">Select</option>
                                         <option value="ME">ME</option>
                                         <option value="CE">CE</option>
@@ -213,7 +244,7 @@
 
                                 <div class="col-sm-3 form-group">
                                     <label> P2  </label>
-                                    <select name="p2" id="" class="form-control" style="width:auto;">
+                                    <select name="p2" id="" class="form-control" style="width:auto;"  required <?php echo $a?> >
                             <option value="Select">Select</option>
                             <option value="ME">ME</option>
                             <option value="CE">CE</option>
@@ -224,7 +255,7 @@
 
                                 <div class="col-sm-3 form-group">
                                     <label> P3  </label>
-                                    <select name="p3" id="" class="form-control" style="width:auto;">
+                                    <select name="p3" id="" class="form-control" style="width:auto;"  required <?php echo $a?>>
                             <option value="Select">Select</option>
                             <option value="ME">ME</option>
                             <option value="CE">CE</option>
@@ -235,7 +266,7 @@
 
                                 <div class="col-sm-3 form-group">
                                     <label> P4  </label>
-                                    <select name="p4" id="" class="form-control" style="width:auto;">
+                                    <select name="p4" id="" class="form-control" style="width:auto;"  required <?php echo $a?>>
                             <option value="Select">Select</option>
                             <option value="ME">ME</option>
                             <option value="CE">CE</option>
