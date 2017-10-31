@@ -1,5 +1,6 @@
 <?php 
-	session_start();
+  session_start();
+  $msg="";
 	if(isset($_SESSION['email']))
 	{
     $email = $_SESSION['email'];
@@ -63,6 +64,7 @@
                <h3 class="panel-title">Available Courses</h3>
             </div>
             <div class="panel-body">
+
             <table class="table table-striped table-hover table-bordered">
                <tr>
                  <th>ID</th>

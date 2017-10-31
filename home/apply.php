@@ -1,8 +1,8 @@
 <?php 
 	session_start();
-	$d;
-	$email = $_SESSION['email'];
+	$d="";
 	$msg=" ";
+	$email = $_SESSION['email'];
 	if(isset($_SESSION['email'])){
 
 	$databaseHost = "localhost";
@@ -36,10 +36,10 @@
 
 	if(isset($_POST['applyCourse'])){
 		
-		$eQuery = $conn->prepare( "SELECT `ID` FROM `education_information` WHERE `ssc_per` = ?" );			
-		$eQuery->bindValue( 1, $d);
+		$eQuery = $conn->prepare( "SELECT `ID` FROM `education_information` WHERE `ID` = ?" );			
+		$eQuery->bindValue(1, $d);
 		$eQuery->execute();
-		if(!$eQuery->rowCount() > 0 )
+		if($eQuery->rowCount() > 0 )
 		{	
 			header("Location: ../home/educational_details.php");
 
@@ -61,10 +61,9 @@
 			if ($conn->query($insertQuery)){
 				$msg = "<p style='text-align:center; color:green;'>Application Successful </p>";
 			}
-		else
-		{
+			else{
 			$msg = "<p style='text-align:center; color:red;'>An Error Occured Contact SysAdmin</p>";
-		}
+			}
 		}
 		}
 }
@@ -81,9 +80,7 @@
     <div class="col-lg-9">
         <div class="panel panel-default">
             <div class="panel-heading main-color-bg">
-                <h3 class="panel-title">
-                    <b>Apply For Course</b>
-                </h3>
+                <h3 class="panel-title"> <b>Apply For Course</b> </h3>
             </div>
             <div class="panel-body">
                 <div class="col-lg-12">

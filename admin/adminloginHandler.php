@@ -2,7 +2,7 @@
 session_start();
 $errmsg_array = array();
 $errflag = false;   
-
+$msg="";
     $databaseHost = "localhost";
     $databaseUsername = "root";
     $databasePassword = "";
@@ -56,18 +56,19 @@ $errflag = false;
         $query->execute();
         if($query->rowCount() > 0 )
         {	
-            echo "This Course Already Exists";
+            $msg="This Course Already Exists";
             header("Location: addCourse.php");
         }
         else{
             $sql = "INSERT INTO `courses` (`coursename`)VALUES ('$coursename')";
                     if ($conn->query($sql))
                     {
-                    echo "Course Inserted Successfully";
+                        $msg="Course registered successfully";       
+                        header("Location: addCourse.php");                        
                     }
-                      else
+                    else
                     {
-                    echo "An Error Occured Contact SysAdmin";
+                        echo "An Error Occured Contact SysAdmin";
                     }
         }
 

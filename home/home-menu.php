@@ -40,6 +40,7 @@
 				$('[data-toggle="tooltip"]').tooltip();
 		});
 </script>
+
 <a href="home.php"><img class="img" src="img/nuv_logo.png" /> </a>
 <div class="navbar-nuvcolor navbar-inverse text-center h4">
 		<div class="container-fluid">

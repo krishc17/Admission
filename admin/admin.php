@@ -90,7 +90,6 @@
                     <th>ID</th>
                      <th>Name</th>
                      <th>Email</th>
-                     <th>Course</th>
                      <th>Joined</th>
                   </tr>
                 <?php
@@ -104,7 +103,6 @@
                     echo "<td>$addrow[0]</td>";
                     echo "<td>$addrow[1]</td>";
                     echo "<td>$addrow[9]</td>";
-                    echo "<td>Msc (IT)</td>";
                     echo "<td>$newDate</td>";
                     echo "</tr>";
 
