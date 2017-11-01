@@ -149,15 +149,21 @@
                 $mysqli = mysqli_connect($databaseHost,$databaseUsername,$databasePassword,$databaseName);
                 if (isset($_POST['searchQuery'])){
                   // TODO: Echo Results of Query
+                  //YYYY-MM-DD
                   //SELECT * FROM `student_data` WHERE register_date BETWEEN '2017-03-01' and '2017-10-30'
                   $from = $_POST['from'];
                   $to = $_POST['to'];
                   $cname =$_POST['cname'];
-                  $query = "select student_data.id,student_data.FULLNAME,student_data.EMAIL,selected_courses.coursename,student_data.register_date FROM student_data JOIN selected_courses ON student_data.ID=selected_courses.ID
-                            WHERE  student_data.register_date BETWEEN '$from' AND '$to'
-                            ";
-                            echo $from . ' ' . $to.' '. $cname;
-                  while($addrow = mysqli_fetch_array($result)){
+                  $fromNew = date('Y-m-d',strtotime($from));
+                  $toNew = date('Y-m-d',strtotime($to));
+                  $Equery = "select student_data.id,student_data.FULLNAME,student_data.EMAIL,selected_courses.coursename,student_data.register_date FROM student_data JOIN selected_courses ON student_data.ID=selected_courses.ID
+                            WHERE student_data.register_date BETWEEN '$fromNew' AND '$toNew' AND selected_courses.coursename='$cname'";
+                            
+                            //DEBUGGING
+                            //echo $fromNew . ' ' . $toNew.' '. $cname;
+                 
+                            $result = mysqli_query($mysqli,$Equery);
+                            while($addrow = mysqli_fetch_array($result)){
                               $newDate = date('d-M-Y',strtotime($addrow[4]));
                               echo "<tr>";
                               echo "<td>$addrow[0]</td>";
@@ -169,11 +175,12 @@
                             }
                 }
 
+                
                 else{
                   $query = "select student_data.id,student_data.FULLNAME,student_data.EMAIL,selected_courses.coursename,student_data.register_date FROM student_data JOIN selected_courses ON student_data.ID=selected_courses.ID";
                   $result = mysqli_query($mysqli,$query);
                   while($addrow = mysqli_fetch_array($result)){
-                    $newDate = date('d-M-Y',strtotime($addrow[4]));
+                    $newDate = date('Y-m-d',strtotime($addrow[4]));
                     echo "<tr>";
                     echo "<td>$addrow[0]</td>";
                     echo "<td>$addrow[1]</td>";
