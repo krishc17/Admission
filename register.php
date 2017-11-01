@@ -77,11 +77,11 @@
 						<div class="row">
 							<div class="col-sm-6 form-group">
 								<label>Password</label>
-								<input name="password" type="password" placeholder="Enter Password.." class="form-control" required>
+								<input name="password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="Enter Password.." class="form-control" required>
 							</div>
 							<div class="col-sm-6 form-group">
 								<label>Confirm Password</label>
-								<input type="password" name="password2" placeholder="Confirm Password.." class="form-control" required>
+								<input type="password"pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"  name="password2" placeholder="Confirm Password.." class="form-control" required>
 							</div>
 						</div>
 						<input class="btn btn-lg btn-info" type="submit" name="addRegister" value="Submit">

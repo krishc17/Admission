@@ -23,6 +23,25 @@
 
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    	<script type="text/javascript" src="//code.jquery.com/jquery-1.12.4.js"></script>
+    	<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+	    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.4.2/js/dataTables.buttons.min.js"></script>
+	    <script type="text/javascript" src="//cdn.datatables.net/buttons/1.4.2/js/buttons.print.min.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function() 
+                {
+                    $('#record').DataTable
+                    ( 
+                        {
+                            dom: 'Bfrtip',
+                            buttons: [
+                            'print'
+                            ]
+                        } 
+                    );
+                } );
+            </script>
 
         <!-- Date picker JS-->
 
@@ -96,8 +115,7 @@
                 </div>
                 <div class="panel-body">
                     <div class="row">
-                        <form action="records.php" method="post">
-
+                     <form action="records.php" method="post">
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="from">From</label>
@@ -137,7 +155,7 @@
                     </div>
 
                     <br/>
-                    <table class="table table-striped table-hover table-bordered">
+                    <table id="record" class="table table-striped table-hover table-bordered">
                         <tr>
                             <th>ID</th>
                             <th>Student Name</th>
