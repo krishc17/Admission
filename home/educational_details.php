@@ -219,7 +219,7 @@
                                             </tr>
                                         </tbody>
                                     </table>                         
-                            <input type="submit" name="submitEducationDetails" class="form-control">
+                            <input type="submit" style="color:#BD0006;" name="submitEducationDetails" class="form-control btn btn-info">
                             <?php echo $msg;?>
 							</form>
                     </div>

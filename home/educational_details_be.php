@@ -109,7 +109,7 @@
 
         function handleChange(input) {
             if (input.value < 0) input.value = 0;
-            if (input.value > 100) input.value = 100;
+            if (input.value > 100) input.value = null;
         };
 
         $(document).ready(function() {
@@ -337,7 +337,7 @@
                     </div>
                 </div>
             </div>
-            <input type="submit" style="color:#BD0006;" name="submitEducationDetails_BE" class="form-control">
+            <input type="submit" style="color:#BD0006;" name="submitEducationDetails_BE" class="form-control btn btn-info">
             <?php echo $msg ?>
             </form>
             <?php
