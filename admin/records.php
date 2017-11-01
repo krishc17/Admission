@@ -98,21 +98,21 @@
                 <div class="panel-body">
                     <div class="row">
                      <form action="records.php" method="post">
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                                 <div class="form-group">
                                     <label for="from">From</label>
                                     <input type="text" data-format="dd/MM/yyy" id="from" placeholder="dd-MM-yyyy" name="from" class="form-control" required>
                                 </div>
                             </div>
 
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                                 <div class="form-group">
                                     <label for="to">To</label>
                                     <input type="text" data-format="dd/MM/yyy" id="to" placeholder="dd-MM-yyyy" name="to" class="form-control" required>
                                 </div>
                             </div>
 
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                                 <div class="form-group">
                                     <label for="exampleSelect1">Select Course</label>
                                     <select class='form-control' id='exampleSelect1' name='cname'>
@@ -130,10 +130,18 @@
 
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Search</label>
+                                    <label> </label>
                                     <input type="submit" name="searchQuery" class="form-control" value="Search">
                                 </div>
                             </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label> </label>
+                                    <input type="submit" name="print" class="form-control" value="Print">
+                                </div>
+                            </div>
+
                     </div>
 
                     <br/>
