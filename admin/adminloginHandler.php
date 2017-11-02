@@ -1,13 +1,9 @@
 <?php
 session_start();
-$errmsg_array = array();
-$errflag = false;   
-$msg="";
-    $databaseHost = "localhost";
-    $databaseUsername = "root";
-    $databasePassword = "";
-    $databaseName = "admission2018";
-
+    $errmsg_array = array();
+    $errflag = false;   
+    $msg="";
+    include 'variables.php';
     $conn = new PDO("mysql:host=$databaseHost;dbname=$databaseName;", $databaseUsername, $databasePassword);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     

@@ -3,10 +3,7 @@
     if(isset($_SESSION['email']))
     {
       $email = $_SESSION['email'];
-      $databaseHost = "localhost";
-      $databaseUsername = "root";
-      $databasePassword = "";
-      $databaseName = "admission2018";
+      include 'variables.php';
     ?>
     <html lang="en">
 
@@ -30,8 +27,6 @@
         <script type="text/javascript" src="//cdn.datatables.net/buttons/1.4.2/js/buttons.print.min.js"></script>
 
         <!-- Date picker JS-->
-
-
         <script>
             $(function() {
                 var dateFormat = "dd-mm-yy",
