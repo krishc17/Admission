@@ -9,6 +9,7 @@
       $databaseName = "admission2018";
     ?>
     <html lang="en">
+
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -69,19 +70,15 @@
             });
         </script>
 
-<script type="text/javascript">
-            $(document).ready(function() 
-            {
-                $('#record').DataTable
-                ( 
-                    {
-                        dom: 'Bfrtip',
-                        buttons: [
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#record').DataTable({
+                    dom: 'Bfrtip',
+                    buttons: [
                         'print'
-                        ]
-                    } 
-                );
-            } );
+                    ]
+                });
+            });
         </script>
     </head>
 
@@ -115,7 +112,7 @@
                 </div>
                 <div class="panel-body">
                     <div class="row">
-                     <form action="records.php" method="post">
+                        <form action="records.php" method="post">
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="from">From</label>
@@ -129,9 +126,7 @@
                                     <input type="text" data-format="dd/MM/yyy" id="to" placeholder="dd-MM-yyyy" name="to" class="form-control" required>
                                 </div>
                             </div>
-
-
-                <!--            <div class="col-md-2">
+                            <!--            <div class="col-md-2">
                                 <div class="form-group">
                                     <label for="exampleSelect1">Select Course</label>
                                     <select class='form-control' id='exampleSelect1' name='cname'>
@@ -157,14 +152,14 @@
 
                     <br/>
                     <table id="record" class="table table-striped table-hover table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Std. ID</th>
-                            <th>Student Name</th>
-                            <th>Email</th>
-                            <th>Course</th>
-                            <th>Joined On</th>
-                        </tr>
+                        <thead>
+                            <tr>
+                                <th>Std. ID</th>
+                                <th>Student Name</th>
+                                <th>Email</th>
+                                <th>Course</th>
+                                <th>Joined On</th>
+                            </tr>
                         </thead>
                         <?php
                 $mysqli = mysqli_connect($databaseHost,$databaseUsername,$databasePassword,$databaseName);
@@ -225,6 +220,6 @@
   }
 else{
 ?>
-<?php header("Location: ../admin/");
+            <?php header("Location: ../admin/");
 }
 ?>
