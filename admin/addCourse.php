@@ -4,11 +4,7 @@
 	if(isset($_SESSION['email']))
 	{
     $email = $_SESSION['email'];
-    $databaseHost = "localhost";
-    $databaseUsername = "root";
-    $databasePassword = "";
-    $databaseName = "admission2018";  
-
+    include 'variables.php';
     ?>
 <html lang="en">
 <head>
