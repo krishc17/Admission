@@ -9,23 +9,27 @@
       $databaseName = "admission2018";
     ?>
     <html lang="en">
-
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Admin Area | Dashboard</title>
+        <title>Search Results</title>
         <!-- Bootstrap core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
         <script src="http://cdn.ckeditor.com/4.6.1/standard/ckeditor.js"></script>
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
- 
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.4.2/css/buttons.dataTables.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.4.2/js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" src="//cdn.datatables.net/buttons/1.4.2/js/buttons.print.min.js"></script>
 
         <!-- Date picker JS-->
+
 
         <script>
             $(function() {
@@ -65,6 +69,20 @@
             });
         </script>
 
+<script type="text/javascript">
+            $(document).ready(function() 
+            {
+                $('#record').DataTable
+                ( 
+                    {
+                        dom: 'Bfrtip',
+                        buttons: [
+                        'print'
+                        ]
+                    } 
+                );
+            } );
+        </script>
     </head>
 
     <body>
@@ -98,21 +116,22 @@
                 <div class="panel-body">
                     <div class="row">
                      <form action="records.php" method="post">
-                            <div class="col-md-2">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="from">From</label>
                                     <input type="text" data-format="dd/MM/yyy" id="from" placeholder="dd-MM-yyyy" name="from" class="form-control" required>
                                 </div>
                             </div>
 
-                            <div class="col-md-2">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="to">To</label>
                                     <input type="text" data-format="dd/MM/yyy" id="to" placeholder="dd-MM-yyyy" name="to" class="form-control" required>
                                 </div>
                             </div>
 
-                            <div class="col-md-2">
+
+                <!--            <div class="col-md-2">
                                 <div class="form-group">
                                     <label for="exampleSelect1">Select Course</label>
                                     <select class='form-control' id='exampleSelect1' name='cname'>
@@ -126,7 +145,7 @@
 								                     ?>
                     						</select>
                               </div>
-                            </div>
+                            </div> -->
 
                             <div class="col-md-3">
                                 <div class="form-group">
@@ -134,25 +153,19 @@
                                     <input type="submit" name="searchQuery" class="form-control" value="Search">
                                 </div>
                             </div>
-
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label> </label>
-                                    <input type="submit" name="print" class="form-control" value="Print">
-                                </div>
-                            </div>
-
                     </div>
 
                     <br/>
                     <table id="record" class="table table-striped table-hover table-bordered">
+                    <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>Std. ID</th>
                             <th>Student Name</th>
                             <th>Email</th>
                             <th>Course</th>
                             <th>Joined On</th>
                         </tr>
+                        </thead>
                         <?php
                 $mysqli = mysqli_connect($databaseHost,$databaseUsername,$databasePassword,$databaseName);
                 if (isset($_POST['searchQuery'])){
