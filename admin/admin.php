@@ -63,18 +63,12 @@
                <h3 class="panel-title"> Overview</h3>
             </div>
             <div class="panel-body">
-               <div class="col-md-6">
+               <div class="col-md-12">
                   <div class="well dash-box">
                      <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span>                 
                       <?php echo $val; ?>
                      </h2>
                      <h4>Admissions</h4>
-                  </div>
-               </div>
-               <div class="col-md-6">
-                  <div class="well dash-box">
-                     <h2><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> 12</h2>
-                     <h4>Test Questions</h4>
                   </div>
                </div>
             </div>
@@ -158,9 +152,6 @@
             </div>
          </div>
       </div>
-      <script>
-         CKEDITOR.replace( 'editor1' );
-      </script>
       <!-- Bootstrap core JavaScript
          ================================================== -->
       <!-- Placed at the end of the document so the pages load faster -->
@@ -172,7 +163,6 @@
   } 
   else
     {
- //   echo 'not logged in ';
  header("Location: ../admin/");
   }
 ?>

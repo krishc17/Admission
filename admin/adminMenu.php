@@ -37,13 +37,10 @@
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <li><a href="admin.php">Dashboard</a></li>
-          <li><a href="#">Transaction</a></li>
           <li><a href="records.php">Records</a></li>
-          <li><a href="test-questions.php">Test</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#">Welcome, <?php echo $details[1];?> </a></li>
-          <li><a href="#"> Profile </a></li>
           <li><a href="logout.php">Logout</a></li>
         </ul>
       </div><!--/.nav-collapse -->
