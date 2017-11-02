@@ -3,10 +3,7 @@
 session_start();
 
 // Database Connection
-$databaseHost = "localhost";
-$databaseUsername = "root";
-$databasePassword = "";
-$databaseName = "admission2018";
+include 'variables.php';
 //Register
 try
 	{

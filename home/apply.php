@@ -4,12 +4,8 @@
 	$msg=" ";
 	$email = $_SESSION['email'];
 	if(isset($_SESSION['email'])){
-
-	$databaseHost = "localhost";
-	$databaseUsername = "root";
-	$databasePassword = "";
-	$databaseName = "admission2018";
 		
+	include 'variables.php';		
 
 	$conn = new PDO("mysql:host=$databaseHost;dbname=$databaseName;", $databaseUsername, $databasePassword);
 	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
