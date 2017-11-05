@@ -18,8 +18,7 @@ This Admission portal is a final year University Project, probably will go live 
 
 - Export documents PDF
 - View Student details
-
- ~~Initiate Tests~~
+-  ~~Initiate Tests~~
 
 ## Installtion
 
