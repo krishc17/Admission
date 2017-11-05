@@ -19,7 +19,7 @@ This Admission portal is a final year University Project, probably will go live 
 - Export documents PDF
 - View Student details
 
- ~~ Initiate Tests ~~
+ ~~Initiate Tests~~
 
 ## Installtion
 
@@ -30,6 +30,6 @@ This Admission portal is a final year University Project, probably will go live 
 
 ## Technology Used
 
- [Bootstrap](http://getbootstrap.com) - HTML enhanced for web apps!
- [Core PHP](http://www.php.net/) PHP Version 7
- [jQuery](https://jquery.com/) - JavaScript Framework
+ - [Bootstrap](http://getbootstrap.com) - HTML enhanced for web apps!
+ - [Core PHP](http://www.php.net/) PHP Version 7
+ - [jQuery](https://jquery.com/) - JavaScript Framework
