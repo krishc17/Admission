@@ -5,7 +5,7 @@
         $email = $_SESSION['email'];
 		include 'variables.php';	
 		$mysqli = new mysqli($databaseHost,$databaseUsername,$databasePassword,$databaseName);
-        $query = "SELECT * FROM student_data WHERE email = '{$_SESSION['email']}'"; 
+        $query = "SELECT fullname FROM student_data WHERE email = '{$_SESSION['email']}'"; 
         $result = $mysqli->query($query) or die($mysqli->error);
 		if($result->num_rows > 0) 
 		{
@@ -13,11 +13,13 @@
 			{
 				foreach($row as $val) 
 				{
-                    $details[] = $val;
+                    $name[] = $val;
                 }
             }   
 		}
 	}
+
+
 ?>
 
 <title>
@@ -47,7 +49,7 @@
 							<li><a class="link-3" href="apply.php">Apply</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right horizontal">
-								<p class="navbar-brand">Welcome <?php echo $details[1];?></p>
+								<p class="navbar-brand">Welcome <?php echo $name[0];?></p>
 								<a href="logout.php" class="navbar-brand" >Logout</a>
 						</ul>
 				</div>
