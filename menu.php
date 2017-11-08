@@ -87,8 +87,7 @@
                     <input type="submit" name="login" class="login loginmodal-submit navbar-inverse" value="Login">
                     </form>
                     <div class="login-help">
-                      <a href="register.php">Register </a> - 
-                      <a href="#">Forgot Password </a>
+                      <a href="register.php">Register </a> 
                     </div>
                   </div>
                 </div>

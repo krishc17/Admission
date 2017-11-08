@@ -172,12 +172,13 @@
                             
                             //DEBUGGING
                             //echo $fromNew . ' ' . $toNew.' '. $cname;
-                 
+                            // This code is strictly for debugging, do not put final changes in here
+                            // if final changes are commited to the code, death will be upon us
                             $result = mysqli_query($mysqli,$Equery);
                             while($addrow = mysqli_fetch_array($result)){
                               $newDate = date('d-M-Y',strtotime($addrow[4]));
                               echo "<tr>";
-                              echo "<td>$addrow[0]</td>";
+                              echo "<td><a href='view.php?id=$addrow[0]' target='_blank'>" .$addrow[0] . "</a></td>";
                               echo "<td>$addrow[1]</td>";
                               echo "<td>$addrow[2]</td>";
                               echo "<td>$addrow[3]</td>";
@@ -193,7 +194,7 @@
                   while($addrow = mysqli_fetch_array($result)){
                     $newDate = date('Y-m-d',strtotime($addrow[4]));
                     echo "<tr>";
-                    echo "<td>$addrow[0]</td>";
+                    echo "<td><a href='view.php?id=$addrow[0]' target='_blank'>" .$addrow[0] . "</a></td>";
                     echo "<td>$addrow[1]</td>";
                     echo "<td>$addrow[2]</td>";
                     echo "<td>$addrow[3]</td>";

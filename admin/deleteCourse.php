@@ -42,7 +42,6 @@
                       $result->execute();
                       header("Location:../admin/addCourse.php");
                   ?>
-
 					</div>
 				</div>
 			</div>
