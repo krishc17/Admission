@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2017 at 04:52 AM
+-- Generation Time: Nov 08, 2017 at 07:56 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -64,10 +64,10 @@ CREATE TABLE `courses` (
 --
 
 INSERT INTO `courses` (`ID`, `coursename`, `isActive`) VALUES
-(26, 'BBA', NULL),
 (27, 'MAA', NULL),
 (29, 'MCA', NULL),
-(30, 'MBA', NULL);
+(30, 'MBA', NULL),
+(31, 'MCQ', NULL);
 
 -- --------------------------------------------------------
 
@@ -197,7 +197,10 @@ INSERT INTO `selected_courses` (`S_ID`, `ID`, `coursename`, `isAvailable`) VALUE
 (22, 18, 'BBA', 1),
 (23, 18, 'MAA', 1),
 (24, 18, 'TTT', 1),
-(25, 1, 'B.E', 1);
+(25, 1, 'B.E', 1),
+(26, 2, 'MBA', 1),
+(27, 12, 'MBA', 1),
+(28, 12, 'MCA', 1);
 
 -- --------------------------------------------------------
 
@@ -245,7 +248,8 @@ INSERT INTO `student_data` (`ID`, `FULLNAME`, `GENDER`, `BGROUP`, `ADDRESS`, `CI
 (15, 'Shane', 'Male', 'B+VE', 'VADODARA', 'vadodara', 'Gujarat', '3900011', '9714574465', 'dee@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2017-10-16', '20-12-1995', 'profile_images/Shane.png', 1),
 (16, 'Shane', 'Male', 'B+VE', 'VADODARA', 'Vadodara', 'Gujarat', '390001', '9714574465', 'aa@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2017-10-22', '12-10-2017', 'profile_images/Shane.png', 1),
 (17, 'Yash Karanke', 'Male', '', 'VADODARA', 'VADODARA', 'VADODARA', '390001', '9714574465', 'a@a.com', '74b87337454200d4d33f80c4663dc5e5', '2017-10-25', '11-10-2017', 'profile_images/Shane.png', 1),
-(18, 'Sagar Soni', 'Male', 'A+VE', 'Padra', 'bARODA', 'gUJARAT', '391410', '9033186403', 'SAGAR@gmail.com', 'b4078c14fbcb7b3ef69a5f915a753d5b', '2017-10-31', '06-10-1994', 'profile_images/P7A.png', 1);
+(18, 'Sagar Soni', 'Male', 'A+VE', 'Padra', 'bARODA', 'gUJARAT', '391410', '9033186403', 'SAGAR@gmail.com', 'b4078c14fbcb7b3ef69a5f915a753d5b', '2017-10-31', '06-10-1994', 'profile_images/P7A.png', 1),
+(19, 'Yash Karanke', 'Male', 'A+VE', 'Vadodara', 'Vadodara', 'Vadodara', '390001', '9714574465', 'Vadodara@gmail.com', '2395404a9438f1483548ab1179671f95', '2017-11-07', '08-11-2017', 'profile_images/minimalistic-dc-comics-joker-pictures-for-desktop.jpg', 1);
 
 --
 -- Indexes for dumped tables
@@ -281,14 +285,17 @@ ALTER TABLE `education_information_be`
 -- Indexes for table `selected_courses`
 --
 ALTER TABLE `selected_courses`
-  ADD PRIMARY KEY (`S_ID`);
+  ADD PRIMARY KEY (`S_ID`),
+  ADD KEY `bba_index_coursename` (`coursename`);
 
 --
 -- Indexes for table `student_data`
 --
 ALTER TABLE `student_data`
   ADD PRIMARY KEY (`ID`),
-  ADD UNIQUE KEY `EMAIL` (`EMAIL`);
+  ADD UNIQUE KEY `EMAIL` (`EMAIL`),
+  ADD KEY `stud_name_index` (`FULLNAME`),
+  ADD KEY `gender_stud` (`GENDER`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -303,7 +310,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `ID` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `ID` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 --
 -- AUTO_INCREMENT for table `education_information`
 --
@@ -318,12 +325,12 @@ ALTER TABLE `education_information_be`
 -- AUTO_INCREMENT for table `selected_courses`
 --
 ALTER TABLE `selected_courses`
-  MODIFY `S_ID` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `S_ID` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT for table `student_data`
 --
 ALTER TABLE `student_data`
-  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;COMMIT;
+  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
