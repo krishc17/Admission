@@ -2,19 +2,22 @@
 session_start();
 if(isset($_SESSION['email']))
 {
-$id=$_GET['id'];
-include 'variables.php';
-$mysqli = new mysqli($databaseHost,$databaseUsername,$databasePassword,$databaseName);
-//
-$query = "SELECT * FROM student_data WHERE id =$id"; 
-$result = $mysqli->query($query) or die($mysqli->error);
-if($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        foreach($row as $val) {
-            $details[] = $val;
-        }
-    }   
-}
+    $id=$_GET['id'];
+    include 'variables.php';
+    $mysqli = new mysqli($databaseHost,$databaseUsername,$databasePassword,$databaseName);
+
+    $query = "SELECT * FROM student_data WHERE id =$id"; 
+    $result = $mysqli->query($query) or die($mysqli->error);
+    if($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            foreach($row as $val) {
+                $details[] = $val;
+            }
+        }   
+    }
+    if($id>0){
+
+    
 
 ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -95,11 +98,21 @@ if($result->num_rows > 0) {
         </div>
     </body>
     </html>
-    
     <?php
   }
 else{
 ?>
+            <?php 
+            echo '<script language="javascript">';
+            echo 'alert("Invalid Parameters")';
+            echo '</script>';
+
+        }
+            ?>    
+<?php
+  }
+else{
+    ?>
             <?php header("Location: ../admin/");
 }
 ?>
