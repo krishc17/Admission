@@ -194,8 +194,8 @@
                   while($addrow = mysqli_fetch_array($result)){
                     $newDate = date('Y-m-d',strtotime($addrow[4]));
                     echo "<tr>";
-                    echo "<td><a href='view.php?id=$addrow[0]' target='_blank'>" .$addrow[0] . "</a></td>";
-                    echo "<td>$addrow[1]</td>";
+                    echo "<td>$addrow[0]</td>";
+                    echo "<td><a href='view.php?id=$addrow[0]' target='_blank'>" .$addrow[1] . "</a></td>";
                     echo "<td>$addrow[2]</td>";
                     echo "<td>$addrow[3]</td>";
                     echo "<td>$newDate</td>";

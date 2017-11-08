@@ -45,10 +45,6 @@
                                         <div class="col-sm-6 form-group">
                                             <label>Gender</label>
                                             <input list="gender" name="gender" class="form-control" value= "<?php echo $details[2]; ?> " disabled>
-                                            <datalist id="gender">
-                                                <option value="Male"></option>
-                                                <option value="Female"></option>
-                                            </datalist>
                                         </div>
                                         <div class="col-sm-6 form-group">
                                             <label>Blood Group</label>
