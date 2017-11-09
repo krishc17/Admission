@@ -121,7 +121,7 @@
                   $query = "select * from student_data";
                   $result = mysqli_query($mysqli,$query);
                   while($addrow = mysqli_fetch_array($result)){
-                    $newDate = date('Y-m-d',strtotime($addrow[4]));
+                    $newDate = date('d-M-Y',strtotime($addrow[11]));
                     echo "<tr>";
                     echo "<td>$addrow[0]</td>";
                     echo "<td><a href='view.php?id=$addrow[0]' target='_blank'>" .$addrow[1] . "</a></td>";

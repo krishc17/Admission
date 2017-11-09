@@ -34,7 +34,8 @@
 		$eResult = $mysqli->query($eQuery) or die($mysqli->error);
 		if(!$eResult->num_rows > 0) {
 			header("Location: ../home/educational_details.php");			
-			}   
+			}
+			   
 		else{
 		 $selectedCourse = $_POST['selectedCourse'];
 		 $id = $details[0];		

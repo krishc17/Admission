@@ -127,7 +127,6 @@
                                                 </td>
                                                 <td>
                                                     <select class="form-control" name="sscattemp" required <?php echo $a?>>
-                                                        <option value="Select Attempt">Select..</option>
                                                         <option value="First">First</option>
                                                         <option value="Second">Second</option>
                                                     </select>
@@ -151,7 +150,6 @@
                                                 </td>
                                                 <td>
                                                     <select class="form-control" name="hscattemp" required <?php echo $a?>>
-                                                        <option value="Select Attempt">Select..</option>
                                                         <option value="First">First</option>
                                                         <option value="Second">Second</option>
                                                     </select>
