@@ -164,11 +164,10 @@
                   //SELECT * FROM `student_data` WHERE register_date BETWEEN '2017-03-01' and '2017-10-30'
                   $from = $_POST['from'];
                   $to = $_POST['to'];
-                  $cname =$_POST['cname'];
                   $fromNew = date('Y-m-d',strtotime($from));
                   $toNew = date('Y-m-d',strtotime($to));
                   $Equery = "select student_data.id,student_data.FULLNAME,student_data.EMAIL,selected_courses.coursename,student_data.register_date FROM student_data JOIN selected_courses ON student_data.ID=selected_courses.ID
-                            WHERE student_data.register_date BETWEEN '$fromNew' AND '$toNew' AND selected_courses.coursename='$cname'";
+                            WHERE student_data.register_date BETWEEN '$fromNew' AND '$toNew'";
                             
                             //DEBUGGING
                             //echo $fromNew . ' ' . $toNew.' '. $cname;
@@ -178,8 +177,8 @@
                             while($addrow = mysqli_fetch_array($result)){
                               $newDate = date('d-M-Y',strtotime($addrow[4]));
                               echo "<tr>";
-                              echo "<td><a href='view.php?id=$addrow[0]' target='_blank'>" .$addrow[0] . "</a></td>";
-                              echo "<td>$addrow[1]</td>";
+                              echo "<td>$addrow[0]</td>";
+                              echo "<td><a href='view.php?id=$addrow[0]' target='_blank'>" .$addrow[1] . "</a></td>";
                               echo "<td>$addrow[2]</td>";
                               echo "<td>$addrow[3]</td>";
                               echo "<td>$newDate</td>";

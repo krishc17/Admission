@@ -14,8 +14,8 @@
 	$stmt = $conn->prepare($sql);
 	$stmt->execute();
 	$users = $stmt->fetchAll();
+	
 	//id
-
 	$mysqli = new mysqli($databaseHost,$databaseUsername,$databasePassword,$databaseName);
 	//
 	$query = "SELECT id FROM student_data WHERE email = '{$_SESSION['email']}'"; 
@@ -31,8 +31,7 @@
 	}
 
 	if(isset($_POST['applyCourse'])){
-		
-		$eQuery = $conn->prepare( "SELECT `ID` FROM `education_information` WHERE `ID` = ?" );			
+		$eQuery = $conn->prepare( "SELECT ID FROM education_information WHERE ID = ?" );			
 		$eQuery->bindValue(1, $d);
 		$eQuery->execute();
 		if($eQuery->rowCount() > 0 )
@@ -64,7 +63,7 @@
 		}
 }
 ?>
-<!DOCTYPE html>
+
 <html lang="en">
 <?php include 'home-menu.php';?>
 <?php include 'user-side-menu.php'; ?>
