@@ -3,13 +3,11 @@
 	$d="";
 	$msg=" ";
 	$email = $_SESSION['email'];
-	if(isset($_SESSION['email'])){
-		
-	include 'variables.php';		
+	if(isset($_SESSION['email'])){		
+	include 'variables.php';
 
 	$conn = new PDO("mysql:host=$databaseHost;dbname=$databaseName;", $databaseUsername, $databasePassword);
 	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	
 	$sql = "SELECT id,coursename FROM courses";
 	$stmt = $conn->prepare($sql);
 	$stmt->execute();
@@ -31,14 +29,12 @@
 	}
 
 	if(isset($_POST['applyCourse'])){
-		$eQuery = $conn->prepare( "SELECT ID FROM education_information WHERE ID = ?" );			
-		$eQuery->bindValue(1, $d);
-		$eQuery->execute();
-		if($eQuery->rowCount() > 0 )
-		{	
-			header("Location: ../home/educational_details.php");
-
-		}
+	
+		$eQuery = "SELECT ID FROM education_information WHERE ID = $details[0]";			
+		$eResult = $mysqli->query($eQuery) or die($mysqli->error);
+		if(!$eResult->num_rows > 0) {
+			header("Location: ../home/educational_details.php");			
+			}   
 		else{
 		 $selectedCourse = $_POST['selectedCourse'];
 		 $id = $details[0];		
