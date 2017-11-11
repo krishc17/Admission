@@ -59,6 +59,7 @@
 else{
 ?>
 	<?php
- header("Location: ../admin/");	
-}
+			echo "<script language='javascript'>alert('Login to continue');
+			window.location.href='/Admission/admin';
+			 </script>";}
 ?>

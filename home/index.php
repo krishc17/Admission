@@ -28,4 +28,6 @@
 <!-- To add same code before the last div -- >
 </html>
 <?php } else { ?>
-<?php  header("Location:../index.php"); } ?>
+<?php  						echo "<script language='javascript'>alert('You are not logged in');
+			window.location.href='/Admission/';
+			 </script>"; } ?>

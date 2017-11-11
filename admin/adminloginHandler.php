@@ -31,8 +31,9 @@ session_start();
         header("Location: ../admin/admin.php");
         }
         else{
-            $errmsg_arr[] = 'Username and Password are not found';
-            $errflag = true;
+			echo "<script language='javascript'>alert('Username/Password not found');
+			window.location.href='/Admission/admin/';
+			 </script>";
         }
         if($errflag) {
             $_SESSION['ERRMSG_ARR'] = $errmsg_arr;

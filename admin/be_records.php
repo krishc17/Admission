@@ -182,4 +182,9 @@
   }
 else{
 ?>
-            <?php header("Location: ../admin/");} ?>
+<?php 
+			echo "<script language='javascript'>alert('Login to continue');
+			window.location.href='/Admission/admin';
+			 </script>";
+       
+        } ?>

@@ -343,6 +343,8 @@
     {
         ?>
                 <?php
-header("Location: ../index.php");
+			echo "<script language='javascript'>alert('You are not logged in');
+			window.location.href='/Admission/';
+			 </script>";
     }
     ?>
