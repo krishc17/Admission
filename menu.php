@@ -70,7 +70,7 @@
               </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <a href="#" data-toggle="modal" class="navbar-brand" data-target="#login-modal"> Login</a>
+              <a href="#login" data-toggle="modal" class="navbar-brand" data-target="#login-modal">Login</a>
               <a class="navbar-brand" href="register.php"> Register </a>
             </ul>
           </div>

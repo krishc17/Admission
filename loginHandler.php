@@ -35,10 +35,11 @@ if (isset($_POST['login'])) {
         $_SESSION['email'] = $email;
         header("Location: ../Admission/home/");
 	}
-    else {
-            $errmsg_arr[] = 'Username and Password are not found';
-            $errflag = true;
-        }
+    else {  
+        echo "<script language='javascript'>alert('Username/Password not found');
+        window.location.href='/Admission/#login-modal';
+         </script>";
+    }
         if($errflag) {
             $_SESSION['ERRMSG_ARR'] = $errmsg_arr;
             session_write_close();
