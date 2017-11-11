@@ -53,15 +53,16 @@ session_start();
         $query->execute();
         if($query->rowCount() > 0 )
         {	
-            $msg="This Course Already Exists";
-            header("Location: addCourse.php");
-        }
+            echo "<script language='javascript'>alert('This Course already exists.');
+			window.location.href='/Admission/admin/addCourse.php';
+             </script>";        }
         else{
             $sql = "INSERT INTO `courses` (`coursename`)VALUES ('$coursename')";
                     if ($conn->query($sql))
                     {
-                        $msg="Course registered successfully";       
-                        header("Location: addCourse.php");                        
+                        echo "<script language='javascript'>alert('Course Added Successfully');
+                        window.location.href='/Admission/admin/addCourse.php';
+                         </script>";                        
                     }
                     else
                     {
