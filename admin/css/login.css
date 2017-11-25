@@ -130,9 +130,16 @@ font-size: 20px;
 padding: 0 10px;
 margin: 0 10px;
 }
+/*custom CSS for stable menu bar*/
 .l-3-c{
 color: #ffffff;
 font-size: 20px;    
+}
+
+/* custom css for map*/
+.map-box{
+    height: 100%;
+    width: 100%;
 }
 
 .navbar-inverse {
