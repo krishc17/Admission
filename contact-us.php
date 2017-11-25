@@ -3,10 +3,10 @@
 <div class="col-md-12">
 		<div class="panel panel-default">
 			<div class="panel-heading main-color-bg">
-				<h3 class="panel-title">Location of University</h3>
+				<h3 class="panel-title"> Location of University </h3>
 			</div>
 		<div class="panel-body">
-			<!-- Map to College -->
+			<!-- Map to College-->
 
 		</div>
 	</div>
@@ -16,7 +16,7 @@
 <div class="col-md-12">
 	<div class="panel panel-default">
 		<div class="panel-heading main-color-bg">
-			<h3 class="panel-title">Contact Details</h3>
+			<h3 class="panel-title"> Contact Details </h3>
 		</div>
 		<div class="panel-body">
 			<b>Navrachna University</b><br>

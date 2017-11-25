@@ -54,11 +54,11 @@
     <div class="collapse navbar-collapse dropdown" id="myNavbar">
       <ul class="nav navbar-nav vertical" style="text-decoration:none;">
         <li>
-          <a class="link-3" href="index.php">Home</a></li>
+          <a class="l-3-c" href="index.php">Home</a></li>
           <li>
-            <a class="link-3" href="about.php"> About </a></li>
+            <a class="l-3-c" href="about.php">About</a></li>
             <li class="dropdown" style="color:rgba(8, 8, 8, 0.09);">
-              <a href="courses.php" class="dropdown-toggle" data-toggle="dropdown"> Courses</a>
+              <a href="courses.php" class="dropdown-toggle" data-toggle="dropdown">Courses</a>
               <ul class="dropdown-menu">
                 <li><a href="sbl.php">School Of Business And Law</a></li>
                 <li><a href="set.php">School of Engineering and Technology</a></li>
@@ -67,7 +67,7 @@
               </ul>
             </a>
           </li>
-        <li><a class="link-3" href="contact-us.php">Contact Us</a></li>
+        <li><a class="l-3-c" href="contact-us.php">Contact Us</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <a href="#login" data-toggle="modal" class="navbar-brand" data-target="#login-modal">Login</a>
