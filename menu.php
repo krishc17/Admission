@@ -1,6 +1,6 @@
 <!-- No Need of session_start();-->
 <a href="index.php"> <img src="img/nuv_logo.png" /> </a>
-<title> Navrachna Admission Portal </title>
+<title>Navrachna Admission Portal </title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="style.css" type="text/css">
@@ -69,7 +69,6 @@
           </li>
         <li><a class="link-3" href="contact-us.php">Contact Us</a></li>
         </ul>
-
         <ul class="nav navbar-nav navbar-right">
           <a href="#login" data-toggle="modal" class="navbar-brand" data-target="#login-modal">Login</a>
           <a class="navbar-brand" href="register.php"> Register </a>
