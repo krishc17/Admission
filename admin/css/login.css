@@ -136,7 +136,7 @@ color: #ffffff;
 font-size: 20px;    
 }
 
-/*Following 2 classes are not working*/
+/*Following 2 are not working*/
 .white-color{
     font-color: white !important;
     color:white !important;
