@@ -1,4 +1,10 @@
 	<?php include 'menu.php'; ?>
+<style type="text/css">
+	.first-box{padding:10px;background:#9C0;}
+.second-box{padding:10px; background:#39F;}
+.third-box{padding:10px;background:#F66;}
+.fourth-box{padding:10px;background:#6CC;}
+</style>
 	<!--start-->
 <div class="col-md-12">
 		<div class="panel panel-default">
@@ -23,9 +29,30 @@
 			<h3 class="panel-title"> Contact Details </h3>
 		</div>
 		<div class="panel-body">
-			<b>Navrachna University</b><br>
-			Vasna Bhayli Road, Vadodara - 391 410. <br>
-			Phone: +91 265-3020100 , +91 265-3020110 <br>
+<div class="container">
+	<div class="row text-center">
+		<div class="col-sm-3 col-xs-6 first-box">
+        <h1><span class="glyphicon glyphicon-earphone"></span></h1>
+        <h3>Phone</h3>
+        <p>+ 91 265 30 20 100</p><br>
+    </div>
+    <div class="col-sm-3 col-xs-6 second-box">
+        <h1><span class="glyphicon glyphicon-home"></span></h1>
+        <h3>Location</h3>
+        <p>Vasna Bhayali Road,Vadodara-391 410</p><br>
+    </div>
+    <div class="col-sm-3 col-xs-6 third-box">
+        <h1><span class="glyphicon glyphicon-send"></span></h1>
+        <h3>E-mail</h3>
+        <p><a href="mailto:nuv@nuv.ac.in?Subject=Inquiry"> nuv@nuv.ac.in</a></p><br>
+    </div>
+    <div class="col-sm-3 col-xs-6 fourth-box">
+    	<h1><span class="glyphicon glyphicon-leaf"></span></h1>
+        <h3>Web</h3>
+        <p><a>http://nuv.ac.in/</a></p><br>
+    </div>
+	</div>
+</div>
 		</div>
 	</div>
 </div>
