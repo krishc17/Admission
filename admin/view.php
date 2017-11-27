@@ -1,5 +1,6 @@
 <?php
 session_start();
+$sid=0;
 if(isset($_SESSION['email']))
 {
     $id=$_GET['id'];
@@ -13,12 +14,10 @@ if(isset($_SESSION['email']))
             foreach($row as $val) {
                 $details[] = $val;
             }
+            $sid=$details[0];
         }   
     }
-    if($id>0){
-
-    
-
+    if($id==$sid){
 ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -103,10 +102,9 @@ if(isset($_SESSION['email']))
 else{
 ?>
             <?php 
-            echo '<script language="javascript">';
-            echo 'alert("Invalid Parameters")';
-            echo '</script>';
-
+	        echo '<div class="container" style="margin:150px;">
+            <h1 class="well" style="text-align: center;color: red !important;">Error : Invalid Student ID</h1>
+            <h3 class="well" style="text-align: center;"><a href="view.php?id=1" style="color: #000080 !important;">Click here to return ID 1</a></h3>';
         }
             ?>    
 <?php
