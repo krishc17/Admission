@@ -140,7 +140,7 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label> </label>
-                                    <input type="submit" name="searchQuery" class="form-control" value="Search">
+                                    <input style="background: #BD0006 !important; color: white !important;" type="submit" name="searchQuery" class="form-control" value="Search">
                                 </div>
                             </div>
                     </div>
