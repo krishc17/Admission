@@ -9,8 +9,8 @@
 <div class="col-md-9">
   <!-- Website Overview -->
   <div class="panel panel-default">
-    <div class="panel-heading main-color-bg">
-      <h3 class="panel-title">Instructions </h3>
+    <div class="panel-heading main-color-bg" style="background: #BD0006 !important;">
+      <h3 class="panel-title" style="color: white !important;">Instructions</h3>
     </div>
     <div class="panel-body">
       <p>1. Once registered on the portal you can apply for individual Courses given in the options 

@@ -9,8 +9,8 @@
     <div class="row">
       <div class="col-md-3">
        <div class="list-group">
-        <a href="#" class="list-group-item main-color-bg a-color navbar-nuvcolor">
-          <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Sidemenu</a>
+        <p href="#" class="list-group-item main-color-bg a-color navbar-nuvcolor" style="color: white !important;">
+          <span class="glyphicon glyphicon-cog" aria-hidden="true" style="color: white !important;"></span> Sidemenu</p>
           <a href="index.php" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Home <span class="badge"></span></a>
           <a href="profile.php" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Profile<span class="badge"></span></a>
           <a href="educational_details.php" class="list-group-item"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Educational Details <span class="badge"></span></a>
