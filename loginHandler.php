@@ -36,7 +36,7 @@ if (isset($_POST['login'])) {
         header("Location: ../Admission/home/");
 	}
     else {  
-        echo "<script language='javascript'>alert('Username/Password not found');
+        echo "<script language='javascript'>alert('Email ID/Password not found');
         window.location.href='/Admission/#login-modal';
          </script>";
     }
