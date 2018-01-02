@@ -94,7 +94,7 @@ if(isset($_SESSION['email']))
 				</div>
 			</div>
 <!-- Education Details -->			
-			<div class="container">
+<!--			<div class="container">
 				<h1 class="well" style="text-align: center;">Educational Detail</h1>
 				<div class="col-lg-12 well">
 					<div class="row">
@@ -108,7 +108,7 @@ if(isset($_SESSION['email']))
 						</div>
 					</div>
 				</div>
-			</div>
+			</div>-->
 
 		</body>
 		</html>

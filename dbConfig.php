@@ -71,11 +71,11 @@ if (isset($_POST['addRegister']))
 				(NULL,'$fullname','$gender','$bgroup','$address','$city','$state','$zip','$pnumber','$email','$password',NOW(),'$dob','$image',1)";
 					if ($conn->query($sql))
 					{
-					$msg = "<p style='text-align:center; color:green;'>Registration Successful. You Can Login now</p>";
+						$msg = "<p style='text-align:center; color:green;'>Registration Successful. You Can Login now</p>";
 					}
 					  else
 					{
-					$msg = "An Error Occured Contact SysAdmin";
+						$msg = "An Error Occured Contact SysAdmin";
 					}
 				}
 			
@@ -86,7 +86,7 @@ if (isset($_POST['addRegister']))
 
 
 catch(PDOException $e)
-	{
+{
 		$msg =  "Connection failed: " . $e->getMessage();
 	}
 ?>

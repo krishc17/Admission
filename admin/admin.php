@@ -104,8 +104,6 @@
       </div>
       </div>
       </section>
-      <footer id="footer">
-      </footer>
       <!-- Modals -->
       <!-- Add Page -->
       <div class="modal fade" id="addPage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

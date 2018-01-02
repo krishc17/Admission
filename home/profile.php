@@ -17,9 +17,7 @@
                 }
             }   
         }
-
-
-     ?>
+?>
 <?php include 'home-menu.php'; ?>
     <?php include 'user-side-menu.php'; ?>
         <div class="container">
