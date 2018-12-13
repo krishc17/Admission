@@ -5,6 +5,7 @@
 ![PHP Status](https://img.shields.io/badge/PHP-build-brightgreen.svg)
 ![NUV](https://img.shields.io/badge/project-Navrachna%20University-BD0006.svg)
 [![codecov](https://codecov.io/gh/dextel2/Admission/branch/master/graph/badge.svg)](https://codecov.io/gh/dextel2/Admission)
+[![Coverage Status](https://coveralls.io/repos/github/dextel2/Admission/badge.svg?branch=master)](https://coveralls.io/github/dextel2/Admission?branch=master)
 
 This Admission portal is a final year University Project, probably will go live around in 2018. This project is made by the students for the students and the faculty as well
 
