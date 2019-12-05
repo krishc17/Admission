@@ -1,6 +1,6 @@
 # Navrachna Universirty Admission Portal
 
-[![N|Solid](http://nuv.ac.in/images/nuv_logo.png)](http://nuv.ac.in/)
+[![N|Solid](https://nuv.ac.in/wp-content/uploads/2019/02/logo.png)](http://nuv.ac.in/)
 [![Build Status](https://travis-ci.org/dextel2/Admission.svg?branch=master)](https://travis-ci.org/dextel2/Admission) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![PHP Status](https://img.shields.io/badge/PHP-build-brightgreen.svg)
 ![NUV](https://img.shields.io/badge/project-Navrachna%20University-BD0006.svg)
@@ -19,7 +19,7 @@ This Admission portal is a final year University Project, probably will go live 
 
 - Export documents PDF
 - View Student details
--  ~~Initiate Tests~~
+
 
 ## Installtion
 
@@ -28,8 +28,4 @@ This Admission portal is a final year University Project, probably will go live 
 - If any errors, feel free to raise issue
 - There won't be any future updates as this is a University Project, but there is still hope ;)
 
-## Technology Used
 
-- [Bootstrap](http://getbootstrap.com) - HTML enhanced for web apps!
-- [Core PHP](http://www.php.net/) PHP Version 7
-- [jQuery](https://jquery.com/) - JavaScript Framework
