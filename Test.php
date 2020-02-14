@@ -1,9 +1,10 @@
 <?php
-	use PHPUnit\Framework\TestCase;
-    class Test extends TestCase
+use PHPUnit\Framework\TestCase;
+class Test extends TestCase
+{
+    public function testOnePlusOne()
     {
-        public function testOnePlusOne() {
-            $this->assertEquals(1+1,2);
-        }
+        $this->assertEquals(1 + 1, 2);
     }
+}
 ?>
